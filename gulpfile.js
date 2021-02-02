@@ -4,9 +4,9 @@ browserSync = require("browser-sync").create();
 
 // compile scss --> css
 function style() {
-    return gulp.src("./scss/**/*.scss") // путь к css-файлу
+    return gulp.src("./scss/**/*.scss") // source of css-files
         .pipe(sass({outputStyle: "expanded"}))
-        .pipe(gulp.dest("./css")) // путь к комплированному css-коду
+        .pipe(gulp.dest("./css")) // source of compiled css-files
         .pipe(browserSync.stream());  // browser live server
 }
 

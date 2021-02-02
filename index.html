@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/jquery.lineProgressbar.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Gulp-Sass Landing</title>
 </head>
 
 <body>
@@ -79,66 +83,45 @@
     </svg>
     <!------ /.Sprite ------>
 
-    <header class="main_header" style="background-image: url(/img/header-1.png)">
+    <header class="main_header" id="mainHeaderJS">
         <div class="header_container">
-
-            <div class="headerbar">
+            <div class="headerBar" id="headerBarJS">
                 <div class="header_item_logo">
                     <h1>BOUNCY</h1>
                 </div>
                 <div class="header_nav">
-                    <a href="#" class="header-link nav-effect">Hello</a>
-                    <a href="#" class="header-link">About</a>
-                    <a href="#" class="header-link">Services</a>
-                    <a href="#" class="header-link">Portfolio</a>
-                    <a href="#" class="header-link">Team</a>
-                    <a href="#" class="header-link">Blog</a>
-                    <a href="#" class="header-link">Contacts</a>
+                    <a href="#" class="header-link" data-scroll="#header_descriptionJS">Hello</a>
+                    <a href="#" class="header-link" data-scroll="#project_descriptionJS">About</a>
+                    <a href="#" class="header-link" data-scroll="#servicesJS">Services</a>
+                    <a href="#" class="header-link" data-scroll="#portfolioJS">Portfolio</a>
+                    <a href="#" class="header-link" data-scroll="#teamJS">Team</a>
+                    <a href="#" class="header-link" data-scroll="#newsJS">Blog</a>
+                    <a href="#" class="header-link" data-scroll="#contactsJS">Contacts</a>
                 </div>
             </div>
 
-            <div class="headerbar-mobile">
-
-                <div class="header_item_logo">
-
+            <div class="headerBar-mobile">
+                <div class="header_mobile_items">
                     <div class="logo_text">
                         <h1>BOUNCY</h1>
                     </div>
-                    
-                    <div class="header_burger">
-                        <span></span>
+
+                    <span class="menu-icon">&#9776;</span>
+                </div>
+
+                <div class="menu_container">
+                    <span class="menu_close">&times;</span>
+                    <div class="menu_content">
+                        <a href="#" class="burger_links" data-scroll="#header_descriptionJS">hello</a>
+                        <a href="#" class="burger_links" data-scroll="#project_descriptionJS">About</a>
+                        <a href="#" class="burger_links" data-scroll="#servicesJS">Services</a>
+                        <a href="#" class="burger_links" data-scroll="#portfolioJS">Portfolio</a>
+                        <a href="#" class="burger_links" data-scroll="#teamJS">Team</a>
+                        <a href="#" class="burger_links" data-scroll="#newsJS">Blog</a>
+                        <a href="#" class="burger_links" data-scroll="#contactsJS">Contact</a>
                     </div>
                 </div>
-
-                <div class="header_nav">
-                    <ul class="header_nav_ul">
-                        <li>
-                            <a href="#" class="header-link nav-effect">Hello</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">Services</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">Team</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#" class="header-link">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
-
-
 
             <div class="header_text">
                 <div class="header_title">
@@ -148,17 +131,24 @@
                     <h3>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>
                         praesentium voluptatum</h3>
                 </div>
+
                 <div class="header_button">
-                    <a href="#" class="btn--header"></a>
+                    <a href=""></a>
+                    <div class="btn--header">
+                        <i class="arrow_down"></i>
+                        <div class="btn--header_bg"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </header>
     <!------ /.header ------>
 
-    <div class="header_description">
+    <div class="header_description" id="header_descriptionJS">
         <div class="header_description_container">
             <div class="header_description_inner">
+
                 <div class="header_description_inner-left">
                     <div class="h-description_title">
                         <h2>THIS IS BOUNCY</h2>
@@ -175,12 +165,14 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="h-description_button">
                     <a href="#" class="btn--header_description">Read More</a>
                 </div>
+
                 <div class="header_description_inner-right">
                     <div class="h-description_img">
-                        <img src="/img/h-description-1.png" alt="">
+                        <img src="./img/h-description-1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -188,9 +180,10 @@
     </div>
     <!------ /.header_description ------>
 
-    <div class="project_description">
+    <div class="project_description" id="project_descriptionJS">
         <div class="description_container">
             <div class="description_inner">
+
                 <div class="description_text">
                     <div class="description_title">
                         <h2>DETAILS ABOUT BOUNCY</h2>
@@ -200,18 +193,20 @@
                             blanditiis praesentium</h3>
                     </div>
                 </div>
+
                 <div class="description_icons_inner">
                     <div class="description_icon">
-                        <img class="img--description" src="/img/description-1.png" alt="">
+                        <img class="img--description" src="./img/description-1.png" alt="">
                     </div>
                     <div class="description_icon">
-                        <img class="img--description" src="/img/description-1.png" alt="">
+                        <img class="img--description" src="./img/description-1.png" alt="">
                     </div>
                     <div class="description_icon">
-                        <img class="img--description" src="/img/description-1.png" alt="">
+                        <img class="img--description" src="./img/description-1.png" alt="">
                     </div>
                 </div>
-                <div class="description_content-btm">
+
+                <sectcion class="description_content-btm">
                     <div class="left_description">
                         <div class="left_description-text">
                             <h2>Creative ideas</h2>
@@ -224,6 +219,7 @@
                             </p>
                         </div>
                     </div>
+
                     <div class="right_description">
                         <div class="right_description-text">
                             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
@@ -245,48 +241,57 @@
                             </p>
                         </div>
                     </div>
-                </div>
+
+                </sectcion>
+
             </div>
         </div>
     </div>
     <!------ /.project_description ------>
 
     <section class="featured_project">
-        <div class="project_text">
-            <div class="project_title">
-                <h2>FEATURED PROJECTS</h2>
+        <div class="featured_container">
+
+            <div class="project_text">
+                <div class="project_title">
+                    <h2>FEATURED PROJECTS</h2>
+                </div>
+                <div class="project_subtitle">
+                    <h3>At vero eos et accusamus et iusto odio dignissimos ducimus qui <br> blanditiis
+                        praesentium</h3>
+                </div>
             </div>
-            <div class="project_subtitle">
-                <h3>At vero eos et accusamus et iusto odio dignissimos ducimus qui <br> blanditiis
-                    praesentium</h3>
+
+            <div class="project_content">
+                <div class="project_img_card">
+                    <img src="./img/project-2.png" class="project_img" alt="">
+                </div>
+                <div class="project_img_card">
+                    <img src="./img/project-1.png" class="project_img" alt="">
+                </div>
+                <div class="project_img_card">
+                    <img src="./img/project-3.png" class="project_img" alt="">
+                </div>
             </div>
-        </div>
-        <div class="project_content">
-            <div class="project_img_card">
-                <img src="/img/project-1.png" class="project_img" alt="">
-            </div>
-            <div class="project_img_card">
-                <img src="/img/project-2.png" class="project_img" alt="">
-            </div>
-            <div class="project_img_card">
-                <img src="/img/project-3.png" class="project_img" alt="">
-            </div>
-            <div class="project_footer" style="background-image: url(/img/project-backround.png)">
+
+            <div class="project_footer">
                 <div class="project_footer_text">
                     <p>At vero eos et <span style="font-style: italic;">accusamus</span> et iusto odio <span
                             style="font-style: italic;">dignissimos</span> ducimus qui blanditiis
                     </p>
                 </div>
                 <div class="project_button">
-                    <a href="#" class="btn--project">Sumbit Now</a>
+                    <button class="btn--project">Sumbit Now</button>
                 </div>
             </div>
+
         </div>
     </section>
     <!------ /.featured_project ------>
 
-    <sectcion class="services">
+    <sectcion class="services" id="servicesJS">
         <div class="services_container">
+
             <div class="services_text">
                 <div class="services_title">
                     <h2>OUR SERVICES</h2>
@@ -297,11 +302,12 @@
                         </br></h3>
                 </div>
             </div>
+
             <div class="left_discription_inner">
                 <div class="services_icons">
-                    <img src="/img/services-1.png" alt="">
-                    <img src="/img/services-1.png" alt="">
-                    <img src="/img/services-1.png" alt="">
+                    <img src="./img/services-1.png" alt="">
+                    <img src="./img/services-1.png" alt="">
+                    <img src="./img/services-1.png" alt="">
                 </div>
                 <ul class="services_discription">
                     <li>Graphic Design</li>
@@ -317,65 +323,67 @@
                         dolorum fuga. </li>
                 </ul>
             </div>
+
             <div class="right_services_graphics_inner">
+
                 <div class="graphics_inner">
-                    <div class="graphics_card">
-                        <div class="interest">
-                            <h1>80%</h1>
-                        </div>
+
+                    <div class="circle--branding" data-percent="100" data-scale-color="#f3f3f3">
+                        <h2 class="percent--branding">100%</h2>
                     </div>
-                    <div class="graphics_card">
-                        <div class="interest">
-                            <h1>80%</h1>
-                        </div>
-                    </div>
-                    <div class="graphics_card">
-                        <div class="interest">
-                            <h1>80%</h1>
-                        </div>
-                    </div>
-                    <div class="graphics_card-title">
+                    <button class="circle_text text--branding">
                         <h2>Branding</h2>
+                    </button>
+
+                    <div class="circle--web" data-percent="70" data-scale-color="#f3f3f3">
+                        <h2 class="percent--web">70%</h2>
                     </div>
-                    <div class="graphics_card-title">
-                        <h3>Web Design</h3>
+                    <button class="circle_text text--web">
+                        <h2>Web Design</h2>
+                    </button>
+
+                    <div class="circle--ui" data-percent="50" data-scale-color="#f3f3f3">
+                        <h2 class="percent--ui">50%</h2>
                     </div>
-                    <div class="graphics_card-title">
-                        <h4>UI/UX</h4>
-                    </div>
+                    <button class="circle_text text--ui">
+                        <h2>UI/UX</h2>
+                    </button>
+
                 </div>
             </div>
+
         </div>
     </sectcion>
     <!------ /.services ------>
 
-    <section class="advantages" style="background-image: url(/img/advantages-bg.png)">
+    <div class="advantages">
         <div class="advantages_container">
-            <div class="advantages_right_inner">
-                <div class="advantages_text">
-                    <h1>IMPRESSED?</h1>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>
-                        praesentium voluptatum deleniti atque corrupti quos <br>
-                        dolores et quas molestiasAt vero eos et accusamus et iusto odio dignissimos ducimus qui
-                        blanditiis <br>
-                        praesentium voluptatum deleniti atque corrupti quos <br>
-                        dolores et quas molestiasAt vero eos et accusamus et iusto odio dignissimos ducimus qui
-                        blanditiis <br>
-                        praesentium voluptatum deleniti atque corrupti quos <br>
-                        dolores et quas molestias</p>
-                    <p>- Abdullah Noman <br>
-                        Creatice Director, <span style="color: #19bd9a">Code Cafe</span></p>
+            <div class="advantages_inner">
+                <div class="advantages_right_inner">
+                    <sectcion class="advantages_text">
+                        <h2>IMPRESSED?</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur veniam nemo autem quam
+                            molestias illum possimus quod placeat aut ipsam, delectus, fuga ipsa quisquam eos, numquam
+                            voluptatum dolorum dolores eius?
+                            Pariatur quidem autem ullam alias in tenetur, eveniet libero ex minima? Cum et dignissimos
+                            corporis omnis vero consectetur aspernatur placeat esse tempora? Iusto ipsa sequi iste.
+                            Accusantium temporibus voluptas cupiditate!
+                            Vitae dolores repudiandae porro aliquam, commodi aut eius debitis modi ipsum omnis numquam,
+                            deserunt nesciunt aliquid perspiciatis consectetur sed autem officiis cupiditate harum.
+                            Porro
+                            culpa, cum ratione soluta voluptate ipsa?</p>
+                        <h3>- Abdullah Noman</h3>
+                        <h4>Creatice Director, <span style="color: #19bd9a">Code Cafe</span></h4>
+                    </sectcion>
                 </div>
             </div>
-            <div class="advantages_left_inner">
-                <img src="/img/1-adv.png" alt="" class="img-responsive">
-            </div>
         </div>
-    </section>
+    </div>
     <!------ /.advantages ------>
 
-    <section class="portfolio_section">
+    <div class="portfolio_section" id="portfolioJS">
         <div class="portfolio_section_container">
+
             <div class="porfolio_header_text">
                 <div class="portfolio_title">
                     <h2>THE PORTFOLIO</h2>
@@ -384,45 +392,233 @@
                     <h3>At vero eos et accusamus et iusto odio dignissimos ducimus qui <br>
                         blanditiis praesentium</h3>
                 </div>
+
                 <div class="portfolio_nav">
-                    <a href="#" class="p-nav_link">All Works</a>
-                    <a href="#" class="p-nav_link">Print</a>
-                    <a href="#" class="p-nav_link">Identity</a>
-                    <a href="#" class="p-nav_link">Branding</a>
-                    <a href="#" class="p-nav_link">Web</a>
-                    <a href="#" class="p-nav_link">HTML</a>
-                    <a href="#" class="p-nav_link">Wordpress</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_1">All Works</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_2">Print</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_3">Identity</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_4">Branding</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_5">Web</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_6">HTML</a>
+                    <a href="#" class="p-nav_link" data-tab="#tab_7">Wordpress</a>
                 </div>
             </div>
+
             <div class="portfolio_container">
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-1.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-2.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-3.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-4.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-5.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-6.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-7.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-8.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-9.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-10.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-11.png)"></div>
-                <div class="portfolio_element" style="background-image: url(/img/portfolio-12.png)"></div>
+                <div class="portfolio_item" id="tab_1">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-1.png"
+                        style="background-image: url(img/portfolio-1.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-5.png"
+                        style="background-image: url(img/portfolio-5.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-6.png"
+                        style="background-image: url(img/portfolio-6.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-7.png"
+                        style="background-image: url(img/portfolio-7.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-8.png"
+                        style="background-image: url(img/portfolio-8.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-9.png"
+                        style="background-image: url(img/portfolio-9.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-11.png"
+                        style="background-image: url(img/portfolio-11.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_2">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-2.png"
+                        style="background-image: url(img/portfolio-2.png)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_3">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-3.png"
+                        style="background-image: url(img/portfolio-3.png)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_4">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-4.png"
+                        style="background-image: url(img/portfolio-4.png)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_5">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-12.png"
+                        style="background-image: url(img/portfolio-12.png)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_6">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-14.jpg"
+                        style="background-image: url(img/portfolio-14.jpg)"></a>
+                </div>
+
+                <div class="portfolio_item" id="tab_7">
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                    <a class="portfolio_element" data-lightbox="roadtrip" href="img/portfolio-10.png"
+                        style="background-image: url(img/portfolio-10.png)"></a>
+                </div>
             </div>
-            <div class="portfolio_element_btm" style="background-image: url(/img/h-background.png)">
+
+            <div class="portfolio_element_btm">
                 <div class="p_element_btm">
                     <p>At vero eos et <span style="font-style: italic;">accusamus</span> et iusto odio <span
                             style="font-style: italic;">dignissimos</span> ducimus qui blanditiis
                     </p>
+
                     <div class="portfolio_button">
-                        <a href="#" class="btn--portfolio">Start Project</a>
+                        <button class="btn--portfolio">SUMBIT</button>
                     </div>
+
                 </div>
             </div>
+
         </div>
-    </section>
-    <div class="team">
+    </div>
+    </div>
+    <!------ /.portfolio ------>
+
+    <div class="team" id="teamJS">
         <div class="team_container">
             <div class="team_inner">
+
                 <div class="team_text">
                     <div class="team_title">
                         <h2>THE TEAM</h2>
@@ -432,68 +628,19 @@
                             blanditiis praesentium</h3>
                     </div>
                 </div>
-                <div class="team_content_inner">
-                    <div class="left_team_content">
-                        <div class="left_team_img">
-                            <img src="/img/1-team.png" alt="">
-                        </div>
-                    </div>
-                    <div class="right_team_content">
-                        <div class="right_text_content">
-                            <div class="right_title">
-                                <h2>Eugene Egorov</h2>
-                                <h3>CREATIVE DIRECTOR, CODE CAFE</h3>
-                            </div>
-                            <div class="right_subtitle">
-                                <p>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                                    blanditiis praesentium</p>
-                            </div>
-                        </div>
-                        <div class="team_progressBar">
-                            <ul class="progressBar_ul">
-                                <li>
-                                    <h3>BRANDING</h3><span class="bar"><span class="branding"></span></span>
-                                </li>
-                                <li>
-                                    <h3>WEB DESIGN</h3><span class="bar"><span class="design"></span></span>
-                                </li>
-                                <li>
-                                    <h3>USER INTERFACE</h3><span class="bar"><span class="interface"></span></span>
-                                </li>
-                            </ul>
-                            <script>
-                                CSS.registerProperty({
-                                    name: "--p",
-                                    syntax: "<integer>",
-                                    initialValue: 0,
-                                    inherits: true,
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <g>
-            <!-- <div class="team_container">
-                <div class="team_inner">
-                    <div class="team_text">
-                        <div class="team_title">
-                            <h2>THE TEAM</h2>
-                        </div>
-                        <div class="team_subtitle">
-                            <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                                blanditiis praesentium</h3>
-                        </div>
-                    </div>
+
+                <div class="team_slider owl-carousel">
+
                     <div class="team_content_inner">
                         <div class="left_team_content">
-                            <img class="team_img" src="/img/1-team.png" alt="">
+                            <div class="left_team_img">
+                                <img src="./img/1-team.png" alt="">
+                            </div>
                         </div>
                         <div class="right_team_content">
                             <div class="right_text_content">
                                 <div class="right_title">
-                                    <h2>Eugene Egorov</h2>
+                                    <h2>Abdullah Noman</h2>
                                     <h3>CREATIVE DIRECTOR, CODE CAFE</h3>
                                 </div>
                                 <div class="right_subtitle">
@@ -501,42 +648,111 @@
                                         blanditiis praesentium</p>
                                 </div>
                             </div>
-                            <div class="team_progressBar">
-                                <li>
-                                    <h3>BRANDING</h3><span class="bar"><span class="branding"></span></span>
-                                </li>
-                                <li>
-                                    <h3>WEB DESIGN</h3><span class="bar"><span class="design"></span></span>
-                                </li>
-                                <li>
-                                    <h3>USER INTERFACE</h3><span class="bar"><span class="interface"></span></span>
-                                </li>
-                                <script>
-                                    CSS.registerProperty({
-                                        name: "--p",
-                                        syntax: "<integer>",
-                                        initialValue: 0,
-                                        inherits: true,
-                                    });
-                                </script>
+
+                            <div class="team_progressBar" id="teamBarFirst">
+
+                                <h3 class="bar_name--branding">BRANDING</h3>
+                                <div class="team_bar team_bar--branding" id="progressBrandJS_1"></div>
+                                <h3 class="bar_name--web">WEB DESIGN</h3>
+                                <div class="team_bar team_bar--web" id="progressWebJS_1"></div>
+                                <h3 class="bar_name--intfce">USER INTARFACE</h3>
+                                <div class="team_bar team_bar--intfce" id="progressIntfcJS_1"></div>
+
                             </div>
+
                         </div>
                     </div>
+
+                    <div class="team_content_inner">
+                        <div class="left_team_content">
+                            <div class="left_team_img">
+                                <img src="./img/1-team.png" alt="">
+                            </div>
+                        </div>
+                        <div class="right_team_content">
+                            <div class="right_text_content">
+                                <div class="right_title">
+                                    <h2>G1GZER</h2>
+                                    <h3>FRONTEND REACT DEV</h3>
+                                </div>
+                                <div class="right_subtitle">
+                                    <p>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                        blanditiis praesentium</p>
+                                </div>
+                            </div>
+
+                            <div class="team_progressBar" id="teamBarSecond">
+
+                                <h3 class="bar_name--branding">BRANDING</h3>
+                                <div class="team_bar team_bar--branding" id="progressBrandJS_2"></div>
+                                <h3 class="bar_name--web">WEB DESIGN</h3>
+                                <div class="team_bar team_bar--web" id="progressWebJS_2"></div>
+                                <h3 class="bar_name--intfce">USER INTARFACE</h3>
+                                <div class="team_bar team_bar--intfce" id="progressIntfcJS_2"></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="team_content_inner">
+
+                        <div class="left_team_content">
+                            <div class="left_team_img">
+                                <img src="./img/1-team.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="right_team_content">
+
+                            <div class="right_text_content">
+                                <div class="right_title">
+                                    <h2>FPSSKA</h2>
+                                    <h3>CODE CAFE</h3>
+                                </div>
+                                <div class="right_subtitle">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis voluptate
+                                        excepturi sint molestiae! Cumque voluptatem reprehenderit, repellendus aliquid
+                                        provident deserunt illum aspernatur rem quas optio dolorem labore, recusandae
+                                        esse!</p>
+                                </div>
+                            </div>
+
+                            <div class="team_progressBar" id="teamBarThird">
+
+                                <h3 class="bar_name--branding">BRANDING</h3>
+                                <div class="team_bar team_bar--branding" id="progressBrandJS_3"></div>
+                                <h3 class="bar_name--web">WEB DESIGN</h3>
+                                <div class="team_bar team_bar--web" id="progressWebJS_3"></div>
+                                <h3 class="bar_name--intfce">USER INTARFACE</h3>
+                                <div class="team_bar team_bar--intfce" id="progressIntfcJS_3"></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-            </div> -->
-        </g>
-        <!--FOR SLIDER-->
+            </div>
+        </div>
     </div>
     <!------ /.team ------>
 
-    <div class="testimonials_button_inner" style="background-image: url(/img/contcs-baclground.png);">
+    <div class="testimonials_button_inner">
+
         <div class="testimonial_button-container">
             <div class="testimonial_button-text">
                 <h2>Already Loved Us? Let's talk!</h2>
             </div>
+
             <div class="testimonials_button">
-                <a href="#" class="btn--testimonials">Contact Us</a>
+                <div class="btn--testimonials">
+                    <a href="#">Contact Us<span class="shift"></span>
+                    </a>
+                    <div class="mask"></div>
+                </div>
             </div>
+
         </div>
     </div>
     <!------ /.testimonials_button_inner ------>
@@ -553,293 +769,437 @@
                             praesentium</h3>
                     </div>
                 </div>
-                <div class="testimonial_card">
-                    <div class="testimonial_card-img">
-                        <img src="/img/testimonials-1.png" alt="">
-                    </div>
-                    <div class="testimonial_card-text">
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium <br>
-                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                            <br>
-                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.
-                        </p>
-                        <h2><span style="font-weight: 700; color: #19bd9a">PARTHO</span></h2>
-                        <h3>FOUNDER, ARTWAYS BD</h3>
-                    </div>
-                </div>
 
-                <g>
-                    <!-- <div class="testimonial_card">
-        <div class="testimonial_card-img">
-            <img src="/img/testimonials-1.png" alt="">
-        </div>
-        <div class="testimonial_card-text">
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium <br>
-                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                <br>
-                cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.</p>
-            <h2><span style="font-weight: 700; color: #19bd9a">PARTHO</span></h2>
-            <h3>FOUNDER, ARTWAYS BD</h3>
-        </div>
-    </div> -->
-                </g>
-                <!--FOR SLIDER-->
+                <div class="testimonial_slider owl-carousel">
+
+                    <div class="testimonial_card">
+                        <div class="testimonial_card-img">
+                            <img src="./img/testimonials-1.png" alt="">
+                        </div>
+                        <div class="testimonial_card-text">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                mollitia.voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                                sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                                deserunt
+                                mollitia. Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi
+                                sintoccaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                mollitia.
+                            </p>
+                            <h2><span style="font-weight: 700; color: #19bd9a">PARTHO</span></h2>
+                            <h3>FOUNDERM ARTWAYS BD</h3>
+                        </div>
+                    </div>
+
+                    <div class="testimonial_card">
+                        <div class="testimonial_card-img">
+                            <img src="./img/testimonials-1.png" alt="">
+                        </div>
+                        <div class="testimonial_card-text">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                mollitia.voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi
+                                sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                                deserunt
+                                mollitia. Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi
+                            </p>
+                            <h2><span style="font-weight: 700; color: #19bd9a">FPSSKA</span></h2>
+                            <h3>FRONTEND WEB DEV</h3>
+                        </div>
+                    </div>
+
+                    <div class="testimonial_card">
+                        <div class="testimonial_card-img">
+                            <img src="./img/testimonials-1.png" alt="">
+                        </div>
+                        <div class="testimonial_card-text">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+                                mollitia.
+                            </p>
+                            <h2><span style="font-weight: 700; color: #19bd9a">FPSSKA</span></h2>
+                            <h3>FRONTEND WEB DEV</h3>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </div>
-    </div>
-    <!------ /.testimonials ------>
+        <!------ /.testimonials ------>
 
-    <section class="news" style="background-image: url(/img/news-background.png);">
-        <div class="news_container">
-            <div class="news_title">
-                <h2>LATEST NEWS</h2>
-                <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                    blanditiis praesentium</h3>
-            </div>
-            <div class="news_subtitle">
-                <h1>The trending Landing Pages</h1>
-                <h2>BY <span style="color:#19bd9a">EUGENE EGOROV</span></h2>
-                <h3>6950 Likes - 243 Comments - 703 shares</h3>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium <br>
-                    voluptatum deleniti atque corrupti quos dolores et quas molestias <br>
-                    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia <br>
-                    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum <br>
-                    facilis est et expedita distinctio...At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                    blanditiis praesentium <br>
-                    voluptatum deleniti atque corrupti quos dolores et quas molestias <br>
-                    excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia <br>
-                    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum <br>
-                    facilis est et expedita distinctio... </p>
+        <div class="news_section" id="newsJS">
+            <div class="news_container">
+                <div class="news_inner">
+
+                    <div class="news_slider owl-carousel">
+
+                        <div class="news_card">
+                            <section class="news_title">
+                                <h2>LATEST NEWS</h2>
+                                <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                    blanditiis praesentium</h3>
+                            </section>
+                            <sectcion class="news_subtitle">
+                                <h2>The trending Landing Pages</h2>
+                                <h3>BY <span style="color:#19bd9a">KABIR UDDIN</span></h3>
+                                <h4>6950 Likes - 243 Comments - 703 shares</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae earum doloremque
+                                    labore
+                                    ipsa adipisci maiores id enim. Beatae, reiciendis nisi natus quo unde molestiae
+                                    molestias consectetur asperiores facilis nemo minima!
+                                    Neque ut recusandae et culpa aspernatur illo, nemo officiis laudantium magnam.
+                                    Distinctio consequuntur voluptas, mollitia magni, corporis a aliquid minus dolorem
+                                    magnam, culpa unde similique asperiores ipsum nihil veritatis molestiae.
+                                    Id est, quae sunt earum, rem eaque eos voluptate exercitationem architecto natus
+                                    omnis?
+                                    Unde fuga labore rerum eum. Voluptate rem accusamus doloribus enim aperiam
+                                    exercitationem sapiente facilis velit culpa impedit.
+                                    Eaque, architecto doloribus. Culpa dignissimos exercitationem est sed eaque numquam,
+                                    earum provident magnam porro excepturi? Voluptate at exercitationem perferendis
+                                    explicabo totam ullam minima quasi, sapiente ipsum eaque a recusandae inventore?
+                                    Doloribus ratione aliquid natus quisquam esse veniam vitae corporis. Nemo illo
+                                    ducimus
+                                    doloremque odio, eius adipisci at veritatis fugiat velit sapiente hic sint debitis
+                                    exercitationem culpa nihil, quibusdam eveniet asperiores.
+                                    Dolorum et eum, amet dolorem ab quas? Voluptatem iusto sapiente atque tempora,
+                                    exercitationem libero obcaecati voluptas, eaque sequi nihil voluptatibus, aliquid
+                                    eius
+                                    officia incidunt expedita nobis vel! Dolores, consequatur ipsam!
+                                    Quas consectetur itaque ea molestias voluptatem voluptates suscipit alias sint, odit
+                                    accusamus, inventore eveniet quasi omnis nobis placeat optio explicabo consequuntur
+                                    repellat nostrum nam aliquam quisquam tenetur quam. Provident, nostrum?
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt aut ipsum
+                                    maiores
+                                    nihil cum eligendi amet quia, dolore optio atque at maxime ab provident eveniet
+                                    quidem
+                                    velit repudiandae quae!
+                                    A nesciunt repudiandae excepturi itaque ipsum odio molestiae eius dolorem pariatur
+                                    obcaecati iusto animi ullam veritatis qui incidunt soluta officiis, consequuntur
+                                    laborum? Maxime, voluptatibus. Iusto earum mollitia fuga magnam ipsa.
+                                    Unde modi rem dolor, perferendis ratione, adipisci autem totam odio asperiores eos
+                                    quasi
+                                    quo? Nemo repellendus sed similique, eveniet minima minus! Autem ratione cumque
+                                    saepe
+                                    praesentium error iusto. Fugit, voluptatum.</p>
+                            </sectcion>
+                        </div>
+
+
+                        <div class="news_card">
+                            <section class="news_title">
+                                <h2>LATEST NEWS</h2>
+                                <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                    blanditiis praesentium</h3>
+                            </section>
+                            <sectcion class="news_subtitle">
+                                <h2>The trending Landing Pages</h2>
+                                <h3>BY <span style="color:#19bd9a">FPSSKA</span></h3>
+                                <h4>6950 Likes - 243 Comments - 703 shares</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sequi numquam
+                                    dolor
+                                    magni a. Voluptatem nihil odit, aliquam fugit eligendi corrupti deserunt eum.
+                                    Tenetur
+                                    ducimus amet assumenda. Quidem, maxime aut.
+                                    Quisquam numquam impedit autem iusto beatae dolores laborum dicta tempore
+                                    perferendis.
+                                    Debitis mollitia, ducimus nulla et commodi voluptates ullam delectus enim minima
+                                    omnis,
+                                    amet eaque sapiente atque numquam perferendis ab?
+                                    Necessitatibus nobis, repellendus cupiditate earum nisi natus impedit, maiores sequi
+                                    et
+                                    fugiat iusto? Quia alias, placeat eveniet aperiam voluptas repellendus omnis
+                                    consequuntur saepe deserunt officia, non asperiores laudantium vero a?
+                                    Magni inventore natus repellendus voluptas iusto similique. Reiciendis porro
+                                    similique
+                                    natus architecto obcaecati nam. Obcaecati, ipsa iusto? Alias amet atque incidunt
+                                    debitis
+                                    molestias culpa necessitatibus officiis laboriosam tempore provident? Aperiam!
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident autem rerum
+                                    dolore
+                                    eos unde enim ullam reprehenderit laboriosam ducimus corporis quasi fuga, temporibus
+                                    qui
+                                    inventore sint iure! Culpa, mollitia quas!Similique sint sed explicabo ducimus
+                                    provident
+                                    dignissimos hic optio tempora. Ea eum maxime, laboriosam ab unde, natus iusto amet
+                                    inventore, labore reiciendis nam voluptatum ex quos dolore. Doloremque, ipsum rerum.
+                                </p>
+                            </sectcion>
+                        </div>
+
+                        <div class="news_card">
+                            <section class="news_title">
+                                <h2>LATEST NEWS</h2>
+                                <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                    blanditiis praesentium</h3>
+                            </section>
+                            <sectcion class="news_subtitle">
+                                <h2>The trending Landing Pages</h2>
+                                <h3>BY <span style="color:#19bd9a">G1GZER</span></h3>
+                                <h4>6950 Likes - 243 Comments - 703 shares</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quisquam maiores
+                                    earum
+                                    doloremque quo voluptatum beatae suscipit aliquam tempore! Accusamus modi vero
+                                    minima
+                                    recusandae eum similique? Perspiciatis repellat harum expedita.
+                                    Dolores deleniti, accusamus odio quisquam similique id, ducimus minus blanditiis,
+                                    perferendis fugiat velit. Iste, expedita, itaque laudantium similique assumenda
+                                    temporibus ab, blanditiis eum necessitatibus error voluptate. Neque ratione eaque
+                                    ipsum.
+                                    Ad, excepturi, porro saepe suscipit delectus dicta recusandae a autem optio esse
+                                    mollitia eius rerum perferendis. Magni aut molestiae ex accusantium vitae laudantium
+                                    delectus dolore, veritatis facilis nam quos natus!
+                                    Odio delectus nihil sed fugiat veritatis, dicta hic modi? Voluptatem dolorem fugiat
+                                    non
+                                    illo quos asperiores totam. Voluptatibus commodi, excepturi quasi deserunt
+                                    laudantium
+                                    reprehenderit repellat sunt consequatur hic molestias perferendis.</p>
+                            </sectcion>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
+        <!------ /.news ------>
 
-        <g>
-            <!-- <div class="news_container">
-                <div class="news_title">
-                    <h2>LATEST NEWS</h2>
-                    <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                        blanditiis praesentium</h3>
-                </div>
-                <div class="news_subtitle">
-                    <h1>The trending Landing Pages</h1>
-                    <h2>BY <span style="color:#19bd9a">EUGENE EGOROV</span></h2>
-                    <h3>6950 Likes - 243 Comments - 703 shares</h3>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium <br>
-                        voluptatum deleniti atque corrupti quos dolores et quas molestias <br>
-                        excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia <br>
-                        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum <br>
-                        facilis est et expedita distinctio... </p>
-                </div>
-            </div> -->
-        </g>
-        <!--FOR SLIDER-->
-    </section>
-    <!------ /.news ------>
-
-    <div class="prices">
-        <div class="prices_container">
-            <div class="prices_inner">
-                <div class="prices_text">
-                    <div class="prices_title">
-                        <h2>OUR PRICE</h2>
-                    </div>
-                    <div class="prices_subtitle">
-                        <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                            blanditiis praesentium
-                        </h3>
-                    </div>
-                </div>
-                <div class="prices_card_inner">
-                    <div class="prices_card card--first">
-                        <div class="price_card_content-top">
-                            <h2>PREMIUM</h2>
+        <div class="prices">
+            <div class="prices_container">
+                <div class="prices_inner">
+                    <div class="prices_text">
+                        <div class="prices_title">
+                            <h2>OUR PRICE</h2>
                         </div>
-                        <div class="price_card_content-center">
-                            <h4>$ 60</h4>
-                            <p>Per Month</p>
+                        <div class="prices_subtitle">
+                            <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                blanditiis praesentium
+                            </h3>
                         </div>
                     </div>
-                    <div class="prices_card card--second">
-                        <div class="price_card_content-center">
-                            <ul class="price_card_ul">
-                                <li>Full Branding</li>
-                                <li>Project Managment</li>
-                                <li>Unlimited Revisions</li>
-                                <li>24/7 h Service</li>
-                                <li>Free Domain</li>
-                                <li>Free Hosting</li>
-                            </ul>
-                        </div>
-                        <div class="price_card_content-btm">
-                            <h3>Let's Start</h3>
-                        </div>
-                    </div>
-                    <div class="prices_card card--third">
-                        <div class="price_card_content-top">
-                            <h2>EXCLUSIVE</h2>
-                        </div>
-                        <div class="price_card_content-center">
-                            <h4>$ 80</h4>
-                            <p>Per Month</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!------ /.prices ------>
-
-    <section class="subscribe" style="background-image: url(/img/sub-background.png)">
-        <div class="subscribe_container">
-            <div class="subscribe_inner">
-                <div class="subscribe_text">
-                    <div class="subscribe_title">
-                        <h2>SUBSCRIBE US</h2>
-                    </div>
-                    <div class="subscribe_subtitle">
-                        <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                            blanditiis praesentium
-                        </h3>
-                    </div>
-                </div>
-                <div class="subscribe_inputs">
-                    <input class="subscribe_input" placeholder="Email Address..." type="">
-                    <div class="subscribe_button">
-                        <a href="" class="btn--subscribe">SUMBIT</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!------ /.subscribe ------>
-
-    <div class="contacts">
-        <div class="contacts_container">
-            <div class="contacts_inner">
-                <div class="contacts_text">
-                    <div class="contacts_title">
-                        <h2>CONTACT US</h2>
-                    </div>
-                    <div class="contacts_subtitle">
-                        <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                            blanditiis praesentium</h3>
-                    </div>
-                </div>
-                <div class="contacst_card_inner">
-                    <div class="contacts_card">
-                        <div class="card_top_content" style="background-image: url(/img/contacts-1.png)"> 
-                        <img class="contacts_card_img" src="/img/cntcts-icon-1.png" alt="">
-                        </div>
-                        <div class="card_btm_content">
-                            <div class="card_title">
-                                <h2>EMAIL</h2>
+                    <div class="prices_card_inner">
+                        <div class="prices_card card--first">
+                            <div class="price_card_content-top">
+                                <h2>PREMIUM</h2>
                             </div>
-                            <div class="card_subtitle">
-                                <a class="requisites_1" href="mailto:hello@codecafe.com">HELLO@CODECAFE.COM</a>
-                                <a class="requisites_2" href="mailto:redwan@deviserweb.com">REDWAN@DEVISERWEB.COM</a>
+                            <div class="price_card_content-center">
+                                <h4>$ 300</h4>
+                                <p>Per Month</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="contacts_card">
-                        <div class="card_top_content card--office" style="background-image: url(/img/contacts-1.png)">
-                            <img class="contacts_card_img" src="/img/cntcts-icon-2.png" alt="">
-                        </div>
-                        <div class="card_btm_content">
-                            <div class="card_title">
-                                <h2>OUR OFFICE</h2>
+                        <div class="prices_card card--second">
+                            <div class="price_card_content-center">
+                                <ul class="price_card_ul">
+                                    <li>Full Branding</li>
+                                    <li>Project Managment</li>
+                                    <li>Unlimited Revisions</li>
+                                    <li>24/7 h Service</li>
+                                    <li>Free Domain</li>
+                                    <li>Free Hosting</li>
+                                    <li>Free Hosting</li>
+                                </ul>
                             </div>
-                            <div class="card_subtitle">
-                                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam iusto, corrupti illo
-                                    exercitationem rerum ut pariatur veniam? Voluptas laudantium, consequatur atque,
-                                    quos assumenda magnam temporibus nesciunt quaerat, ab repudiandae ratione.
-                                </h3>
-                                <h3>BANGLADESH</h3>
+                            <div class="price_card_content-btm">
+                                <h3>Let's Start</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="contacts_card">
-                        <div class="card_top_content card--phone" style="background-image: url(/img/contacts-3.png)">
-                            <img class="contacts_card_img" src="/img/cntcts-icon-3.png" alt="">
-                        </div>
-                        <div class="card_btm_content">
-                            <div class="card_title">
-                                <h2>PHONE</h2>
+                        <div class="prices_card card--third">
+                            <div class="price_card_content-top">
+                                <h2>EXCLUSIVE</h2>
                             </div>
-                            <div class="card_subtitle">
-                                <a class="requisites_1" href="tel:+8801761746373">(+88) 017 617 46373</a>
-                                <a class="requisites_2" href="tel:+8801761746373">(+88) 017 617 46373</a>
+                            <div class="price_card_content-center">
+                                <h4>$ 322</h4>
+                                <p>Per Month</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!------ /.contacts ------>
+        <!------ /.prices ------>
 
-    <div class="feedback">
-        <div class="feedback_container">
-            <div class="feedback_inner">
-                <div class="group_inputs">
-                    <input class="input input--name" name="" placeholder="Your name" type="text">
-                    <input class="input input--email" name="" placeholder="Email address" type="text">
-                    <input class="input input--subject" name="" placeholder="Subject" type="text">
-                </div>
-                <input class="input input--message" name="" placeholder="Type your message" type="text">
-                <a href="#" class="btn--feedback">SUMBIT NOW</a>
-            </div>
-        </div>
-    </div>
-    <!------ /.feedback ------>
-
-    <div class="map">
-        <div class="map_container">
-            <div class="map_iframe">
-                <iframe class="iframe-responsive"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8001.863678282539!2d30.485171384237418!3d59.90781454143142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1607417726134!5m2!1sru!2sru"
-                    width="1920" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-                <div class="map_text">
-                    <h1>FIND US ON THE MAP</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!------ /.map ------>
-
-    <footer class="footer">
-        <div class="footer_container">
-            <div class="footer_inner">
-                <div class="footer_text">
-                    <div class="footer_title">
-                        <h1>BOUNCY</h1>
+        <div class="subscribe">
+            <div class="subscribe_container">
+                <div class="subscribe_inner">
+                    <div class="subscribe_text">
+                        <div class="subscribe_title">
+                            <h2>SUBSCRIBE US</h2>
+                        </div>
+                        <div class="subscribe_subtitle">
+                            <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                blanditiis praesentium
+                            </h3>
+                        </div>
                     </div>
-                    <div class="footer_subtitle">
-                        <h3>Copyright 2020, All rights Reserved</h3>
+                    <div class="subscribe_inputs">
+                        <input class="subscribe_input" placeholder="Email Address..." type="">
+                        <div class="subscribe_button">
+                            <button class="custom-btn btn-subscribe"><span>SUMBIT</span></button>
+                        </div>
                     </div>
                 </div>
-                <div class="footer_icons_inner">
-                    <svg class="footer_icon">
-                        <use xlink:href="#facebook"></use>
-                    </svg>
-                    <svg class="footer_icon">
-                        <use xlink:href="#twitter"></use>
-                    </svg>
-                    <svg class="footer_icon">
-                        <use xlink:href="#linkedin"></use>
-                    </svg>
-                    <svg class="footer_icon">
-                        <use xlink:href="#telegram"></use>
-                    </svg>
-                    <svg class="footer_icon">
-                        <use xlink:href="#vk"></use>
-                    </svg>
+            </div>
+        </div>
+        <!------ /.subscribe ------>
+
+        <div class="contacts" id="contactsJS">
+            <div class="contacts_container">
+                <div class="contacts_inner">
+                    <div class="contacts_text">
+                        <div class="contacts_title">
+                            <h2>CONTACT US</h2>
+                        </div>
+                        <div class="contacts_subtitle">
+                            <h3>At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                blanditiis praesentium</h3>
+                        </div>
+                    </div>
+                    <div class="contacst_card_inner">
+
+                        <div class="contacts_card">
+                            <div class="card_top_content card--social">
+                                <img class="contacts_card_img" src="/img/cntcts-icon-1.png" alt="">
+                            </div>
+                            <div class="card_btm_content">
+                                <div class="card_title">
+                                    <h2>EMAIL</h2>
+                                </div>
+                                <div class="card_subtitle">
+                                    <a class="requisites_1" href="mailto:hello@codecafe.com">HELLO@CODECAFE.COM</a>
+                                    <a class="requisites_2"
+                                        href="mailto:redwan@deviserweb.com">REDWAN@DEVISERWEB.COM</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contacts_card">
+                            <div class="card_top_content card--office">
+                                <img class="contacts_card_img" src="./img/cntcts-icon-2.png" alt="">
+                            </div>
+                            <div class="card_btm_content">
+                                <div class="card_title">
+                                    <h2>OUR OFFICE</h2>
+                                </div>
+                                <div class="card_subtitle">
+                                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam iusto, corrupti
+                                        illo
+                                        exercitationem rerum ut pariatur veniam? Voluptas laudantium, consequatur atque,
+                                        quos assumenda magnam temporibus nesciunt quaerat, ab repudiandae ratione.
+                                    </h3>
+                                    <h3>BANGLADESH</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contacts_card">
+                            <div class="card_top_content card--phone">
+                                <img class="contacts_card_img" src="./img/cntcts-icon-3.png" alt="">
+                            </div>
+                            <div class="card_btm_content">
+                                <div class="card_title">
+                                    <h2>PHONE</h2>
+                                </div>
+                                <div class="card_subtitle">
+                                    <a class="requisites_1" href="tel:+8801761746373">(+88) 017 617 46373</a>
+                                    <a class="requisites_2" href="tel:+8801761746373">(+88) 017 617 46373</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!------ /.footer ------>
+        <!------ /.contacts ------>
+
+        <div class="feedback">
+            <div class="feedback_container">
+                <div class="feedback_inner">
+                    <div class="group_inputs">
+                        <input class="input input--name" name="" placeholder="Your name" type="text">
+                        <input class="input input--email" name="" placeholder="Email address" type="text">
+                        <input class="input input--subject" name="" placeholder="Subject" type="text">
+                    </div>
+                    <input class="input input--message" name="" placeholder="Type your message" type="text">
+                    <a href="#" class="btn-feedback">
+                        <span class="text">Text</span>
+                        <span class="flip-front">SUMBIT NOW</span>
+                        <span class="flip-back">COMPLITE!</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!------ /.feedback ------>
+
+        <div class="map">
+            <div class="map_container">
+                <div class="map_iframe">
+                    <iframe class="iframe-responsive"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d8001.863678282539!2d30.485171384237418!3d59.90781454143142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1607417726134!5m2!1sru!2sru"
+                        width="1920" height="700" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                    <div class="map_text">
+                        <h2>FIND US ON THE MAP</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------ /.map ------>
+
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="footer_inner">
+                    <div class="footer_text">
+                        <div class="footer_title">
+                            <h2>BOUNCY</h2>
+                        </div>
+                        <div class="footer_subtitle">
+                            <h3>Copyright 2020, All rights Reserved</h3>
+                        </div>
+                    </div>
+                    <div class="footer_icons_inner">
+                        <svg class="footer_icon">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                        <svg class="footer_icon">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                        <svg class="footer_icon">
+                            <use xlink:href="#linkedin"></use>
+                        </svg>
+                        <svg class="footer_icon">
+                            <use xlink:href="#telegram"></use>
+                        </svg>
+                        <svg class="footer_icon">
+                            <use xlink:href="#vk"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!------ /.footer ------>
+
+
+        <!--JQuery-->
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <!--JQuery Owl-->
+        <script src="js/owl.carousel.min.js"></script>
+        <!--LightBox-->
+        <script src="js/lightbox.min.js"></script>
+        <!--Easy Pie Chart-->
+        <script src="js/jquery.easypiechart.min.js"></script>
+        <!--Line Progressbar-->
+        <script src="js/jquery.lineProgressbar.js"></script>
+        <!--JS-->
+        <script src="js/script.js"></script>
+
+
 </body>
 
 </html>
