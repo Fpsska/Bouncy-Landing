@@ -6,9 +6,9 @@ $(document).ready(function () {
         margin: 30,
         loop: true,
         autoHeight: true,
-        autoplay: true,
-        autoplayTimeout: 1500,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplayTimeout: 1500,
+        // autoplayHoverPause: true,
         stageClass: [
             'slider__stage'
         ]
@@ -20,9 +20,9 @@ $(document).ready(function () {
         margin: 30,
         loop: true,
         autoHeight: true,
-        autoplay: true,
-        autoplayTimeout: 1500,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplayTimeout: 1500,
+        // autoplayHoverPause: true,
         stageClass: [
             'slider__stage'
         ]
@@ -34,9 +34,9 @@ $(document).ready(function () {
         loop: true,
         margin: 30,
         autoHeight: true,
-        autoplay: true,
-        autoplayTimeout: 1500,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplayTimeout: 1500,
+        // autoplayHoverPause: true,
         stageClass: [
             'slider__stage'
         ]

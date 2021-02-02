@@ -1890,7 +1890,8 @@ body {
                         position: relative;
                         display: inline-block;
                         color: $header;
-                        &:hover {
+                        &:hover,
+                        &:focus {
                             color: $second;
                         }
                     }
