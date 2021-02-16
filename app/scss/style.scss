@@ -1,6 +1,7 @@
-// imports
-@import "_nullstyle.scss";
-@import "_include-media.scss";
+@import "nullstyle.scss";
+@import "include-media";
+
+//IMPORTS
 
 @mixin btn {
     display: inline-block;
@@ -64,13 +65,13 @@ body {
         min-width: 100%;
         text-align: center;
         display: grid;
-        grid-row-gap: .5em;
+        grid-row-gap: 0.5em;
         grid-template-columns: 0.5fr 2fr 1fr;
         grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "a a a"
             "b b b";
-            // "c c c";
+        // "c c c";
         .headerBar-mobile {
             display: none;
             /***MEDIA***/
@@ -203,7 +204,7 @@ body {
         }
         .headerBar.fixed {
             display: grid;
-            grid-template-columns: 1fr 12fr;
+            grid-template-columns: 1fr 13fr;
             grid-template-rows: 50px;
             grid-template-areas: "c d";
             position: fixed;
@@ -250,11 +251,11 @@ body {
             display: grid;
             align-items: center;
             grid-template-columns: 0.2fr 1fr;
-            grid-template-rows: .5fr;
+            grid-template-rows: 0.5fr;
             grid-template-areas: "c d";
             /***MEDIA***/
             @include media("<=tablet") {
-                grid-template-rows: .3fr;
+                grid-template-rows: 0.3fr;
             }
             @include media("<=phone-landscape") {
                 display: none;
@@ -359,7 +360,7 @@ body {
                 }
             }
             .header_button {
-                margin: .3em 0 0 0;
+                margin: 0.3em 0 0 0;
                 position: relative;
                 display: grid;
                 grid-template-columns: auto;
@@ -375,15 +376,15 @@ body {
                     background-size: 18px;
                     cursor: pointer;
                     outline: none;
-                    width: .7em;
-                    height: .7em;
+                    width: 0.7em;
+                    height: 0.7em;
                     border-radius: 100%;
                     i {
                         border: solid $header;
                         border-width: 0 2px 2px 0;
                         display: inline-block;
                         padding: 3px;
-                        &:hover, 
+                        &:hover,
                         &:focus {
                             border: solid $dark;
                             border-width: 0 2px 2px 0;
@@ -400,8 +401,8 @@ body {
                         position: absolute;
                         animation: pulse 1.2s ease infinite;
                         background: $second;
-                        width: .7em;
-                        height: .7em;
+                        width: 0.7em;
+                        height: 0.7em;
                         border-radius: 100%;
                     }
                 }
@@ -419,7 +420,6 @@ body {
                 }
             }
         }
-        
     }
 }
 
@@ -511,7 +511,7 @@ body {
                 display: grid;
                 align-items: start;
                 padding: 0 0 0 0.5em;
-                grid-template-columns: 0.2fr; 
+                grid-template-columns: 0.2fr;
                 grid-template-rows: minmax(0.3fr, auto);
                 /***MEDIA***/
                 @include media("<=phone") {
@@ -861,12 +861,12 @@ body {
                     bottom: 35%;
                     /***MEDIA***/
                     @include media("<=desktop") {
-                        left: 70%;
-                        bottom: 22%;
+                        left: 80%;
+                        bottom: 37%;
                     }
                     @include media("<=small-screens") {
-                        left: 66%;
-                        bottom: 22%;
+                        left: 70%;
+                        bottom: 37%;
                     }
                     @include media("<=tablet-landscape") {
                         display: none;
@@ -951,7 +951,7 @@ body {
             margin: 0;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 0.5fr; 
+            grid-template-rows: 0.5fr;
             /***MEDIA***/
             @include media("<=phone") {
                 grid-template-rows: repeat(3, auto);
@@ -2463,72 +2463,80 @@ body {
 
 //*************MAP_BLOCK*************//
 
-.map {
-    height: 700px;
-    /*MEDIA*/
-    @include media("<=small-screens") {
-        height: 100vh;
-    }
-    .map_container {
-        max-width: 100%;
-        height: 100%;
-        /*MEDIA*/
-        @include media("<=small-screens") {
-            height: 100vh;
-        }
-        .map_iframe {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            /*MEDIA*/
-            @include media("<=small-screens") {
-                height: 100vh;
-            }
-            .iframe-responsive {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                width: 100%;
-                /*MEDIA*/
-                @include media("<=small-screens") {
-                    height: 100vh;
-                }
-            }
-        }
-        .map_text {
-            display: grid;
-            width: 100%;
-            height: 100%;
-            background-color: $dark;
-            opacity: 0.9;
-            align-items: center;
-            justify-items: center;
-            /*MEDIA*/
-            @include media("<=small-screens") {
-                height: 100vh;
-            }
-            h2 {
-                font-weight: 200;
-                font-size: 2em;
-                color: $header;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    font-size: 1.4em;
-                    top: 45%;
-                    left: 20%;
-                }
-            }
-        }
-    }
-    &:hover .map_text {
-        display: none;
-        opacity: 0;
-        transition: 0.6s linear;
-    }
+
+.map_iframe {
+    height: 800px;
+    width: 100%; 
+    height: 800; 
+    border: 0; 
 }
+
+// #map {
+//     width: 100%;
+//     height: 700px;
+// }
+
+// .map {
+//     height: 700px;
+//     /*MEDIA*/
+//     @include media("<=small-screens") {
+//         height: 100vh;
+//     }
+//     .map_container {
+//         max-width: 100%;
+//         height: 100%;
+//         /*MEDIA*/
+//         @include media("<=small-screens") {
+//             height: 100vh;
+//         }
+//         .map_iframe {
+//             position: relative;
+//             overflow: hidden;
+//             width: 100%;
+//             height: 100%;
+//             /*MEDIA*/
+//             @include media("<=small-screens") {
+//                 height: 100vh;
+//             }
+//             .iframe-responsive {
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 bottom: 0;
+//                 right: 0;
+//                 width: 100%;
+//                 /*MEDIA*/
+//                 @include media("<=small-screens") {
+//                     height: 100vh;
+//                 }
+//             }
+//         }
+//         .map_text {
+//             display: grid;
+//             width: 100%;
+//             height: 100%;
+//             background-color: $dark;
+//             opacity: 0.9;
+//             align-items: center;
+//             justify-items: center;
+//             /*MEDIA*/
+//             @include media("<=small-screens") {
+//                 height: 100vh;
+//             }
+//             h2 {
+//                 font-weight: 200;
+//                 font-size: 2em;
+//                 color: $header;
+//                 /***MEDIA***/
+//                 @include media("<=phone") {
+//                     font-size: 1.4em;
+//                     top: 45%;
+//                     left: 20%;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 //*************PROJECT_DESCRIPTION_BLOCK*************//
 
@@ -2718,3 +2726,7 @@ body {
         }
     }
 }
+
+
+
+@import "include-media.scss";

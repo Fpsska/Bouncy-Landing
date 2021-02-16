@@ -1,20 +1,22 @@
 {
-  "name": "skillup",
+  "name": "bouncy",
   "version": "1.0.0",
-  "description": "project gulp + scss",
+  "description": "project gulp + scss + grid",
   "main": "index.js",
-  "dependencies": {
-    "gulp-cli": "^2.3.0",
-    "jquery": "^3.5.1"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fpsska",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "jquery": "^3.5.1"
+  }
 }
