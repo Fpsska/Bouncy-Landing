@@ -1,7 +1,7 @@
 @import "nullstyle.scss";
 @import "include-media";
 
-//IMPORTS
+//*************IMPORTS*************//
 
 @mixin btn {
     display: inline-block;
@@ -315,6 +315,7 @@ body {
         }
         .header_text {
             grid-area: b;
+            transition: 0.5s linear;
             align-content: center;
             padding: 0 0.5em;
             font-size: 2em;
@@ -627,10 +628,10 @@ body {
         .portfolio_container {
             grid-area: b;
             padding: 0 0.5em;
-            .portfolio_item {
+            .portfolio_block {
                 display: none;
             }
-            .portfolio_item.active {
+            .portfolio_block.active {
                 display: grid;
                 text-align: center;
                 grid-gap: 0.5em;
@@ -2076,7 +2077,6 @@ body {
                         /***MEDIA***/
                         @include media("<=phone") {
                             padding: 0.5em 0.5em;
-                            grid-template-rows: repeat(2, 5fr);
                             grid-row-gap: 1em;
                         }
                         .right_text_content {
@@ -2123,33 +2123,46 @@ body {
                             grid-row-gap: 0.4em;
                             justify-items: end;
                             .team_bar {
-                                width: 100%;
-                                max-width: 20em;
-                                .progressbar {
-                                    margin: 0;
+                                width: 15em;
+                                .bar_text {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, auto);
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .text_progress {
+                                        width: auto;
+                                        text-align: right;
+                                        font-family: Arial, sans-serif;
+                                        color: #202020;
+                                        font-weight: 700;
+                                        font-size: 14px;
+                                        &::after {
+                                            content: "%";
+                                            font-size: 12px;
+                                        }
+                                    }
                                 }
-                                .percentCount {
-                                    margin: 0;
-                                    font-weight: 200;
-                                    position: absolute;
-                                    left: 90%;
-                                    font-family: inherit;
+                                .bg_progress {
+                                    width: 100%;
+                                    height: 5px;
+                                    background: #d8dce0;
+                                    border-radius: 2px;
+                                    position: relative;
+                                    .current_progress {
+                                        position: absolute;
+                                        height: 5px;
+                                        background: $second;
+                                        border-radius: 2px;
+                                    }
                                 }
-                            }
-                            .bar_name--branding {
-                                text-align: start;
-                                width: 100%;
-                                max-width: 20em;
-                            }
-                            .bar_name--web {
-                                text-align: start;
-                                width: 100%;
-                                max-width: 20em;
-                            }
-                            .bar_name--intfce {
-                                text-align: start;
-                                width: 100%;
-                                max-width: 20em;
+                                @keyframes progress {
+                                    from {
+                                        width: 0;
+                                    }
+                                }
+                                .progress-anim {
+                                    animation: progress 3s cubic-bezier(0.1, 0.7, 0.9, 0.8);
+                                }
                             }
                         }
                     }
@@ -2463,80 +2476,90 @@ body {
 
 //*************MAP_BLOCK*************//
 
+// .map_iframe {
+//     height: 800px;
+//     width: 100%;
+//     height: 800;
+//     border: 0;
+// }
 
-.map_iframe {
-    height: 800px;
-    width: 100%; 
-    height: 800; 
-    border: 0; 
-}
-
-// #map {
+// .map {
 //     width: 100%;
 //     height: 700px;
 // }
 
-// .map {
-//     height: 700px;
-//     /*MEDIA*/
-//     @include media("<=small-screens") {
-//         height: 100vh;
-//     }
-//     .map_container {
-//         max-width: 100%;
-//         height: 100%;
-//         /*MEDIA*/
-//         @include media("<=small-screens") {
-//             height: 100vh;
-//         }
-//         .map_iframe {
-//             position: relative;
-//             overflow: hidden;
-//             width: 100%;
-//             height: 100%;
-//             /*MEDIA*/
-//             @include media("<=small-screens") {
-//                 height: 100vh;
-//             }
-//             .iframe-responsive {
-//                 position: absolute;
-//                 top: 0;
-//                 left: 0;
-//                 bottom: 0;
-//                 right: 0;
-//                 width: 100%;
-//                 /*MEDIA*/
-//                 @include media("<=small-screens") {
-//                     height: 100vh;
-//                 }
-//             }
-//         }
-//         .map_text {
-//             display: grid;
-//             width: 100%;
-//             height: 100%;
-//             background-color: $dark;
-//             opacity: 0.9;
-//             align-items: center;
-//             justify-items: center;
-//             /*MEDIA*/
-//             @include media("<=small-screens") {
-//                 height: 100vh;
-//             }
-//             h2 {
-//                 font-weight: 200;
-//                 font-size: 2em;
-//                 color: $header;
-//                 /***MEDIA***/
-//                 @include media("<=phone") {
-//                     font-size: 1.4em;
-//                     top: 45%;
-//                     left: 20%;
-//                 }
-//             }
-//         }
-//     }
-// }
+.map {
+    max-width: 100%;
+    height: 800px;
+    /*MEDIA*/
+    @include media("<=small-screens") {
+        height: 100vh;
+    }
+    .map_container {
+        width: 100%;
+        height: 100%;
+        /*MEDIA*/
+        @include media("<=small-screens") {
+            height: 100vh;
+        }
+        .map_iframe {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            &:hover .map_text {
+                width: 0;
+                height: 0;
+                transition: .5s linear;
+                font-size: 0;
+            }
+            &:hover .map_title {
+                font-size: 0;
+            }
+            /*MEDIA*/
+            @include media("<=small-screens") {
+                height: 100vh;
+            }
+            .iframe-responsive {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                /*MEDIA*/
+                @include media("<=small-screens") {
+                    height: 100vh;
+                }
+            }
+        }
+        .map_text {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            background-color: $dark;
+            opacity: 0.9;
+            align-items: center;
+            justify-items: center;
+            /*MEDIA*/
+            @include media("<=small-screens") {
+                height: 100vh;
+            }
+            .map_title {
+                font-weight: 200;
+                font-size: 2em;
+                color: $header;
+                /***MEDIA***/
+                @include media("<=phone") {
+                    font-size: 1.4em;
+                    top: 45%;
+                    left: 20%;
+                }
+            }
+        }
+    }
+}
 
 //*************PROJECT_DESCRIPTION_BLOCK*************//
 
@@ -2726,7 +2749,5 @@ body {
         }
     }
 }
-
-
 
 @import "include-media.scss";

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('.team_slider').owlCarousel({
         items: 1,
         nav: false,
@@ -39,100 +39,8 @@ $(document).ready(function(){
 
 //  //*********/.SLIDER*********//
 
-$('#progressBrandJS_1').LineProgressbar({
-    percentage: 65,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e5',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressBrandJS_2').LineProgressbar({
-    percentage: 35,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e5',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressBrandJS_3').LineProgressbar({
-    percentage: 85,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e5',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressWebJS_1').LineProgressbar({
-    percentage: 70,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e7',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressWebJS_2').LineProgressbar({
-    percentage: 85,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e7',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressWebJS_3').LineProgressbar({
-    percentage: 65,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e7',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressIntfcJS_1').LineProgressbar({
-    percentage: 85,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e9',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressIntfcJS_2').LineProgressbar({
-    percentage: 25,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e9',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-$('#progressIntfcJS_3').LineProgressbar({
-    percentage: 100,
-    duration: 1000,
-    fillBackgroundColor: '#19bd9a',
-    backgroundColor: '#e1e4e9',
-    radius: '0px',
-    height: '.45em',
-    width: '100%'
-});
-
-//  //*********/.TEAM PROGRESSBAR*********//
-
 const tabsLink = document.querySelectorAll(".p-nav_link"),
-    tabsItems = document.querySelectorAll(".portfolio_item");
+    tabsItems = document.querySelectorAll(".portfolio_block");
 
 tabsLink.forEach(onTabClick);
 
@@ -188,65 +96,14 @@ $(document).ready(function () {
 
         let blockID = $(this).data("scroll");
         blockPosTop = $(blockID).offset().top;
-
         $("html, body").animate({
-            scrollTop: blockPosTop + 1
-        });
+            scrollTop: blockPosTop
+        }, 1500);
 
     });
 });
 
 //  //*********/.SMOOTH SCROLL*********//
-
-const brandingItem = document.querySelector(".percent--branding"),
-    webItem = document.querySelector(".percent--web"),
-    uiItem = document.querySelector(".percent--ui");
-
-let progressFunc = (item, percent) => {
-
-    let counter = 0; /*counter of start*/
-    setInterval(() => {
-        if (counter == percent) { /*counter of end*/
-            clearInterval();
-        } else {
-            counter += 1; /*step*/
-            item.textContent = counter + "%";
-        }
-    }, 50); /*speed*/
-};
-
-progressFunc(brandingItem, 100);
-progressFunc(webItem, 70);
-progressFunc(uiItem, 50);
-
-$(document).ready(function () {
-    $('.circle--branding').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
-    $('.circle--web').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
-    $('.circle--ui').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
-});
-
-//  //************/.GRAPHISC_CARD************//
 
 lightbox.option({
     'resizeDuration': 200,
@@ -298,5 +155,182 @@ $(document).ready(function () {
 
 //  //*********/.BURGER*********//
 
+const brandingItem = document.querySelector(".percent--branding"),
+    webItem = document.querySelector(".percent--web"),
+    uiItem = document.querySelector(".percent--ui");
+
+let progressFunc = (item, percent) => {
+
+    let counter = 0; /*counter of start*/
+    setInterval(() => {
+        if (counter == percent) { /*counter of end*/
+            clearInterval();
+        } else {
+            counter += 1; /*step*/
+            item.textContent = counter + "%";
+        }
+    }, 50); /*speed*/
+};
+
+progressFunc(brandingItem, 100);
+progressFunc(webItem, 70);
+progressFunc(uiItem, 50);
+
+$(document).ready(function () {
+    $('.circle--branding').easyPieChart({
+        barColor: "#19bd9a",
+        trackColor: "#ededed",
+        lineCap: "circle",
+        size: 115,
+        lineWidth: 5,
+        animate: 4000,
+    });
+    $('.circle--web').easyPieChart({
+        barColor: "#19bd9a",
+        trackColor: "#ededed",
+        lineCap: "circle",
+        size: 115,
+        lineWidth: 5,
+        animate: 4000,
+    });
+    $('.circle--ui').easyPieChart({
+        barColor: "#19bd9a",
+        trackColor: "#ededed",
+        lineCap: "circle",
+        size: 115,
+        lineWidth: 5,
+        animate: 4000,
+    });
+});
+
+//  //************/.GRAPHISC_CARD************//
+
+//slide 1
+const firstSlide_bar1 = {
+    text: document.querySelector('.first_text--slide1'),
+    cp: document.querySelector('.first_pr--slide1'),
+    bg: document.querySelector('.first_bg--slide1')
+};
+
+const firstSlide_bar2 = {
+    text: document.querySelector('.second_text--slide1'),
+    cp: document.querySelector('.second_pr--slide1'),
+    bg: document.querySelector('.second_bg--slide1')
+};
+
+const firstSlide_bar3 = {
+    text: document.querySelector('.third_text--slide1'),
+    cp: document.querySelector('.third_pr--slide1'),
+    bg: document.querySelector('.third_bg--slide1')
+};
+
+//slide 2
+const secondSlide_bar1 = {
+    text: document.querySelector('.first_text--slide2'),
+    cp: document.querySelector('.first_pr--slide2'),
+    bg: document.querySelector('.first_bg--slide2')
+};
+
+const secondSlide_bar2 = {
+    text: document.querySelector('.second_text--slide2'),
+    cp: document.querySelector('.second_pr--slide2'),
+    bg: document.querySelector('.second_bg--slide2')
+};
+
+const secondSlide_bar3 = {
+    text: document.querySelector('.third_text--slide2'),
+    cp: document.querySelector('.third_pr--slide2'),
+    bg: document.querySelector('.third_bg--slide2')
+};
+
+//slide 3
+const thirdSlide_bar1 = {
+    text: document.querySelector('.first_text--slide3'),
+    cp: document.querySelector('.first_pr--slide3'),
+    bg: document.querySelector('.first_bg--slide3')
+};
+
+const thirdSlide_bar2 = {
+    text: document.querySelector('.second_text--slide3'),
+    cp: document.querySelector('.second_pr--slide3'),
+    bg: document.querySelector('.second_bg--slide3')
+};
+
+const thirdSlide_bar3 = {
+    text: document.querySelector('.third_text--slide3'),
+    cp: document.querySelector('.third_pr--slide3'),
+    bg: document.querySelector('.third_bg--slide3')
+};
+
+function startProgress(item, valueForDone) {
+    valueForDone = valueForDone < 100 ? valueForDone : 100;
+    item.cp.classList.add('progress-anim');
+    // item.cp.style.animation = 'progress ' + getRandom(1, 3) + 's cubic-bezier(' + getRandom(0, 0.9) + ', ' + getRandom(0, 0.9) + ', ' + getRandom(0, 0.9) + ', ' + getRandom(0, 0.9) + ')'
+    item.cp.style.width = valueForDone + '%';
+}
+
+function resize(item) {
+    item.text.innerHTML = Math.round(item.cp.getBoundingClientRect().width / item.bg.getBoundingClientRect().width * 100);
+}
+
+const resizer = new ResizeObserver((entries) => {
+    for (let entry of entries) {
+        //slide 1
+        if (entry.target.classList.contains('first_pr--slide1')) {
+            resize(firstSlide_bar1);
+        } else if (entry.target.classList.contains('second_pr--slide1')) {
+            resize(firstSlide_bar2);
+        } else if (entry.target.classList.contains('third_pr--slide1')) {
+            resize(firstSlide_bar3);
+        }
+        //slide 2
+        else if (entry.target.classList.contains('first_pr--slide2')) {
+            resize(secondSlide_bar1);
+        } else if (entry.target.classList.contains('second_pr--slide2')) {
+            resize(secondSlide_bar2);
+        } else if (entry.target.classList.contains('third_pr--slide2')) {
+            resize(secondSlide_bar3);
+        }
+        //slide 3
+        else if (entry.target.classList.contains('first_pr--slide3')) {
+            resize(thirdSlide_bar1);
+        } else if (entry.target.classList.contains('second_pr--slide3')) {
+            resize(thirdSlide_bar2);
+        } else if (entry.target.classList.contains('third_pr--slide3')) {
+            resize(thirdSlide_bar3);
+        }
+    }
+});
+
+//slide 1
+resizer.observe(firstSlide_bar1.cp);
+resizer.observe(firstSlide_bar2.cp);
+resizer.observe(firstSlide_bar3.cp);
+//slide 2
+resizer.observe(secondSlide_bar1.cp);
+resizer.observe(secondSlide_bar2.cp);
+resizer.observe(secondSlide_bar3.cp);
+//slide 3
+resizer.observe(thirdSlide_bar1.cp);
+resizer.observe(thirdSlide_bar2.cp);
+resizer.observe(thirdSlide_bar3.cp);
+
+//slide 1
+startProgress(firstSlide_bar1, 40);
+startProgress(firstSlide_bar2, 90); // valueForDone
+startProgress(firstSlide_bar3, 60);
+//slide 2
+startProgress(secondSlide_bar1, 90);
+startProgress(secondSlide_bar2, 20); // valueForDone
+startProgress(secondSlide_bar3, 70);
+//slide 3
+startProgress(thirdSlide_bar1, 70);
+startProgress(thirdSlide_bar2, 95); // valueForDone
+startProgress(thirdSlide_bar3, 35);
+
+// function getRandom(min, max) {
+//     return Math.random() * (max - min) + min;
+// }
 
 
+//  //*********/.TEAM PROGRESSBAR*********//
