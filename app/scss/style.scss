@@ -2508,9 +2508,9 @@ body {
             width: 100%;
             height: 100%;
             &:hover .map_text {
-                width: 0;
-                height: 0;
+                transform: translate(-100);
                 transition: .5s linear;
+                height: 0;
                 font-size: 0;
             }
             &:hover .map_title {
