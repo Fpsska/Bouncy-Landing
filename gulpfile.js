@@ -7,14 +7,13 @@ const uglify = require("gulp-uglify-es").default; //
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin"); // отпимизация img
 const del = require("del"); // удаление dist-папки
+const ghpages = require('gh-pages'); // gh-pages for dist folder
 
-// var gulp = require('gulp');
-// var ghPages = require('gulp-gh-pages');
 
-// gulp.task('deploy', function () {
-//     return gulp.src('./dist/**/*')
-//         .pipe(ghPages());
-// });
+ghpages.publish('dist', {
+    repo: 'https://github.com/Fpsska/Bouncy-Landing.git',
+    message: 'Auto-generated commit'
+});
 
 function cleanDist() {
     return del("dist");
@@ -57,7 +56,7 @@ function styles() {       /*КОМПИЛЯЦИЯ scss -> style.min.css*/
         "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
         "node_modules/lightbox2/dist/css/lightbox.css",
         "app/scss/style.scss"
-    ]) 
+    ])
         .pipe(scss({ outputStyle: "compressed" })) // минификация
         .pipe(concat("style.min.css")) // конкатенация + единое название  
         .pipe(autoprefixer({
@@ -76,7 +75,7 @@ function browsersync() {  // live update
     });
 }
 
-function watching() { 
+function watching() {
     watch(["app/scss/**/*.scss"], styles);
     watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
     watch(["app/*.html"]).on("change", browserSync.reload);
@@ -86,7 +85,7 @@ function build() {
     return src([
         "app/*.html",
         "app/css/style.min.css",
-        "app/js/main.min.js" 
+        "app/js/main.min.js"
     ], { base: "app" })
         .pipe(dest("dist"));
 }
