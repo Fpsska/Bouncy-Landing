@@ -1709,6 +1709,13 @@ body {
                     @include media("<=phone") {
                         grid-area: b;
                     }
+                    h3 {
+                        font-size: 1.8em;
+                        font-weight: 700;
+                        color: $second;
+                        padding: 0.1em 0.1em;
+                        margin: auto 0 0 0;
+                    }
                 }
                 .card--second {
                     display: grid;
@@ -1748,6 +1755,13 @@ body {
                     @include media("<=phone") {
                         grid-area: a;
                     }
+                    h3 {
+                        font-size: 1.8em;
+                        font-weight: 700;
+                        color: $second;
+                        padding: 0.1em 0.1em;
+                        margin: auto 0 0 0;
+                    }
                 }
                 h2 {
                     padding: 0.5em 0.5em;
@@ -1758,13 +1772,6 @@ body {
                     font-size: 1.2em;
                     padding: 0.5em 0.5em;
                     color: $header;
-                }
-                h4 {
-                    font-size: 1.8em;
-                    font-weight: 700;
-                    color: $second;
-                    padding: 0.1em 0.1em;
-                    margin: auto 0 0 0;
                 }
                 p {
                     font-size: 1.3em;
@@ -2508,7 +2515,7 @@ body {
             height: 100%;
             &:hover .map_text {
                 transform: translate(-100);
-                transition: .5s linear;
+                transition: 0.5s linear;
                 height: 0;
                 font-size: 0;
             }
