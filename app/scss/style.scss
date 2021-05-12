@@ -851,8 +851,8 @@ body {
                 @include media("<=desktop") {
                     grid-template-columns: 0.65fr;
                 }
-                @include media("<=tablet-landscape") {
-                    grid-template-columns: auto;
+                @include media("<=small-screens") {
+                    grid-template-columns: 1fr;
                 }
                 &::after {
                     content: url("../img/1-adv.png");
@@ -865,10 +865,6 @@ body {
                         bottom: 37%;
                     }
                     @include media("<=small-screens") {
-                        left: 70%;
-                        bottom: 37%;
-                    }
-                    @include media("<=tablet-landscape") {
                         display: none;
                     }
                 }
