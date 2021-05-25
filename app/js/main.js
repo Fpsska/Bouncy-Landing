@@ -191,8 +191,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //  //*********/.LIGHTBOX*********//
 
+    let name = document.querySelector(".input--name");
+    let email = document.querySelectorAll(".input--email");
+    let subject = document.querySelector(".input--subject");
 
 
+    name.onkeydown = function () {
+        const regex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
+
+        if (regex.test(name.value)) {
+            name.style.color = 'green'
+        } else {
+            name.style.color = 'red'
+        }
+    }
+    email.forEach(item => {
+        item.onkeydown = function () {
+            const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            
+            if (regex.test(item.value)) {
+                item.style.color = 'green'
+            } else {
+                item.style.color = 'red'
+            }
+        }
+    })
+    subject.onkeydown = function () {
+        const regex = /[a-zA-Z]+/;
+
+        if (regex.test(subject.value)) {
+            subject.style.color = 'green'
+        } else {
+            subject.style.color = 'red'
+        }
+    }
+
+    
+    //  //*********/.INPUT VALIDATION*********//
 
 
     //  //*********/.TEAM PROGRESSBAR*********//

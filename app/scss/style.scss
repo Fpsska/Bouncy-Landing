@@ -1,41 +1,9 @@
+@import "global.scss";
 @import "nullstyle.scss";
 @import "include-media";
 
-//*************IMPORTS*************//
+//*************/.IMPORTS*************//
 
-@mixin btn {
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-decoration: none;
-}
-@mixin input {
-    background-color: transparent;
-    border: 1px solid #d8dce0;
-    padding: 1em;
-}
-@mixin title {
-    font-size: 1.7em;
-    font-weight: 400;
-}
-@mixin subtitle {
-    font-size: 1.2em;
-    font-weight: 200;
-}
-$indent: 10em;
-$header: #fff;
-$dark: #000;
-$first: #f3f3f3;
-$second: #19bd9a;
-$subtitle: #81868e;
-
-//*************HEADER_BLOCK*************//
 
 body {
     background-color: $first;
@@ -559,7 +527,8 @@ body {
     }
 }
 
-//*************PORTFOLIO_BLOCK*************//
+//*************/.HEADER_BLOCK*************//
+
 
 .portfolio_section {
     margin: $indent 0;
@@ -800,7 +769,8 @@ body {
     }
 }
 
-//*************ADVANTAGE_BLOCK*************//
+//*************/.PORTFOLIO_BLOCK*************//
+
 
 .advantages {
     min-width: 100%;
@@ -899,7 +869,8 @@ body {
     }
 }
 
-//*************PROJECT_PORTFOLIO_BLOCK*************//
+//*************/.ADVANTAGE_BLOCK*************//
+
 
 .featured_project {
     margin: $indent 0;
@@ -1070,7 +1041,8 @@ body {
     }
 }
 
-//*************SERVICES_BLOCK*************//
+//*************/.PROJECT_PORTFOLIO_BLOCK*************//
+
 
 .services {
     margin: $indent 0;
@@ -1241,7 +1213,8 @@ body {
     }
 }
 
-//*************TESTIMONIALS_BLOCK*************//
+//*************/.SERVICES_BLOCK*************//
+
 
 .testimonials_button_inner {
     margin: $indent 0;
@@ -1283,7 +1256,7 @@ body {
                 position: relative;
                 text-align: center;
                 text-transform: uppercase;
-                transition: background 5s cubic-bezier(0.19, 1, 0.22, 1), border 1s cubic-bezier(0.19, 1, 0.22, 1),
+                transition: 5s cubic-bezier(0.19, 1, 0.22, 1), border 1s cubic-bezier(0.19, 1, 0.22, 1),
                     color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
                 user-select: none;
             }
@@ -1308,7 +1281,7 @@ body {
                 background-color: rgba(255, 255, 255, 0.05);
                 border-color: $header;
                 box-shadow: 0 0 5px $header;
-                transition: background 0s;
+                transition: 0s;
             }
             .btn--testimonials:hover a {
                 color: $header;
@@ -1445,7 +1418,8 @@ body {
     }
 }
 
-//*************NEWS_BLOCK*************//
+//*************/.TESTIMONIALS_BLOCK*************//
+
 
 .news_section {
     opacity: 5;
@@ -1564,7 +1538,7 @@ body {
     }
 }
 
-//*************PRICES_BLOCK*************//
+//*************/.NEWS_BLOCK*************//
 
 .prices {
     margin: $indent 0;
@@ -1779,7 +1753,7 @@ body {
     }
 }
 
-//*************SUBSCRIBE_BLOCK*************//
+//*************/.PRICES_BLOCK*************//
 
 .subscribe {
     margin: 0 0 0 0;
@@ -1963,7 +1937,7 @@ body {
     }
 }
 
-//*************TEAM_BLOCK*************//
+//*************/.SUBSCRIBE_BLOCK*************//
 
 .team {
     .team_container {
@@ -2175,7 +2149,7 @@ body {
     }
 }
 
-//*************CONTACTS_BLOCK*************//
+//*************/.TEAM_BLOCK*************//
 
 .contacts {
     height: auto;
@@ -2304,7 +2278,7 @@ body {
     }
 }
 
-//*************FEEDBACK_BLOCK*************//
+//*************/.CONTACTS_BLOCK*************//
 
 .feedback {
     margin: $indent 0;
@@ -2476,19 +2450,7 @@ body {
     }
 }
 
-//*************MAP_BLOCK*************//
-
-// .map_iframe {
-//     height: 800px;
-//     width: 100%;
-//     height: 800;
-//     border: 0;
-// }
-
-// .map {
-//     width: 100%;
-//     height: 700px;
-// }
+//*************/.FEEDBACK_BLOCK*************//
 
 .map {
     max-width: 100%;
@@ -2563,7 +2525,9 @@ body {
     }
 }
 
-//*************PROJECT_DESCRIPTION_BLOCK*************//
+//*************/.MAP_BLOCK*************//
+
+//*************/.PROJECT_DESCRIPTION_BLOCK*************//
 
 .project_description {
     margin: $indent 0 0 0;
@@ -2706,7 +2670,7 @@ body {
 
 .footer {
     background-color: $first;
-    height: 300px;
+    padding: 4em;
     /*MEDIA*/
     @include media("<=small-screens") {
         height: auto;

@@ -1,0 +1,32 @@
+@mixin btn {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+@mixin input {
+    background-color: transparent;
+    border: 1px solid #d8dce0;
+    padding: 1em;
+}
+@mixin title {
+    font-size: 1.7em;
+    font-weight: 400;
+}
+@mixin subtitle {
+    font-size: 1.2em;
+    font-weight: 200;
+}
+$indent: 10em;
+$header: #fff;
+$dark: #000;
+$first: #f3f3f3;
+$second: #19bd9a;
+$subtitle: #81868e;
+
