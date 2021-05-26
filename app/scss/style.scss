@@ -838,30 +838,30 @@ body {
                         display: none;
                     }
                 }
-                .advantages_text {
+                .advantages_info {
                     color: $subtitle;
-                    h2 {
+                    .advantages_title {   
                         color: $header;
                         margin: 0 0 1em 0;
                         font-size: 1.5em;
                         letter-spacing: 0.2em;
                         font-weight: 200;
                     }
-                    h3 {
-                        color: $header;
-                    }
-                    h3,
-                    h4 {
-                        text-transform: uppercase;
-                        font-weight: 600;
-                    }
-                    p {
+                    .advantages_text { 
                         margin: 0 0 1em 0;
                         font-size: 1em;
                         /***MEDIA***/
                         @include media("<=phone") {
                             font-size: 0.9em;
                         }
+                    }
+                    .advantages_author {
+                        color: $header;
+                    }
+                    .advantages_prof,
+                    .advantages_author {
+                        text-transform: uppercase;
+                        font-weight: 600;
                     }
                 }
             }
@@ -1398,7 +1398,7 @@ body {
                             grid-area: a;
                         }
                     }
-                    .testimonial_card-text {
+                    .testimonial_card-info {
                         grid-area: r;
                         margin: 0 0 0 5em;
                         /***MEDIA***/
@@ -1482,18 +1482,18 @@ body {
                     grid-template-areas:
                         "a"
                         "b";
-                    .news_title {
+                    .news_header {
                         grid-area: a;
                         color: $header;
-                        h3 {
+                        .news_header-title {
+                            @include title;
+                        }
+                        .news_header-subtitle {
                             margin: 1em 0 0 0;
                             opacity: 0.5;
                         }
-                        h2 {
-                            @include title;
-                        }
                     }
-                    .news_subtitle {
+                    .news_footer {
                         grid-area: b;
                         display: grid;
                         align-items: center;
@@ -1512,23 +1512,23 @@ body {
                             padding: 1em 0.5em;
                             margin: 2em 0 0 0;
                         }
-                        p {
-                            grid-area: d;
-                            color: $subtitle;
-                            margin: 2.7em 0 0 0;
-                        }
-                        h2 {
+                        .news_footer-title {
                             grid-area: a;
                             font-size: 1.2em;
                         }
-                        h3 {
+                        .news_footer-author {
                             grid-area: b;
                             @include title;
                             color: $subtitle;
                         }
-                        h4 {
+                        .news_footer-value {
                             grid-area: c;
                             opacity: 0.2;
+                        }
+                        .news_footer-text {
+                            grid-area: d;
+                            color: $subtitle;
+                            margin: 2.7em 0 0 0;
                         }
                     }
                 }
@@ -2075,10 +2075,10 @@ body {
                                     height: 40%;
                                     margin: 0 0 0 auto;
                                 }
-                                h2 {
+                                .team_author {
                                     @include title;
                                 }
-                                h3 {
+                                .team_prof {
                                     @include subtitle;
                                     font-style: italic;
                                 }
@@ -2527,8 +2527,6 @@ body {
 
 //*************/.MAP_BLOCK*************//
 
-//*************/.PROJECT_DESCRIPTION_BLOCK*************//
-
 .project_description {
     margin: $indent 0 0 0;
     /***MEDIA***/
@@ -2666,7 +2664,8 @@ body {
     }
 }
 
-//*************FOOTER_BLOCK*************//
+//*************/.PROJECT_DESCRIPTION_BLOCK*************//
+
 
 .footer {
     background-color: $first;
@@ -2715,5 +2714,7 @@ body {
         }
     }
 }
+
+//*************/.FOOTER_BLOCK*************//
 
 @import "include-media.scss";
