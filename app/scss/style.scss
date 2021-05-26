@@ -4,7 +4,6 @@
 
 //*************/.IMPORTS*************//
 
-
 body {
     background-color: $first;
 }
@@ -328,14 +327,14 @@ body {
                 }
             }
             .header_button {
-                margin: 0.3em 0 0 0;
+                margin-top: 0.3em;
                 position: relative;
                 display: grid;
                 grid-template-columns: auto;
                 grid-template-rows: auto;
                 justify-content: center;
                 .btn--header {
-                    display: flex;
+                    display: grid;
                     justify-content: center;
                     align-items: center;
                     position: relative;
@@ -528,7 +527,6 @@ body {
 }
 
 //*************/.HEADER_BLOCK*************//
-
 
 .portfolio_section {
     margin: $indent 0;
@@ -771,7 +769,6 @@ body {
 
 //*************/.PORTFOLIO_BLOCK*************//
 
-
 .advantages {
     min-width: 100%;
     padding: 5em 2em;
@@ -840,14 +837,14 @@ body {
                 }
                 .advantages_info {
                     color: $subtitle;
-                    .advantages_title {   
+                    .advantages_title {
                         color: $header;
                         margin: 0 0 1em 0;
                         font-size: 1.5em;
                         letter-spacing: 0.2em;
                         font-weight: 200;
                     }
-                    .advantages_text { 
+                    .advantages_text {
                         margin: 0 0 1em 0;
                         font-size: 1em;
                         /***MEDIA***/
@@ -870,7 +867,6 @@ body {
 }
 
 //*************/.ADVANTAGE_BLOCK*************//
-
 
 .featured_project {
     margin: $indent 0;
@@ -1043,7 +1039,6 @@ body {
 
 //*************/.PROJECT_PORTFOLIO_BLOCK*************//
 
-
 .services {
     margin: $indent 0;
     display: grid;
@@ -1214,7 +1209,6 @@ body {
 }
 
 //*************/.SERVICES_BLOCK*************//
-
 
 .testimonials_button_inner {
     margin: $indent 0;
@@ -1420,7 +1414,6 @@ body {
 
 //*************/.TESTIMONIALS_BLOCK*************//
 
-
 .news_section {
     opacity: 5;
     padding: 5em 5em;
@@ -1596,17 +1589,18 @@ body {
                     }
                 }
             }
+
             .prices_card_inner {
                 grid-area: b;
                 padding: 0.5em;
                 display: grid;
                 justify-content: space-between;
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: minmax(10em, auto);
+                grid-template-columns: repeat(3, auto);
                 /***MEDIA***/
                 @include media("<=phone-landscape") {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(3, auto);
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-template-columns: auto;
+                    justify-content: center;
                     grid-row-gap: 3em;
                     grid-template-areas:
                         "a"
@@ -1615,46 +1609,39 @@ body {
                 }
                 .prices_card {
                     display: grid;
-                    grid-template-rows: minmax(13em, auto);
+                    text-align: center;
+                    grid-template-areas:
+                        "a"
+                        "b"
+                        "c";
+                    grid-template-columns: 11em;
+                    grid-template-rows: 1fr;
+                    box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
                     .price_card_content-top {
                         grid-area: a;
-                        display: grid;
                         background-color: $second;
-                        text-align: center;
-                        align-items: center;
-                        grid-template-columns: 1fr;
-                        grid-auto-rows: minmax(3, auto);
                     }
                     .price_card_content-center {
                         grid-area: b;
                         display: grid;
-                        text-align: center;
-                        align-items: center;
-                        grid-template-columns: 1fr;
-                        grid-auto-rows: minmax(6.5em, auto);
                         li {
                             font-size: 1em;
                         }
                     }
                     .price_card_content-btm {
                         grid-area: c;
-                        display: grid;
-                        text-align: center;
-                        align-items: center;
                         background-color: $second;
                         position: relative;
-                        grid-template-columns: 1fr;
-                        grid-auto-rows: minmax(2em, auto);
                         &::before {
                             content: "";
-                            margin: 10% 0 0 75%;
                             position: absolute;
                             top: 0;
-                            left: 0;
+                            left: 77%;
+                            top: 43%;
                             right: 0;
                             bottom: 0;
-                            width: 13px;
-                            height: 13px;
+                            width: 10px;
+                            height: 10px;
                             border-top: 2px solid $header;
                             border-right: 2px solid $header;
                             transform: rotate(-315deg);
@@ -1665,20 +1652,13 @@ body {
                 }
                 .card--first {
                     display: grid;
-                    grid-template-columns: 11em;
-                    grid-template-rows: auto;
+                    grid-template-rows: 0.25fr 1fr;
                     grid-template-areas:
                         "a"
                         "b";
                     position: relative;
                     color: $subtitle;
                     background-color: $header;
-                    margin: auto;
-                    box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        grid-area: b;
-                    }
                     h3 {
                         font-size: 1.8em;
                         font-weight: 700;
@@ -1689,20 +1669,11 @@ body {
                 }
                 .card--second {
                     display: grid;
-                    grid-template-columns: 11em;
-                    grid-template-rows: minmax(10em, auto) auto;
                     grid-template-areas:
                         "b"
                         "c";
                     color: $subtitle;
                     background-color: $header;
-                    text-align: center;
-                    margin: auto;
-                    box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        grid-area: c;
-                    }
                     .price_card_ul {
                         padding: 0.5em 1.5em;
                         text-align: start;
@@ -1710,21 +1681,13 @@ body {
                 }
                 .card--third {
                     display: grid;
-                    grid-template-columns: 11em;
-                    grid-template-rows: auto;
+                    grid-template-rows: 0.25fr 1fr;
                     grid-template-areas:
                         "a"
                         "b";
-                    text-align: center;
                     position: relative;
                     color: $subtitle;
                     background-color: $header;
-                    margin: auto;
-                    box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        grid-area: a;
-                    }
                     h3 {
                         font-size: 1.8em;
                         font-weight: 700;
@@ -2665,7 +2628,6 @@ body {
 }
 
 //*************/.PROJECT_DESCRIPTION_BLOCK*************//
-
 
 .footer {
     background-color: $first;
