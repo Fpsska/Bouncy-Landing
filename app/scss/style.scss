@@ -2356,58 +2356,40 @@ body {
                     border: 1px solid $second;
                 }
             }
-            .btn-feedback {
+            .feedback_button {
                 grid-area: c;
-                line-height: 2.5em;
-                background-color: $second;
-                color: $header;
-                text-align: center;
-                transform: translate(0, 0);
+                display: grid;
+                grid-template-rows: 40px;
             }
-            .text {
-                visibility: hidden;
+            .btn-feedback {
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform .3s ease-out;
+                &:focus {
+                    transform: rotatex(-90deg);
+                }
             }
-            .flip-front,
-            .flip-back {
+            .side {
                 position: absolute;
                 left: 0;
                 top: 0;
                 width: 100%;
                 height: 100%;
-                -webkit-transform-style: flat;
-                transform-style: flat;
-                -webkit-transition: -webkit-transform 0.3s ease-out;
-                -o-transition: -o-transform 0.3s ease-out;
-                transition: transform 0.3s ease-out;
+                display: grid;
+                align-items: center;
+                backface-visibility: hidden;
             }
             .flip-front {
-                color: $header;
-                background-color: transparent;
-                -webkit-transform: rotateX(0deg) translateZ(25px);
-                -ms-transform: rotateX(0deg) translateZ(25px);
-                -o-transform: rotateX(0deg) translateZ(25px);
-                transform: rotateX(0deg) translateZ(25px);
+                font-size: 1em;
+                background-color: $second;
+                color: #202020;
+                transform: translateZ(20.1px);
             }
             .flip-back {
-                color: $second;
-                background-color: #313131;
-                border: 2px solid #313131;
-                -webkit-transform: rotateX(90deg) translateZ(25px);
-                -ms-transform: rotateX(90deg) translateZ(25px);
-                -o-transform: rotateX(90deg) translateZ(25px);
-                transform: rotateX(90deg) translateZ(25px);
-            }
-            .btn-feedback:focus .flip-front {
-                -webkit-transform: rotateX(-90deg) translateZ(25px);
-                -ms-transform: rotateX(-90deg) translateZ(25px);
-                -o-transform: rotateX(-90deg) translateZ(25px);
-                transform: rotateX(-90deg) translateZ(25px);
-            }
-            .btn-feedback:focus .flip-back {
-                -webkit-transform: rotateX(0deg) translateZ(25px);
-                -ms-transform: rotateX(0deg) translateZ(25px);
-                -o-transform: rotateX(0deg) translateZ(25px);
-                transform: rotateX(0deg) translateZ(25px);
+                font-size: 1em;
+                background-color:#202020;
+                color: #fff;
+                transform: rotateX(90deg) translateZ(20.1px);
             }
         }
     }

@@ -360,7 +360,8 @@
                     <div class="advantages_right_inner">
                         <article class="advantages_info">
                             <h2 class="advantages_title">IMPRESSED?</h2>
-                            <blockquote class="advantages_text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur veniam nemo autem
+                            <blockquote class="advantages_text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit. Consequatur veniam nemo autem
                                 quam
                                 molestias illum possimus quod placeat aut ipsam, delectus, fuga ipsa quisquam eos,
                                 numquam
@@ -376,7 +377,8 @@
                                 culpa, cum ratione soluta voluptate ipsa?
                             </blockquote>
                             <address class="advantages_author">- Abdullah Noman</address>
-                            <p class="advantages_prof">Creatice Director, <span style="color: #19bd9a">Code Cafe</span></p>
+                            <p class="advantages_prof">Creatice Director, <span style="color: #19bd9a">Code Cafe</span>
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -1228,17 +1230,20 @@
             <div class="feedback_container">
                 <form action="/" method="GET" enctype="multipart/form-data" class="feedback_inner">
                     <div class="group_inputs">
-                        <input class="input input--name" name="text" placeholder="Your name" type="text">
-                        <input class="input input--email" name="email" placeholder="Email address" type="email">
-                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15"
+                        <input class="input input--name" name="text" placeholder="Your name" type="text" required>
+                        <input class="input input--email" name="email" placeholder="Email address" type="email" required>
+                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15 required"
                             type="text">
                     </div>
-                    <input class="input input--message" name="text" placeholder="Type your message" type="text">
-                    <button class="btn-feedback" type="button">
-                        <span class="text">Text</span>
-                        <span class="flip-front">SUMBIT NOW</span>
-                        <span class="flip-back">COMPLITE!</span>
-                    </button>
+                    <input class="input input--message" name="text" placeholder="Type your message" type="text" required>
+
+                    <div class="feedback_button">
+                    <button class="btn-feedback" type="submit">
+                        <span class="side flip-front">SUMBIT NOW</span>
+                        <span class="side flip-back">COMPLITE!</span>
+                    </button>          
+                    </div>
+
                 </form>
             </div>
         </div>
