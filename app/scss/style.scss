@@ -467,6 +467,11 @@ body {
                         padding: 0 0 0 0.5em;
                     }
                     .h-description_subtitle {
+                        width: 60%;
+                        /***MEDIA***/
+                        @include media("<=tablet-landscape") {
+                            width: auto;
+                        }
                         @include media("<=phone") {
                             margin: auto;
                         }
@@ -2364,7 +2369,7 @@ body {
             .btn-feedback {
                 position: relative;
                 transform-style: preserve-3d;
-                transition: transform .3s ease-out;
+                transition: transform 0.3s ease-out;
                 &:focus {
                     transform: rotatex(-90deg);
                 }
@@ -2387,7 +2392,7 @@ body {
             }
             .flip-back {
                 font-size: 1em;
-                background-color:#202020;
+                background-color: #202020;
                 color: #fff;
                 transform: rotateX(90deg) translateZ(20.1px);
             }
@@ -2586,12 +2591,17 @@ body {
                     grid-area: g;
                     padding: 0 0 0 0.5em;
                     .left_description-text {
+                        width: 55%;
                         h2 {
                             font-size: 1.2em;
                             font-weight: 400;
                             letter-spacing: 0.08em;
                             margin: 0 0 1em 0;
                             font-weight: 600;
+                        }
+                        /***MEDIA***/
+                        @include media("<=phone-landscape") {
+                            width: auto;
                         }
                     }
                 }
@@ -2647,12 +2657,26 @@ body {
                     @include subtitle;
                 }
             }
-            .footer_icons_inner {
+            .footer_social_inner {
                 grid-area: b;
+                display: grid;
+                grid-template-columns: repeat(5, 0.07fr);
+                grid-template-rows: auto;
+                justify-content: center;
+                /*MEDIA*/
+                @include media("<=tablet-landscape") {
+                    grid-column-gap: .25em
+                }
                 .footer_icon {
                     width: 35px;
                     height: 35px;
                     z-index: 10;
+                    transform: scale(1);
+                    transition: 0.1s linear;
+                    border-radius: 5px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
                 }
             }
         }
