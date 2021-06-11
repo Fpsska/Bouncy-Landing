@@ -57,7 +57,7 @@ function styles() {       /*КОМПИЛЯЦИЯ scss -> style.min.css*/
         "node_modules/lightbox2/dist/css/lightbox.css",
         "app/scss/style.scss"
     ])
-        .pipe(scss({ outputStyle: "compressed" })) // минификация
+        .pipe(scss({ outputStyle: "expanded" })) // минификация
         .pipe(concat("style.min.css")) // конкатенация + единое название  
         .pipe(autoprefixer({
             overrideBrowserslist: ["last 10 version"],

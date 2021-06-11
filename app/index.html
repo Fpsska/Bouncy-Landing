@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
     <title>BOUNCY Landing</title>
 </head>
@@ -84,9 +85,7 @@
         <div class="header_container">
 
             <div class="headerBar" id="headerBarJS">
-                <div class="header_item_logo">
-                    <h1>BOUNCY</h1>
-                </div>
+                <h1 class="header_item_logo">BOUNCY</h1>
                 <nav class="header_nav">
                     <a href="#" class="header-link" data-scroll="#header_descriptionJS">Hello</a>
                     <a href="#" class="header-link" data-scroll="#project_descriptionJS">About</a>
@@ -100,9 +99,7 @@
 
             <div class="headerBar-mobile">
                 <div class="header_mobile_items">
-                    <div class="logo_text">
-                        <h1>BOUNCY</h1>
-                    </div>
+                    <h1 class="logo_text">BOUNCY</h1>
 
                     <span class="menu-icon">&#9776;</span>
                 </div>
@@ -173,7 +170,13 @@
 
                     <div class="header_description_inner-right">
                         <div class="h-description_img">
-                            <img src="./img/h-description-1.png" alt="phone">
+                            <picture>
+                                <source type="image/webp"
+                                    srcset="./img/h-description-1.webp 1x, ./img/h-description-1@2x.webp 2x, ./img/h-description-1@3x.webp 3x">
+                                <img src="./img/h-description-1.png"
+                                    srcset="./img/h-description-1@2x.png 2x, ./img/h-description-1@3x.png 3x"
+                                    alt="phone">
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -199,13 +202,22 @@
 
                     <div class="description_icons_inner">
                         <div class="description_icon">
-                            <img class="img--description" src="./img/description-1.png" alt="heart">
+                            <picture>
+                                <source type="image/webp" srcset="./img/description-3.webp 1x">
+                                <img class="img--description" src="./img/description-3.png" alt="heart">
+                            </picture>
                         </div>
                         <div class="description_icon">
-                            <img class="img--description" src="./img/description-1.png" alt="heart">
+                            <picture>
+                                <source type="image/webp" srcset="./img/description-1.webp 1x">
+                                <img class="img--description" src="./img/description-1.png" alt="heart">
+                            </picture>
                         </div>
                         <div class="description_icon">
-                            <img class="img--description" src="./img/description-1.png" alt="heart">
+                            <picture>
+                                <source type="image/webp" srcset="./img/description-3.webp 1x">
+                                <img class="img--description" src="./img/description-3.png" alt="heart">
+                            </picture>
                         </div>
                     </div>
 
@@ -263,13 +275,30 @@
 
                 <div class="project_content">
                     <div class="project_img_card">
-                        <img src="./img/project-2.png" class="project_img" alt="project-2">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="./img/project-3.webp 1x, ./img/project-3@2x.webp 2x, ./img/project-3@3x.webp 3x">
+                            <img src="./img/project-3.png" class="project_img"
+                                srcset="./img/project-3@2x.png 2x, ./img/project-3@3x.png 3x" alt="project-image">
+                        </picture>
+
                     </div>
                     <div class="project_img_card">
-                        <img src="./img/project-1.png" class="project_img" alt="project-1">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="./img/project-1.webp 1x, ./img/project-1@2x.webp 2x, ./img/project-1@3x.webp 3x">
+                            <img src="./img/project-1.png" class="project_img"
+                                srcset="./img/project-1@2x.png 2x, ./img/project-1@3x.png 3x" alt="project-image">
+                        </picture>
+                        <img src="./img/project-2.png" class="project_img" alt="">
                     </div>
                     <div class="project_img_card">
-                        <img src="./img/project-3.png" class="project_img" alt="project-3">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="./img/project-3.webp 1x, ./img/project-3@2x.webp 2x, ./img/project-3@3x.webp 3x">
+                            <img src="./img/project-3.png" class="project_img"
+                                srcset="./img/project-3@2x.png 2x, ./img/project-3@3x.png 3x" alt="project-image">
+                        </picture>
                     </div>
                 </div>
 
@@ -306,9 +335,18 @@
 
                 <div class="left_discription_inner">
                     <div class="services_icons">
-                        <img src="./img/services-1.png" alt="tools">
-                        <img src="./img/services-1.png" alt="tools">
-                        <img src="./img/services-1.png" alt="tools">
+                        <picture class="services_icon">
+                            <source type="image/webp" srcset="./img/services-1.webp 1x">
+                            <img src="./img/services-1.png" alt="tools">
+                        </picture>
+                        <picture class="services_icon">
+                            <source type="image/webp" srcset="./img/services-1.webp 1x">
+                            <img src="./img/services-1.png" alt="tools">
+                        </picture>
+                        <picture class="services_icon">
+                            <source type="image/webp" srcset="./img/services-1.webp 1x">
+                            <img src="./img/services-1.png" alt="tools">
+                        </picture>
                     </div>
                     <ul class="services_discription">
                         <li>Graphic Design</li>
@@ -547,59 +585,59 @@
                     </div>
 
                     <div class="portfolio_block" id="tab_6">
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-14.jpg"
-                            style="background-image: url(img/portfolio-14.jpg)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio-14.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                            style="background-image: url(img/portfolio--14.png)"></a>
                     </div>
 
                     <div class="portfolio_block" id="tab_7">
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-10.png"
-                            style="background-image: url(img/portfolio-10.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
+                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                            style="background-image: url(img/portfolio-13.png)"></a>
                     </div>
                 </div>
 
@@ -642,7 +680,12 @@
                         <div class="team_content_inner">
                             <div class="left_team_content">
                                 <div class="left_team_img">
-                                    <img src="./img/1-team.png" alt="man">
+                                    <picture>
+                                        <source type="image/webp"
+                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                        <img src="./img/1-team.png"
+                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
+                                    </picture>
                                 </div>
                             </div>
                             <div class="right_team_content">
@@ -698,7 +741,12 @@
                         <div class="team_content_inner">
                             <div class="left_team_content">
                                 <div class="left_team_img">
-                                    <img src="./img/1-team.png" alt="man">
+                                    <picture>
+                                        <source type="image/webp"
+                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                        <img src="./img/1-team.png"
+                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
+                                    </picture>
                                 </div>
                             </div>
                             <div class="right_team_content">
@@ -755,7 +803,12 @@
 
                             <div class="left_team_content">
                                 <div class="left_team_img">
-                                    <img src="./img/1-team.png" alt="man">
+                                    <picture>
+                                        <source type="image/webp"
+                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                        <img src="./img/1-team.png"
+                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
+                                    </picture>
                                 </div>
                             </div>
 
@@ -857,7 +910,13 @@
 
                         <div class="testimonial_card">
                             <div class="testimonial_card-img">
-                                <img src="./img/testimonials-1.png" alt="guy">
+                                <picture>
+                                    <source type="image/webp"
+                                        srcset="./img/testimonials-1.webp 1x, ./img/testimonials-1@2x.webp 2x, ./img/testimonials-1@3x.webp 3x">
+                                    <img src="./img/testimonials-1.png"
+                                        srcset="./img/testimonials-1@2x.png 2x, ./img/testimonials-1@3x.png 3x"
+                                        alt="reviewer">
+                                </picture>
                             </div>
                             <div class="testimonial_card-info">
                                 <blockquote class="testimonial_card-text">
@@ -883,7 +942,13 @@
 
                         <div class="testimonial_card">
                             <div class="testimonial_card-img">
-                                <img src="./img/testimonials-1.png" alt="guy">
+                                <picture>
+                                    <source type="image/webp"
+                                        srcset="./img/testimonials-1.webp 1x, ./img/testimonials-1@2x.webp 2x, ./img/testimonials-1@3x.webp 3x">
+                                    <img src="./img/testimonials-1.png"
+                                        srcset="./img/testimonials-1@2x.png 2x, ./img/testimonials-1@3x.png 3x"
+                                        alt="reviewer">
+                                </picture>
                             </div>
                             <div class="testimonial_card-info">
                                 <blockquote class="testimonial_card-text">
@@ -906,7 +971,13 @@
 
                         <div class="testimonial_card">
                             <div class="testimonial_card-img">
-                                <img src="./img/testimonials-1.png" alt="guy">
+                                <picture>
+                                    <source type="image/webp"
+                                        srcset="./img/testimonials-1.webp 1x, ./img/testimonials-1@2x.webp 2x, ./img/testimonials-1@3x.webp 3x">
+                                    <img src="./img/testimonials-1.png"
+                                        srcset="./img/testimonials-1@2x.png 2x, ./img/testimonials-1@3x.png 3x"
+                                        alt="reviewer">
+                                </picture>
                             </div>
                             <div class="testimonial_card-info">
                                 <blockquote class="testimonial_card-text">
@@ -1200,7 +1271,10 @@
 
                         <div class="contacts_card">
                             <div class="card_top_content card--social">
-                                <img class="contacts_card_img" src="./img/cntcts-icon-1.png" alt="email">
+                                <picture class="contacts_card_img">
+                                    <source type="image/webp" srcset="./img/cntcts-icon-1.webp 1x">
+                                    <img src="./img/cntcts-icon-1.png" alt="email">
+                                </picture>
                             </div>
                             <div class="card_btm_content">
                                 <div class="card_title">
@@ -1216,7 +1290,10 @@
 
                         <div class="contacts_card">
                             <div class="card_top_content card--office">
-                                <img class="contacts_card_img" src="./img/cntcts-icon-2.png" alt="location">
+                                <picture class="contacts_card_img">
+                                    <source type="image/webp" srcset="./img/cntcts-icon-2.webp 1x">
+                                    <img src="./img/cntcts-icon-2.png" alt="location">
+                                </picture>
                             </div>
                             <article class="card_btm_content">
                                 <div class="card_title">
@@ -1238,7 +1315,10 @@
 
                         <div class="contacts_card">
                             <div class="card_top_content card--phone">
-                                <img class="contacts_card_img" src="./img/cntcts-icon-3.png" alt="phone">
+                                <picture class="contacts_card_img">
+                                    <source type="image/webp" srcset="./img/cntcts-icon-3.webp 1x">
+                                    <img src="./img/cntcts-icon-3.png" alt="phone">
+                                </picture>
                             </div>
                             <div class="card_btm_content">
                                 <div class="card_title">

@@ -11,6 +11,8 @@ body {
 .main_header {
     background-color: #7f664d;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-image: url("../img/header-1.png");
     height: 100vh;
     position: relative;
@@ -54,6 +56,7 @@ body {
                 font-size: 1.5em;
                 font-weight: 400;
                 .logo_text {
+                    font-weight: 700;
                     font-size: 1.5em;
                     padding: 0 1em;
                     /***MEDIA***/
@@ -109,7 +112,7 @@ body {
                 z-index: 1;
                 background-color: rgba(77, 83, 93, 0.8);
                 overflow: hidden;
-                transition: 1s ease-in-out;
+                // transition: 1s ease-in-out;
                 .menu_content {
                     position: relative;
                     top: 23%;
@@ -128,7 +131,7 @@ body {
                         color: $header;
                         display: block;
                         text-transform: uppercase;
-                        transition: 0.3s ease-in-out;
+                        // transition: 0.3s ease-in-out;
                         &:focus {
                             background-color: $second;
                         }
@@ -184,13 +187,12 @@ body {
             }
             .header_item_logo {
                 margin: 0 0 0 2em;
-                h1 {
-                    font-size: 2.5em;
-                    color: $second;
-                    /***MEDIA**/
-                    @include media("<=small-screens") {
-                        font-size: 2em;
-                    }
+                font-size: 2.5em;
+                font-weight: 900;
+                color: $second;
+                /***MEDIA**/
+                @include media("<=small-screens") {
+                    font-size: 2em;
                 }
             }
             .header_nav {
@@ -227,8 +229,11 @@ body {
                 display: none;
             }
             .header_item_logo {
+                color: $header;
+                font-size: 3em;
+                font-weight: 700;
                 grid-area: c;
-                font-size: 1em;
+                font-size: 2em;
                 /***MEDIA***/
                 @include media("<=small-screens") {
                     margin: 0 0 0 1.2em;
@@ -238,14 +243,7 @@ body {
                     grid-area: a;
                     margin: 0 0 0 1em;
                     padding: 0 3 0 0;
-                }
-                h1 {
-                    color: $header;
-                    font-size: 3em;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        font-size: 38px;
-                    }
+                    font-size: 38px;
                 }
             }
             .header_nav {
@@ -281,7 +279,6 @@ body {
         }
         .header_text {
             grid-area: b;
-            transition: 0.5s linear;
             align-content: center;
             padding: 0 0.5em;
             font-size: 2em;
@@ -736,8 +733,7 @@ body {
                         padding: 0.5em 2em;
                         position: relative;
                         transform: translate(0%, 0%);
-                        -webkit-transition: all 0.6s ease-in-out;
-                        transition: all 1s ease-in-out;
+                        transition: all 0.3s linear;
                         overflow: hidden;
                         &:before {
                             content: "";
@@ -749,14 +745,12 @@ body {
                             width: 300px;
                             height: 300px;
                             left: -75px;
-                            -webkit-transition: box-shadow 0.6s ease-in-out;
-                            transition: box-shadow 0.6s ease-in-out;
+                            transition: box-shadow 0.5s ease-in-out;
                             z-index: -1;
                         }
                         &:hover {
                             color: $second;
                             border: 1px solid $second;
-                            transition: 1s ease;
                         }
                         &:hover::before {
                             box-shadow: inset 0 0 0 160px $first;
@@ -1011,8 +1005,7 @@ body {
                     padding: 0.5em 2em;
                     position: relative;
                     transform: translate(0%, 0%);
-                    -webkit-transition: all 0.6s ease-in-out;
-                    transition: all 1s ease-in-out;
+                    transition: all 0.3 linear;
                     overflow: hidden;
                     &:before {
                         content: "";
@@ -1024,14 +1017,12 @@ body {
                         width: 300px;
                         height: 300px;
                         left: -75px;
-                        -webkit-transition: box-shadow 0.6s ease-in-out;
-                        transition: box-shadow 0.6s ease-in-out;
+                        transition: box-shadow 0.5s ease-in-out;
                         z-index: -1;
                     }
                     &:hover {
                         color: $second;
                         border: 1px solid $second;
-                        transition: 1s ease;
                     }
                     &:hover::before {
                         box-shadow: inset 0 0 0 160px $first;
@@ -1255,8 +1246,8 @@ body {
                 position: relative;
                 text-align: center;
                 text-transform: uppercase;
-                transition: 5s cubic-bezier(0.19, 1, 0.22, 1), border 1s cubic-bezier(0.19, 1, 0.22, 1),
-                    color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+                // transition: 5s cubic-bezier(0.19, 1, 0.22, 1), border 1s cubic-bezier(0.19, 1, 0.22, 1),
+                //     color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
                 user-select: none;
             }
             .btn--testimonials a {
@@ -1268,19 +1259,18 @@ body {
                 height: 100px;
                 position: absolute;
                 transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
-                transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+                // transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
                 width: 200px;
             }
             .btn--testimonials .shift {
                 display: inline-block;
-                transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+                // transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
                 vertical-align: text-top;
             }
             .btn--testimonials:hover {
                 background-color: rgba(255, 255, 255, 0.05);
                 border-color: $header;
                 box-shadow: 0 0 5px $header;
-                transition: 0s;
             }
             .btn--testimonials:hover a {
                 color: $header;
@@ -1831,7 +1821,6 @@ body {
                         background: transparent;
                         outline: none !important;
                         cursor: pointer;
-                        transition: all 0.3s ease;
                         position: relative;
                         display: inline-block;
                         color: $header;
@@ -2193,6 +2182,11 @@ body {
                         position: relative;
                         .contacts_card_img {
                             margin: auto;
+                            transform: scale(1);
+                            transition: 0.2s linear;
+                            &:hover {
+                                transform: scale(1.1);
+                            }
                         }
                     }
                     .card--social {
@@ -2369,7 +2363,6 @@ body {
             .btn-feedback {
                 position: relative;
                 transform-style: preserve-3d;
-                transition: transform 0.3s ease-out;
                 &:focus {
                     transform: rotatex(-90deg);
                 }
@@ -2423,7 +2416,6 @@ body {
             height: 100%;
             &:hover .map_text {
                 transform: translate(-100);
-                transition: 0.5s linear;
                 height: 0;
                 font-size: 0;
             }
@@ -2551,21 +2543,26 @@ body {
                     height: 50px;
                     position: relative;
                     margin-left: 1.5em;
+                    transition: 0.3s linear;
                     &:nth-child(1) {
                         margin: 0;
                     }
                     .img--description {
-                        top: 30%;
-                        left: 25%;
+                        max-width: 26px;
+                        height: 22px;
+                        display: block;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
                         position: absolute;
                     }
                     &:hover {
                         background-color: $second;
-                        transition: 0.4s linear;
                     }
                     &:focus {
                         background-color: $second;
-                        transition: 0.4s linear;
                     }
                 }
             }
@@ -2665,7 +2662,7 @@ body {
                 justify-content: center;
                 /*MEDIA*/
                 @include media("<=tablet-landscape") {
-                    grid-column-gap: .25em
+                    grid-column-gap: 0.25em;
                 }
                 .footer_icon {
                     width: 35px;
