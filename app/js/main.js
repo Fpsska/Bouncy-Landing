@@ -34,34 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     //  //*********/.SLIDER*********//
 
-    $('.circle--branding').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
-    $('.circle--web').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
-    $('.circle--ui').easyPieChart({
-        barColor: "#19bd9a",
-        trackColor: "#ededed",
-        lineCap: "circle",
-        size: 115,
-        lineWidth: 5,
-        animate: 4000,
-    });
+    let brandingCircle = document.querySelector('.circle--branding');
+    let webCircle = document.querySelector('.circle--web');
+    let uiCircle = document.querySelector('.circle--ui');
 
+
+    let generalCircle = (item) => {
+        new EasyPieChart(item, {
+            barColor: "#19bd9a",
+            trackColor: "#ededed",
+            lineCap: "circle",
+            size: 115,
+            lineWidth: 5,
+            animate: 4000,
+        });
+    }
+
+    canvas = document.getElementsByTagName("canvas");
+    canvas.width = canvas.width;
+
+    
     let brandingItem = document.querySelector(".percent--branding");
     let webItem = document.querySelector(".percent--web");
     let uiItem = document.querySelector(".percent--ui");
+
 
     let progressFunc = (item, percent) => {
         let counter = 0; /*counter of start*/
@@ -75,9 +71,84 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50); /*speed*/
     };
 
-    progressFunc(brandingItem, 100);
-    progressFunc(webItem, 70);
-    progressFunc(uiItem, 50);
+    let project = document.querySelector(".featured_project");
+
+    let offset = (el) => {  // функция получения значения от верха страницы (кроссбраузерно)
+        const rect = el.getBoundingClientRect();
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop }
+    }
+
+    let projectOffset = offset(project).top
+
+    let advantages = document.querySelector(".advantages");
+
+    let advantagesOffset = offset(advantages).top;
+
+    let circleHandlerFinish = false;
+
+    let circleHandler = () => {
+        generalCircle(brandingCircle);
+        generalCircle(webCircle);
+        generalCircle(uiCircle);
+        progressFunc(brandingItem, 100);
+        progressFunc(webItem, 70);
+        progressFunc(uiItem, 50);
+
+        circleHandlerFinish = true;
+    }
+
+    window.addEventListener("scroll", () => {
+
+        let scrollPos = window.pageYOffset; // кол-во прокрученных пикселей, ось Y
+
+        if (scrollPos >= projectOffset) {
+            if (scrollPos < advantagesOffset) {
+                if (circleHandlerFinish === false) {
+                    circleHandler();
+                }
+            }
+        }
+    })
+
+
+
+
+
+
+    // let circleProgress = document.querySelectorAll(".circle_progress");
+    // let firstCircle = document.querySelector(".circle_progress--branding");
+    // let secondCircle = document.querySelector(".circle_progress--web");
+    // let thirdCircle = document.querySelector(".circle_progress--ui");
+
+
+    // let radiusArr = [];
+
+    // circleProgress.forEach(item => {
+    //     radiusArr.push(2 * Math.PI * item.r.baseVal.value)
+    // })
+    // console.log(radiusArr)
+
+
+    // firstCircle.style.strokeDasharray = `${radiusArr[0]}`;
+
+    // firstCircle.style.strokeDashoffset = radiusArr[0];
+
+    // let setProgress = (item, percent) => {
+    //     let counter = 0; /*counter of start*/
+    //     setInterval(() => {
+    //         if (counter == percent) { /*counter of end*/
+    //             clearInterval();
+    //         } else {
+    //             counter += 1; /*step*/
+    //             item.textContent = counter + "%";
+    //         }
+    //     }, 50); /*speed*/
+    //     // let offSet = circumference - percent / 100 * circumference;
+    //     // element.style.strokeDashoffset = offSet;
+    // }
+
+    // setProgress(firstCircle, 50);
     //  //************/.GRAPHISC_CARD************//
 
     let tabsLink = document.querySelectorAll(".p-nav_link");
@@ -208,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
     email.forEach(item => {
         item.onkeydown = function () {
             const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            
+
             if (regex.test(item.value)) {
                 item.style.color = 'green'
             } else {
@@ -226,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    
+
     //  //*********/.INPUT VALIDATION*********//
 
 

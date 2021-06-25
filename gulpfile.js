@@ -41,7 +41,7 @@ function scripts() {
         "node_modules/jquery/dist/jquery.js",
         "node_modules/owl.carousel/dist/owl.carousel.js",
         "node_modules/lightbox2/dist/js/lightbox.js",
-        "node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
+        "node_modules/easy-pie-chart/dist/easypiechart.js",
         "app/js/main.js"
     ])
         .pipe(concat("main.min.js")) // конкатенация + единое название 
