@@ -12,7 +12,7 @@
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "easy-pie-chart": "^2.1.7",
-    "gh-pages": "^3.1.0",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
@@ -22,5 +22,8 @@
     "jquery": "^3.5.1",
     "lightbox2": "^2.11.3",
     "owl.carousel": "^2.3.4"
+  },
+  "dependencies": {
+    "just-validate": "^1.5.0"
   }
 }

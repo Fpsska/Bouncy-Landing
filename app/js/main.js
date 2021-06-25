@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas = document.getElementsByTagName("canvas");
     canvas.width = canvas.width;
 
-    
+
     let brandingItem = document.querySelector(".percent--branding");
     let webItem = document.querySelector(".percent--web");
     let uiItem = document.querySelector(".percent--ui");
@@ -111,44 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-
-
-
-
-
-    // let circleProgress = document.querySelectorAll(".circle_progress");
-    // let firstCircle = document.querySelector(".circle_progress--branding");
-    // let secondCircle = document.querySelector(".circle_progress--web");
-    // let thirdCircle = document.querySelector(".circle_progress--ui");
-
-
-    // let radiusArr = [];
-
-    // circleProgress.forEach(item => {
-    //     radiusArr.push(2 * Math.PI * item.r.baseVal.value)
-    // })
-    // console.log(radiusArr)
-
-
-    // firstCircle.style.strokeDasharray = `${radiusArr[0]}`;
-
-    // firstCircle.style.strokeDashoffset = radiusArr[0];
-
-    // let setProgress = (item, percent) => {
-    //     let counter = 0; /*counter of start*/
-    //     setInterval(() => {
-    //         if (counter == percent) { /*counter of end*/
-    //             clearInterval();
-    //         } else {
-    //             counter += 1; /*step*/
-    //             item.textContent = counter + "%";
-    //         }
-    //     }, 50); /*speed*/
-    //     // let offSet = circumference - percent / 100 * circumference;
-    //     // element.style.strokeDashoffset = offSet;
-    // }
-
-    // setProgress(firstCircle, 50);
     //  //************/.GRAPHISC_CARD************//
 
     let tabsLink = document.querySelectorAll(".p-nav_link");
@@ -262,42 +224,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //  //*********/.LIGHTBOX*********//
 
-    let name = document.querySelector(".input--name");
-    let email = document.querySelectorAll(".input--email");
-    let subject = document.querySelector(".input--subject");
-
-
-    name.onkeydown = function () {
-        const regex = /^([\w]{3,})+\s+([\w\s]{3,})+$/i;
-
-        if (regex.test(name.value)) {
-            name.style.color = 'green'
-        } else {
-            name.style.color = 'red'
-        }
-    }
-    email.forEach(item => {
-        item.onkeydown = function () {
-            const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-            if (regex.test(item.value)) {
-                item.style.color = 'green'
-            } else {
-                item.style.color = 'red'
+    function validateForms(selector) {  // selector - строка, класс родителя
+        new window.JustValidate(selector, {
+            rules: {
+                name: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                subject: {
+                    required: false
+                },
+                message: {
+                    required: false
+                }
+            },
+            submitHandler: function (form) {
+                console.log(form);
+                let formData = new FormData(form); // помещаем все данные form
+                fetch("mail.php", {
+                    method: "POST",
+                    body: formData
+                })
+                    .then(function (data) {
+                        console.log(data);
+                        console.log("Форма отправлена!");
+                        document.querySelector(".btn-feedback").classList.add("submited");
+                    });
             }
-        }
-    })
-    subject.onkeydown = function () {
-        const regex = /[a-zA-Z]+/;
-
-        if (regex.test(subject.value)) {
-            subject.style.color = 'green'
-        } else {
-            subject.style.color = 'red'
-        }
+        });
     }
 
-
+    validateForms(".feedback_inner");
     //  //*********/.INPUT VALIDATION*********//
 
 

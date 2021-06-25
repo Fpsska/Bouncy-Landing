@@ -42,6 +42,7 @@ function scripts() {
         "node_modules/owl.carousel/dist/owl.carousel.js",
         "node_modules/lightbox2/dist/js/lightbox.js",
         "node_modules/easy-pie-chart/dist/easypiechart.js",
+        "node_modules/just-validate/dist/js/just-validate.js",
         "app/js/main.js"
     ])
         .pipe(concat("main.min.js")) // конкатенация + единое название 
@@ -55,6 +56,7 @@ function styles() {       /*КОМПИЛЯЦИЯ scss -> style.min.css*/
         "node_modules/owl.carousel/dist/assets/owl.carousel.css",
         "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
         "node_modules/lightbox2/dist/css/lightbox.css",
+        "node_modules/just-validate/dist/css/justValidateTooltip.css",
         "app/scss/style.scss"
     ])
         .pipe(scss({ outputStyle: "compressed" })) // минификация

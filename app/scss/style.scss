@@ -2366,9 +2366,12 @@ body {
             .btn-feedback {
                 position: relative;
                 transform-style: preserve-3d;
-                &:focus {
-                    transform: rotatex(-90deg);
-                }
+                // &:focus {
+                //     transform: rotatex(-90deg);
+                // }
+            }
+            .btn-feedback.submited {
+                transform: rotatex(-90deg);
             }
             .side {
                 position: absolute;
