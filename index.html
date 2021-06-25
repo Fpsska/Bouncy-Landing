@@ -1345,14 +1345,15 @@
             <div class="feedback_container">
                 <form action="/" method="GET" enctype="multipart/form-data" class="feedback_inner">
                     <div class="group_inputs">
-                        <input class="input input--name" name="text" placeholder="Your name" type="text" required>
+                        <input class="input input--name" name="text" placeholder="Your name" type="text" required
+                            data-validate-field="name">
                         <input class="input input--email" name="email" placeholder="Email address" type="email"
-                            required>
-                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15" required
-                            type="text">
+                            required data-validate-field="email">
+                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15" type="text" required
+                            data-validate-field="subject">
                     </div>
                     <input class="input input--message" name="text" placeholder="Type your message" type="text"
-                        required>
+                        required data-validate-field="message">
 
                     <div class="feedback_button">
                         <button class="btn-feedback" type="submit">
