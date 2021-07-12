@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'slider__stage'
         ]
     });
-    $('.testimonial_slider').owlCarousel({
+    $('.testimonial__slider').owlCarousel({
         items: 1,
         nav: false,
         dots: true,
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'slider__stage'
         ]
     });
-    $('.news_slider').owlCarousel({
+    $('.news__slider').owlCarousel({
         items: 1,
         nav: false,
         dots: true,

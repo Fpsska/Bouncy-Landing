@@ -1277,7 +1277,7 @@ body {
 
 //*************/.TEAM SECTION*************//
 
-.testimonials_button_inner {
+.feedback {
     margin: $indent 0;
     background-position: center;
     background-size: cover;
@@ -1286,7 +1286,7 @@ body {
     @include media("<=tablet-landscape") {
         margin: 6em 0;
     }
-    .testimonial_button-container {
+    .feedback__container {
         display: grid;
         max-width: 100%;
         text-align: center;
@@ -1298,70 +1298,66 @@ body {
         grid-template-areas:
             "a"
             "b";
-        .testimonial_button-text {
-            grid-area: a;
-            h2 {
-                font-size: 1.5em;
-            }
+    }
+    .feedback__text {
+        grid-area: a;
+        font-size: 1.5em;
+    }
+    .feedback__button {
+        grid-area: b;
+        margin: auto;
+        .btn--feedback {
+            border: 1px solid #2e2e2e;
+            cursor: pointer;
+            letter-spacing: 0.2125rem;
+            line-height: 1;
+            overflow: hidden;
+            padding: 15px 20px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            user-select: none;
         }
-        .testimonials_button {
-            grid-area: b;
-            margin: auto;
-            .btn--testimonials {
-                border: 1px solid #2e2e2e;
-                cursor: pointer;
-                letter-spacing: 0.2125rem;
-                line-height: 1;
-                overflow: hidden;
-                padding: 15px 20px;
-                position: relative;
-                text-align: center;
-                text-transform: uppercase;
-                // transition: 5s cubic-bezier(0.19, 1, 0.22, 1), border 1s cubic-bezier(0.19, 1, 0.22, 1),
-                //     color 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-                user-select: none;
-            }
-            .btn--testimonials a {
-                color: $subtitle;
-                text-decoration: none;
-            }
-            .btn--testimonials .mask {
-                background-color: $header;
-                height: 100px;
-                position: absolute;
-                transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
-                // transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
-                width: 200px;
-            }
-            .btn--testimonials .shift {
-                display: inline-block;
-                // transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
-                vertical-align: text-top;
-            }
-            .btn--testimonials:hover {
-                background-color: rgba(255, 255, 255, 0.05);
-                border-color: $header;
-                box-shadow: 0 0 5px $header;
-            }
-            .btn--testimonials:hover a {
-                color: $header;
-            }
-            .btn--testimonials:hover .mask {
-                background-color: $header;
-                transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
-            }
-            .btn--testimonials:hover .shift {
-                transform: translateX(5px);
-            }
-            .btn--testimonials:active {
-                background-color: $header;
-            }
-            .btn--testimonials:active a {
-                color: #202020;
-            }
+        .btn--feedback a {
+            color: $subtitle;
+            text-decoration: none;
+        }
+        .btn--feedback .mask {
+            background-color: $header;
+            height: 100px;
+            position: absolute;
+            transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
+            width: 200px;
+        }
+        .btn--feedback .shift {
+            display: inline-block;
+            vertical-align: text-top;
+        }
+        .btn--feedback:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: $header;
+            box-shadow: 0 0 5px $header;
+        }
+        .btn--feedback:hover a {
+            color: $header;
+        }
+        .btn--feedback:hover .mask {
+            background-color: $header;
+            transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
+        }
+        .btn--feedback:hover .shift {
+            transform: translateX(5px);
+        }
+        .btn--feedback:active {
+            background-color: $header;
+        }
+        .btn--feedback:active a {
+            color: #202020;
         }
     }
 }
+
+//*************/.FEEDBACK SECTION*************//
 
 .testimonials {
     margin: 0 0 $indent 0;
@@ -1369,118 +1365,98 @@ body {
     @include media("<=phone") {
         margin: 0 0 7em 0;
     }
-    .testimonial_container {
+    .testimonial__container {
         max-width: 1300px;
         margin: 0 auto;
-        .testimonial_inner {
-            display: grid;
+    }
+    .testimonial__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .testimonial_text {
+        grid-area: a;
+    }
+    /***SLIDER***/
+    .testimonial__slider {
+        margin: 0 0 5em 0;
+        overflow: hidden;
+        /***MEDIA***/
+        @include media("<=phone") {
+            z-index: 0;
+        }
+        @include media("<=tablet-landscape") {
+            z-index: 0;
+            margin: 0 0 3em 0;
+        }
+        .owl-dots {
+            text-align: center;
+            .owl-dot {
+                width: 0.5em;
+                height: 0.5em;
+                color: $header;
+                margin: 0 0 0 0.5em;
+                border-radius: 100%;
+                background-color: $second;
+            }
+            .owl-dot.active {
+                border: 1px solid $second;
+                background-color: $header;
+            }
+        }
+    }
+    /***./SLIDER***/
+    .testimonial__card {
+        grid-area: b;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 3em 3em;
+        background-color: $header;
+        grid-template-columns: auto 1fr;
+        grid-auto-rows: 0.5fr auto;
+        grid-template-areas: "h r";
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            padding: 1em 1em;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, auto);
+            grid-row-gap: 1em;
+            grid-template-rows: min-content;
             grid-template-areas:
                 "a"
                 "b";
-            .testimonial_text {
-                grid-area: a;
-                margin: 0 0 5em 0;
-                text-align: center;
-                display: grid;
-                grid-auto-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "c"
-                    "d";
-                .testimonial_title {
-                    grid-area: c;
-                    margin: 0 0 0.5em 0;
-                    h2 {
-                        @include title;
-                    }
-                }
-                .testimonial_subtitle {
-                    grid-area: d;
-                    h3 {
-                        @include subtitle;
-                    }
-                }
-            }
-            /***SLIDER***/
-            .testimonial_slider {
-                margin: 0 0 5em 0;
-                overflow: hidden;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    z-index: 0;
-                }
-                @include media("<=tablet-landscape") {
-                    z-index: 0;
-                    margin: 0 0 3em 0;
-                }
-                .owl-dots {
-                    text-align: center;
-                    .owl-dot {
-                        width: 0.5em;
-                        height: 0.5em;
-                        color: $header;
-                        margin: 0 0 0 0.5em;
-                        border-radius: 100%;
-                        background-color: $second;
-                    }
-                    .owl-dot.active {
-                        border: 1px solid $second;
-                        background-color: $header;
-                    }
-                }
-                .testimonial_card {
-                    grid-area: b;
-                    display: grid;
-                    align-items: center;
-                    justify-items: center;
-                    padding: 3em 3em;
-                    background-color: $header;
-                    grid-template-columns: auto 1fr;
-                    grid-auto-rows: 0.5fr auto;
-                    grid-template-areas: "h r";
-                    /***MEDIA***/
-                    @include media("<=phone-landscape") {
-                        padding: 1em 1em;
-                        grid-template-columns: 1fr;
-                        grid-row-gap: 1em;
-                        grid-template-rows: min-content;
-                        grid-template-areas:
-                            "a"
-                            "b";
-                    }
-                    .testimonial_card-img {
-                        grid-area: h;
-                        overflow: hidden;
-                        /***MEDIA***/
-                        @include media("<=phone-landscape") {
-                            grid-area: a;
-                        }
-                    }
-                    .testimonial_card-info {
-                        grid-area: r;
-                        margin: 0 0 0 5em;
-                        /***MEDIA***/
-                        @include media("<=phone-landscape") {
-                            grid-area: b;
-                            display: grid;
-                            margin: 0;
-                        }
-                        h3 {
-                            font-weight: 400;
-                        }
-                    }
-                }
-            }
-            /***./SLIDER***/
         }
+    }
+    .testimonial__image {
+        grid-area: h;
+        overflow: hidden;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-area: a;
+        }
+    }
+    .testimonial__text {
+        grid-area: r;
+        margin: 0 0 0 5em;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-area: b;
+            display: grid;
+            margin: 0;
+        }
+    }
+    .testimonial__name {
+        font-weight: 700;
+        color: #19bd9a;
     }
 }
 
 //*************/.TESTIMONIALS_BLOCK*************//
 
-.news_section {
+.news {
     opacity: 5;
     padding: 5em 5em;
     background-position: center;
@@ -1498,106 +1474,106 @@ body {
     @include media("<=phone") {
         padding: 1em 0.5em;
     }
-    .news_container {
+    .news__container {
         max-width: 1750px;
         margin: auto;
-        .news_inner {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: "d";
-            /***SLIDER***/
-            .news_slider {
-                overflow: hidden;
-                grid-area: d;
-                /***MEDIA***/
-                @include media("<=tablet-landscape") {
-                    z-index: 0;
-                }
-                .owl-dots {
-                    text-align: center;
-                    .owl-dot {
-                        width: 0.6em;
-                        height: 0.6em;
-                        color: transparent;
-                        margin: 0 0 0 0.5em;
-                        border: 1px solid #b2b3b3;
-                        border-radius: 100%;
-                        background-color: transparent;
-                        margin: 0 0 0 0.3em;
-                        &:nth-child(1) {
-                            margin: 0;
-                        }
-                    }
-                    .owl-dot.active {
-                        border: none;
-                        background-color: #b2b3b3;
-                    }
-                }
-                .news_card {
-                    display: grid;
-                    grid-template-rows: auto;
-                    grid-template-columns: 1fr;
-                    grid-template-areas:
-                        "a"
-                        "b";
-                    .news_header {
-                        grid-area: a;
-                        color: $header;
-                        .news_header-title {
-                            @include title;
-                        }
-                        .news_header-subtitle {
-                            margin: 1em 0 0 0;
-                            opacity: 0.5;
-                        }
-                    }
-                    .news_footer {
-                        grid-area: b;
-                        display: grid;
-                        align-items: center;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: repeat(4, auto);
-                        grid-template-areas:
-                            "a"
-                            "b"
-                            "c"
-                            "d";
-                        margin: 4em 0 0 0;
-                        padding: 0 5em;
-                        color: $header;
-                        /***MEDIA***/
-                        @include media("<=small-screens") {
-                            padding: 1em 0.5em;
-                            margin: 2em 0 0 0;
-                        }
-                        .news_footer-title {
-                            grid-area: a;
-                            font-size: 1.2em;
-                        }
-                        .news_footer-author {
-                            grid-area: b;
-                            @include title;
-                            color: $subtitle;
-                        }
-                        .news_footer-value {
-                            grid-area: c;
-                            opacity: 0.2;
-                        }
-                        .news_footer-text {
-                            grid-area: d;
-                            color: $subtitle;
-                            margin: 2.7em 0 0 0;
-                        }
-                    }
+    }
+    .news__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "d";
+    }
+    /***SLIDER***/
+    .news__slider {
+        overflow: hidden;
+        grid-area: d;
+        /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            z-index: 0;
+        }
+        .owl-dots {
+            text-align: center;
+            .owl-dot {
+                width: 0.6em;
+                height: 0.6em;
+                color: transparent;
+                margin: 0 0 0 0.5em;
+                border: 1px solid #b2b3b3;
+                border-radius: 100%;
+                background-color: transparent;
+                margin: 0 0 0 0.3em;
+                &:nth-child(1) {
+                    margin: 0;
                 }
             }
-            /***./SLIDER***/
+            .owl-dot.active {
+                border: none;
+                background-color: #b2b3b3;
+            }
         }
+    }
+    /***./SLIDER***/
+    .news__board {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .news__section_1 {
+        grid-area: a;
+        color: $header;
+    }
+    .news__title {
+        @include title;
+    }
+    .news__subtitle {
+        margin: 1em 0 0 0;
+        opacity: 0.5;
+    }
+    .news__section_2 {
+        grid-area: b;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+        margin: 4em 0 0 0;
+        padding: 0 5em;
+        color: $header;
+        /***MEDIA***/
+        @include media("<=small-screens") {
+            padding: 1em 0.5em;
+            margin: 2em 0 0 0;
+        }
+    }
+    .news__title-second {
+        grid-area: a;
+        font-size: 1.2em;
+    }
+    .news__author {
+        grid-area: b;
+        @include title;
+        color: $second;
+    }
+    .news__social {
+        grid-area: c;
+        opacity: 0.2;
+    }
+    .news__quote {
+        grid-area: d;
+        color: $subtitle;
+        margin: 2.7em 0 0 0;
     }
 }
 
-//*************/.NEWS_BLOCK*************//
+//*************/.NEWS SECTION*************//
 
 .prices {
     margin: $indent 0;
@@ -2101,159 +2077,159 @@ body {
 
 //*************/.CONTACTS_BLOCK*************//
 
-.feedback {
-    margin: $indent 0;
-    padding: 0.5em 0.5em;
-    /***MEDIA***/
-    @include media("<=phone") {
-        margin: 3em 0;
-        padding: 0.1em 0.1em;
-    }
-    .feedback_container {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: grid;
-        height: 100%;
-        .feedback_inner {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-            grid-template-areas:
-                "a a a"
-                "b b b"
-                "c c c";
-            /***MEDIA***/
-            @include media("<=tablet") {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "a"
-                    "b"
-                    "c";
-            }
-            .group_inputs {
-                grid-area: a;
-                display: grid;
-                justify-content: space-between;
-                grid-template-columns: repeat(3, auto);
-                grid-template-areas: "m t v";
-                /***MEDIA***/
-                @include media("<=tablet") {
-                    grid-area: a;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(3, auto);
-                    grid-row-gap: 0.5em;
-                    grid-template-areas:
-                        "r"
-                        "p"
-                        "g";
-                }
-                .input--name {
-                    grid-area: m;
-                    @include input;
-                    width: 318px;
-                    height: 40px;
-                    /***MEDIA***/
-                    @include media("<=tablet") {
-                        grid-area: r;
-                        min-width: 100%;
-                    }
-                    @include media("<=tablet") {
-                        width: 210px;
-                    }
-                    &:hover {
-                        border: 1px solid $second;
-                    }
-                }
-                .input--email {
-                    grid-area: t;
-                    @include input;
-                    width: 318px;
-                    height: 40px;
-                    /***MEDIA***/
-                    @include media("<=tablet") {
-                        grid-area: p;
-                        min-width: 100%;
-                    }
-                    @include media("<=tablet") {
-                        width: 210px;
-                    }
-                    &:hover {
-                        border: 1px solid $second;
-                    }
-                }
-                .input--subject {
-                    grid-area: v;
-                    @include input;
-                    width: 318px;
-                    height: 40px;
-                    /***MEDIA***/
-                    @include media("<=tablet") {
-                        grid-area: g;
-                        min-width: 100%;
-                    }
-                    @include media("<=tablet") {
-                        width: 210px;
-                    }
-                    &:hover {
-                        border: 1px solid $second;
-                    }
-                }
-            }
-            .input--message {
-                grid-area: b;
-                @include input;
-                height: 190px;
-                margin: 2.5em 0;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-area: b;
-                    min-width: 150px;
-                }
-                &:hover {
-                    border: 1px solid $second;
-                }
-            }
-            .feedback_button {
-                grid-area: c;
-                display: grid;
-                grid-template-rows: 40px;
-            }
-            .btn-feedback {
-                position: relative;
-                transform-style: preserve-3d;
-                // &:focus {
-                //     transform: rotatex(-90deg);
-                // }
-            }
-            .btn-feedback.submited {
-                transform: rotatex(-90deg);
-            }
-            .side {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                display: grid;
-                align-items: center;
-                backface-visibility: hidden;
-            }
-            .flip-front {
-                font-size: 1em;
-                background-color: $second;
-                color: #202020;
-                transform: translateZ(20.1px);
-            }
-            .flip-back {
-                font-size: 1em;
-                background-color: #202020;
-                color: #fff;
-                transform: rotateX(90deg) translateZ(20.1px);
-            }
-        }
-    }
-}
+// .feedback {
+//     margin: $indent 0;
+//     padding: 0.5em 0.5em;
+//     /***MEDIA***/
+//     @include media("<=phone") {
+//         margin: 3em 0;
+//         padding: 0.1em 0.1em;
+//     }
+//     .feedback_container {
+//         max-width: 1300px;
+//         margin: 0 auto;
+//         display: grid;
+//         height: 100%;
+//         .feedback_inner {
+//             display: grid;
+//             grid-template-columns: repeat(3, 1fr);
+//             grid-template-rows: auto;
+//             grid-template-areas:
+//                 "a a a"
+//                 "b b b"
+//                 "c c c";
+//             /***MEDIA***/
+//             @include media("<=tablet") {
+//                 grid-template-columns: 1fr;
+//                 grid-template-rows: repeat(2, auto);
+//                 grid-template-areas:
+//                     "a"
+//                     "b"
+//                     "c";
+//             }
+//             .group_inputs {
+//                 grid-area: a;
+//                 display: grid;
+//                 justify-content: space-between;
+//                 grid-template-columns: repeat(3, auto);
+//                 grid-template-areas: "m t v";
+//                 /***MEDIA***/
+//                 @include media("<=tablet") {
+//                     grid-area: a;
+//                     grid-template-columns: 1fr;
+//                     grid-template-rows: repeat(3, auto);
+//                     grid-row-gap: 0.5em;
+//                     grid-template-areas:
+//                         "r"
+//                         "p"
+//                         "g";
+//                 }
+//                 .input--name {
+//                     grid-area: m;
+//                     @include input;
+//                     width: 318px;
+//                     height: 40px;
+//                     /***MEDIA***/
+//                     @include media("<=tablet") {
+//                         grid-area: r;
+//                         min-width: 100%;
+//                     }
+//                     @include media("<=tablet") {
+//                         width: 210px;
+//                     }
+//                     &:hover {
+//                         border: 1px solid $second;
+//                     }
+//                 }
+//                 .input--email {
+//                     grid-area: t;
+//                     @include input;
+//                     width: 318px;
+//                     height: 40px;
+//                     /***MEDIA***/
+//                     @include media("<=tablet") {
+//                         grid-area: p;
+//                         min-width: 100%;
+//                     }
+//                     @include media("<=tablet") {
+//                         width: 210px;
+//                     }
+//                     &:hover {
+//                         border: 1px solid $second;
+//                     }
+//                 }
+//                 .input--subject {
+//                     grid-area: v;
+//                     @include input;
+//                     width: 318px;
+//                     height: 40px;
+//                     /***MEDIA***/
+//                     @include media("<=tablet") {
+//                         grid-area: g;
+//                         min-width: 100%;
+//                     }
+//                     @include media("<=tablet") {
+//                         width: 210px;
+//                     }
+//                     &:hover {
+//                         border: 1px solid $second;
+//                     }
+//                 }
+//             }
+//             .input--message {
+//                 grid-area: b;
+//                 @include input;
+//                 height: 190px;
+//                 margin: 2.5em 0;
+//                 /***MEDIA***/
+//                 @include media("<=phone") {
+//                     grid-area: b;
+//                     min-width: 150px;
+//                 }
+//                 &:hover {
+//                     border: 1px solid $second;
+//                 }
+//             }
+//             .feedback_button {
+//                 grid-area: c;
+//                 display: grid;
+//                 grid-template-rows: 40px;
+//             }
+//             .btn-feedback {
+//                 position: relative;
+//                 transform-style: preserve-3d;
+//                 // &:focus {
+//                 //     transform: rotatex(-90deg);
+//                 // }
+//             }
+//             .btn-feedback.submited {
+//                 transform: rotatex(-90deg);
+//             }
+//             .side {
+//                 position: absolute;
+//                 left: 0;
+//                 top: 0;
+//                 width: 100%;
+//                 height: 100%;
+//                 display: grid;
+//                 align-items: center;
+//                 backface-visibility: hidden;
+//             }
+//             .flip-front {
+//                 font-size: 1em;
+//                 background-color: $second;
+//                 color: #202020;
+//                 transform: translateZ(20.1px);
+//             }
+//             .flip-back {
+//                 font-size: 1em;
+//                 background-color: #202020;
+//                 color: #fff;
+//                 transform: rotateX(90deg) translateZ(20.1px);
+//             }
+//         }
+//     }
+// }
 
 //*************/.FEEDBACK_BLOCK*************//
 
