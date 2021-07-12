@@ -80,32 +80,32 @@
     </svg>
     <!-- /.Sprite -->
 
-    <header class="header" id="mainHeaderJS">
+    <header class="header" id="header">
         <div class="header__container">
-            <div class="header__bar" id="headerBarJS">
+            <div class="header__bar" id="headerBar">
                 <h1 class="header__logo">BOUNCY</h1>
                 <nav class="nav header__nav">
                     <ul class="nav__menu header__menu">
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#header_descriptionJS">Hello</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#header">Hello</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#project_descriptionJS">About</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#description">About</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#servicesJS">Services</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#services">Services</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#portfolioJS">Portfolio</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#portfolio">Portfolio</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#teamJS">Team</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#team">Team</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#newsJS">Blog</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#news">Blog</a>
                         </li>
                         <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link" data-scroll="#contactsJS">Contacts</a>
+                            <a href="#" class="nav__menu-link" data-scroll="#contacts">Contacts</a>
                         </li>
                     </ul>
                 </nav>
@@ -115,7 +115,7 @@
     <!-- /.header -->
 
     <main>
-        <div class="about">
+        <div class="about" id="about">
             <h2 class="about__title">WE ARE CODE CAFE</h2>
             <h3 class="about__subtitle">
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>
@@ -129,7 +129,7 @@
         </div>
         <!-- /.about -->
 
-        <div class="description">
+        <div class="description" id="description">
             <div class="description__container">
                 <div class="description__inner">
                     <article class="description__section_1">
@@ -265,7 +265,7 @@
         </div>
         <!-- /.projects -->
 
-        <section class="services">
+        <section class="services" id="services">
             <div class="services__container">
                 <article class="text">
                     <h2 class="title">OUR SERVICES</h2>
@@ -356,471 +356,434 @@
         </div>
         <!-- /.advantages -->
 
-        <div class="portfolio_section" id="portfolioJS">
-            <div class="portfolio_section_container">
-
-                <article class="porfolio_header_text">
-                    <div class="portfolio_title">
-                        <h2>THE PORTFOLIO</h2>
-                    </div>
-                    <div class="portfolio_subtitle">
-                        <h3>
-                            At vero eos et accusamus et iusto odio dignissimos ducimus qui <br>
-                            blanditiis praesentium
-                        </h3>
-                    </div>
-
-                    <nav class="portfolio_nav">
-                        <ul class="nav__menu">
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_1">All Works</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_2">Print</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_3">Identity</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_4">Branding</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_5">Web</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_6">HTML</a>
-                            </li>
-                            <li class="nav__menu-item">
-                                <a class="nav__menu-link" href="#" data-tab="#tab_7">Wordpress</a>
-                            </li>
-                        </ul>
-                    </nav>
+        <div class="portfolio" id="portfolio">
+            <div class="portfolio__container">
+                <article class="text">
+                    <h2 class="title">THE PORTFOLIO</h2>
+                    <h3 class="subtitle">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus qui <br>
+                        blanditiis praesentium
+                    </h3>
                 </article>
+                <nav class="portfolio__nav">
+                    <ul class="nav__menu">
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_1">All Works</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_2">Print</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_3">Identity</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_4">Branding</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_5">Web</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_6">HTML</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_7">Wordpress</a>
+                        </li>
+                    </ul>
+                </nav>
 
-                <div class="portfolio_container">
-
-                    <div class="portfolio_block" id="tab_1">
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-1.png"
+                <div class="portfolio__gallery">
+                    <div class="portfolio__gallery_item" id="tab_1">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-1.png"
                             style="background-image: url(img/portfolio-1.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-5.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-5.png"
                             style="background-image: url(img/portfolio-5.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-6.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-6.png"
                             style="background-image: url(img/portfolio-6.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-7.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-7.png"
                             style="background-image: url(img/portfolio-7.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-8.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-8.png"
                             style="background-image: url(img/portfolio-8.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-9.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-9.png"
                             style="background-image: url(img/portfolio-9.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-10.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-10.png"
                             style="background-image: url(img/portfolio-10.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-11.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-11.png"
                             style="background-image: url(img/portfolio-11.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-1" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-1" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_2">
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                    <div class="portfolio__gallery_item" id="tab_2">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-2" href="img/portfolio-2.png"
                             style="background-image: url(img/portfolio-2.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_3">
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                    <div class="portfolio__gallery_item" id="tab_3">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-3" href="img/portfolio-3.png"
                             style="background-image: url(img/portfolio-3.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_4">
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                    <div class="portfolio__gallery_item" id="tab_4">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-4" href="img/portfolio-4.png"
                             style="background-image: url(img/portfolio-4.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_5">
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                    <div class="portfolio__gallery_item" id="tab_5">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-5" href="img/portfolio-12.png"
                             style="background-image: url(img/portfolio-12.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_6">
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                    <div class="portfolio__gallery_item" id="tab_6">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_linkt" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio-14.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-7" href="img/portfolio-14.png"
                             style="background-image: url(img/portfolio--14.png)"></a>
                     </div>
 
-                    <div class="portfolio_block" id="tab_7">
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                    <div class="portfolio__gallery_item" id="tab_7">
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="pportfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
-                        <a class="portfolio_element" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
+                        <a class="portfolio__gallery_link" data-lightbox="roadtrip-6" href="img/portfolio-13.png"
                             style="background-image: url(img/portfolio-13.png)"></a>
                     </div>
                 </div>
-
-                <div class="portfolio_element_btm">
-                    <div class="p_element_btm">
-                        <p>
-                            At vero eos et <span style="font-style: italic;">accusamus</span> et iusto odio <span
-                                style="font-style: italic;">dignissimos</span> ducimus qui blanditiis
-                        </p>
-
-                        <div class="portfolio_button">
-                            <button class="btn--portfolio" type="button">SUMBIT</button>
-                        </div>
-
+                <div class="portfolio__feedback">
+                    <p class="portfolio__text">
+                        At vero eos et <span style="font-style: italic;">accusamus</span> et iusto odio <span
+                            style="font-style: italic;">dignissimos</span> ducimus qui blanditiis
+                    </p>
+                    <div class="portfolio__button">
+                        <button class="btn--portfolio" type="button">SUMBIT</button>
                     </div>
                 </div>
-
             </div>
         </div>
         <!-- /.portfolio -->
 
-        <div class="team" id="teamJS">
-            <div class="team_container">
-                <div class="team_inner">
+        <div class="team" id="team">
+            <div class="team__container">
+                <div class="team__inner">
 
-                    <article class="team_text">
-                        <div class="team_title">
-                            <h2>THE TEAM</h2>
-                        </div>
-                        <div class="team_subtitle">
-                            <h3>
-                                At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                                blanditiis praesentium
-                            </h3>
-                        </div>
+                    <article class="text">
+                        <h2 class="title">THE TEAM</h2>
+                        <h3 class="subtitle">
+                            At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                            blanditiis praesentium
+                        </h3>
                     </article>
 
-                    <div class="team_slider owl-carousel">
+                    <div class="team__slider owl-carousel">
 
-                        <div class="team_content_inner">
-                            <div class="left_team_content">
-                                <div class="left_team_img">
-                                    <picture>
-                                        <source type="image/webp"
-                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
-                                        <img src="./img/1-team.png"
-                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
-                                    </picture>
-                                </div>
+                        <div class="team__slider_wrapper">
+
+                            <div class="team__section_1">
+                                <picture class="team__image">
+                                    <source type="image/webp"
+                                        srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                    <img src="./img/1-team.png" srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x"
+                                        alt="man">
+                                </picture>
                             </div>
-                            <div class="right_team_content">
-                                <div class="right_text_content">
-                                    <div class="right_title">
-                                        <address class="team_author">Abdullah Noman</address>
-                                        <p class="team_prof">CREATIVE DIRECTOR, CODE CAFE</p>
+
+                            <div class="team__section_2">
+                                <div class="team__text">
+                                    <div class="team__title">
+                                        <address class="team__author">Abdullah Noman</address>
+                                        <p class="team__prof">CREATIVE DIRECTOR, CODE CAFE</p>
                                     </div>
-                                    <div class="right_subtitle">
-                                        <blockquote class="team_quote">
-                                            At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                                            blanditiis praesentium
-                                        </blockquote>
-                                    </div>
+                                    <blockquote class="team__subtitle">
+                                        At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                        blanditiis praesentium
+                                    </blockquote>
                                 </div>
 
-                                <div class="team_progressBar">
+                                <div class="team__skills skills">
                                     <!-- 1 BAR -->
-                                    <div class="team_bar">
-
-                                        <div class="bar_text">
-                                            <span class="bar_name--branding">BRANDING</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--branding">BRANDING</span>
                                             <span class="text_progress text_progress--branding">0</span>
                                         </div>
-
                                         <div class="bg_progress">
                                             <div class="current_progress current_progress-first"></div>
                                         </div>
-
                                     </div>
                                     <!-- 2 BAR -->
-
-                                    <div class="team_bar">
-                                        <div class="bar_text">
-                                            <span class="bar_name--design">WEB DESIGN</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--design">WEB DESIGN</span>
                                             <span class="text_progress text_progress--design">0</span>
                                         </div>
                                         <div class="bg_progress">
                                             <div class="current_progress-second"></div>
                                         </div>
                                     </div>
-
                                     <!-- 3 BAR -->
-
-                                    <div class="team_bar">
-                                        <div class="bar_text">
-                                            <span class="bar_name--intfce">USER INTARFACE</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--intfce">USER INTARFACE</span>
                                             <span class="text_progress text_progress--intfce">0</span>
                                         </div>
                                         <div class="bg_progress">
                                             <div class="current_progress-third"></div>
                                         </div>
                                     </div>
-
                                 </div>
+
                             </div>
                         </div>
-
-                        <div class="team_content_inner">
-                            <div class="left_team_content">
-                                <div class="left_team_img">
-                                    <picture>
-                                        <source type="image/webp"
-                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
-                                        <img src="./img/1-team.png"
-                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
-                                    </picture>
-                                </div>
+                        
+                        <div class="team__slider_wrapper">
+                            <div class="team__section_1">
+                                <picture class="team__image">
+                                    <source type="image/webp"
+                                        srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                    <img src="./img/1-team.png" srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x"
+                                        alt="man">
+                                </picture>
                             </div>
-                            <div class="right_team_content">
-                                <div class="right_text_content">
-                                    <div class="right_title">
-                                        <address class="team_author">G1GZER</address>
-                                        <p class="team_prof">FRONTEND REACT DEV</p>
+                            <div class="team__section_2">
+                                <div class="team__text">
+                                    <div class="team__title">
+                                        <address class="team__author">G1GZER</address>
+                                        <p class="team__prof">FRONTEND REACT DEV</p>
                                     </div>
-                                    <div class="right_subtitle">
-                                        <blockquote class="team_quote">
-                                            At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                                            blanditiis praesentium
-                                        </blockquote>
-                                    </div>
+                                    <blockquote class="team__subtitle">
+                                        At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                        blanditiis praesentium
+                                    </blockquote>
                                 </div>
 
-                                <div class="team_progressBar">
+                                <div class="team__skills skills">
                                     <!-- 1 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--branding">BRANDING</h3>
-                                            <span class="text_progress first_text--slide2">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--branding">BRANDING</span>
+                                            <span class="text_progress text_progress--branding">0</span>
                                         </div>
-                                        <div class="bg_progress first_bg--slide2">
-                                            <div class="current_progress first_pr--slide2"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress current_progress-first"></div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <!-- 2 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--intfce">WEB DESIGN</h3>
-                                            <span class="text_progress second_text--slide2">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--design">WEB DESIGN</span>
+                                            <span class="text_progress text_progress--design">0</span>
                                         </div>
-                                        <div class="bg_progress second_bg--slide2">
-                                            <div class="current_progress second_pr--slide2"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress-second"></div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <!-- 3 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--intfce">USER INTARFACE</h3>
-                                            <span class="text_progress third_text--slide2">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--intfce">USER INTARFACE</span>
+                                            <span class="text_progress text_progress--intfce">0</span>
                                         </div>
-                                        <div class="bg_progress third_bg--slide2">
-                                            <div class="current_progress third_pr--slide2"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress-third"></div>
                                         </div>
-                                    </div> -->
-
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 
-                        <div class="team_content_inner">
-
-                            <div class="left_team_content">
-                                <div class="left_team_img">
-                                    <picture>
-                                        <source type="image/webp"
-                                            srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
-                                        <img src="./img/1-team.png"
-                                            srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x" alt="man">
-                                    </picture>
-                                </div>
+                        <div class="team__slider_wrapper">
+                            <div class="team__section_1">
+                                <picture class="team__image">
+                                    <source type="image/webp"
+                                        srcset="./img/1-team.webp 1x, ./img/1-team@2x.webp 2x, ./img/1-team@3x.webp 3x">
+                                    <img src="./img/1-team.png" srcset="./img/1-team@2x.png 2x, ./img/1-team@3x.png 3x"
+                                        alt="man">
+                                </picture>
                             </div>
-
-                            <div class="right_team_content">
-                                <div class="right_text_content">
-                                    <div class="right_title">
-                                        <address class="team_author">FPSSKA</address>
-                                        <p class="team_prof">FRONTEND WEB DEV</p>
+                            <div class="team__section_2">
+                                <div class="team__text">
+                                    <div class="team__title">
+                                        <address class="team__author">FPSSKA</address>
+                                        <p class="team__prof">FRONTEND WEB DEV</p>
                                     </div>
-                                    <div class="right_subtitle">
-                                        <blockquote class="team_quote">
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis
-                                            voluptate
-                                            excepturi sint molestiae! Cumque voluptatem reprehenderit, repellendus
-                                            aliquid
-                                            provident deserunt illum aspernatur rem quas optio dolorem labore,
-                                            recusandae
-                                            esse!
-                                        </blockquote>
-                                    </div>
+                                    <blockquote class="team__subtitle">
+                                        At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                                        blanditiis praesentium
+                                    </blockquote>
                                 </div>
-
-                                <div class="team_progressBar">
+                                
+                                <div class="team__skills skills">
                                     <!-- 1 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--branding">BRANDING</h3>
-                                            <span class="text_progress first_text--slide3">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--branding">BRANDING</span>
+                                            <span class="text_progress text_progress--branding">0</span>
                                         </div>
-                                        <div class="bg_progress first_bg--slide3">
-                                            <div class="current_progress first_pr--slide3"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress current_progress-first"></div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <!-- 2 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--intfce">WEB DESIGN</h3>
-                                            <span class="text_progress second_text--slide3">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--design">WEB DESIGN</span>
+                                            <span class="text_progress text_progress--design">0</span>
                                         </div>
-                                        <div class="bg_progress second_bg--slide3">
-                                            <div class="current_progress second_pr--slide3"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress-second"></div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <!-- 3 BAR -->
-                                    <!-- <div class="team_bar">
-                                        <div class="bar_text">
-                                            <h3 class="bar_name--intfce">USER INTARFACE</h3>
-                                            <span class="text_progress third_text--slide3">0</span>
+                                    <div class="skills__bar">
+                                        <div class="skills__text">
+                                            <span class="skills--intfce">USER INTARFACE</span>
+                                            <span class="text_progress text_progress--intfce">0</span>
                                         </div>
-                                        <div class="bg_progress third_bg--slide3">
-                                            <div class="current_progress third_pr--slide3"></div>
+                                        <div class="bg_progress">
+                                            <div class="current_progress-third"></div>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -955,7 +918,7 @@
         </div>
         <!--/.testimonials-->
 
-        <div class="news_section" id="newsJS">
+        <div class="news_section" id="news">
             <div class="news_container">
                 <div class="news_inner">
 
@@ -1207,7 +1170,7 @@
         </div>
         <!-- /.subscribe -->
 
-        <div class="contacts" id="contactsJS">
+        <div class="contacts" id="contacts">
             <div class="contacts_container">
                 <div class="contacts_inner">
 

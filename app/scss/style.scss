@@ -505,336 +505,6 @@ body {
 
 //*************/.DETAILS SECTION *************//
 
-.advantages {
-    min-width: 100%;
-    padding: 5em 2em;
-    position: relative;
-    background-color: $dark;
-    background-size: cover;
-    background-image: url("../img/advantages-bg.png");
-    /*MEDIA*/
-    @include media("<=small-screens") {
-        padding: 3em 2em;
-        z-index: 0;
-    }
-    @include media("<=tablet") {
-        padding: 1em 1em;
-        z-index: 0;
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #0c0b0b;
-        opacity: 0.1;
-    }
-    .advantages__container {
-        margin: 0 auto;
-        max-width: 1200px;
-        display: grid;
-        grid-template-columns: 0.7fr;
-        font-size: 1.1em;
-        z-index: 1;
-        color: $header;
-        position: relative;
-        /***MEDIA***/
-        @include media("<=desktop") {
-            grid-template-columns: 0.65fr;
-        }
-        @include media("<=small-screens") {
-            grid-template-columns: 1fr;
-        }
-        // @include media("<=phone-landscape") {
-        //     grid-template-columns: 1fr;
-        //     grid-gap: 0;
-        //     padding: 0.5em 0.5em;
-        // }
-        &::after {
-            content: url("../img/1-adv.png");
-            position: absolute;
-            left: 80%;
-            bottom: 35%;
-            /***MEDIA***/
-            @include media("<=desktop") {
-                left: 73%;
-                bottom: 37%;
-            }
-            @include media("<=small-screens") {
-                display: none;
-            }
-        }
-    }
-    .advantages__info {
-        color: $subtitle;
-    }
-    .advantages__title {
-        color: $header;
-        margin: 0 0 1em 0;
-        font-size: 1.5em;
-        letter-spacing: 0.2em;
-        font-weight: 200;
-    }
-    .advantages__text {
-        margin: 0 0 1em 0;
-        font-size: 1em;
-        /***MEDIA***/
-        @include media("<=phone") {
-            font-size: 0.9em;
-        }
-    }
-    .advantages__author {
-        color: $header;
-    }
-    .advantages__prof,
-    .advantages__author {
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-}
-
-//*************/.ADVANTAGES SECTION *************//
-
-.portfolio_section {
-    margin: $indent 0;
-    /***MEDIA***/
-    @include media("<=tablet-landscape") {
-        margin: 5em 0;
-    }
-
-    .portfolio_section_container {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-areas:
-            "a"
-            "b"
-            "c";
-        .porfolio_header_text {
-            grid-area: a;
-            text-align: center;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(3, auto);
-            grid-template-areas:
-                "a a"
-                "b b"
-                "c c";
-            .portfolio_title {
-                grid-area: a;
-                margin: 0 0 1em 0;
-                h2 {
-                    @include title;
-                }
-            }
-            .portfolio_subtitle {
-                grid-area: b;
-                margin: 0 0 1.7em 0;
-                h3 {
-                    @include subtitle;
-                }
-            }
-            .portfolio_nav {
-                grid-area: c;
-                margin: 0 0 2em 0;
-            }
-            .p-nav_link {
-                font-size: 1.4em;
-                color: $dark;
-                margin-right: 1.2em;
-                /***MEDIA***/
-                @include media("<=phone-landscape") {
-                    font-size: 1.1em;
-                }
-                @include media("<=phone") {
-                    font-size: 1em;
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-            .p-nav_link.active {
-                color: $second;
-                z-index: 10;
-            }
-        }
-        .portfolio_container {
-            grid-area: b;
-            padding: 0 0.5em;
-            .portfolio_block {
-                display: none;
-            }
-            .portfolio_block.active {
-                display: grid;
-                text-align: center;
-                grid-gap: 0.5em;
-                grid-template-columns: repeat(4, auto);
-                grid-template-rows: repeat(5, 210px);
-                grid-template-areas:
-                    "a b c d"
-                    "a f c d"
-                    "e f g h"
-                    "e k g m"
-                    "j k l m"
-                    "n n n n";
-                /***MEDIA***/
-                @include media("<=phone-landscape") {
-                    grid-gap: 0.2em;
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: repeat(9, 180px);
-                    grid-template-areas:
-                        "a b"
-                        "a c"
-                        "d c"
-                        "e f"
-                        "e g"
-                        "h g"
-                        "j k"
-                        "j l"
-                        "m l";
-                }
-                /***MEDIA***/
-                @include media(">phone", "<tablet") {
-                    grid-gap: 0.2em;
-                }
-            }
-            .portfolio_element {
-                position: relative;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                &:nth-child(1) {
-                    grid-area: a;
-                }
-                &:nth-child(2) {
-                    grid-area: b;
-                }
-                &:nth-child(3) {
-                    grid-area: c;
-                }
-                &:nth-child(4) {
-                    grid-area: d;
-                }
-                &:nth-child(5) {
-                    grid-area: e;
-                }
-                &:nth-child(6) {
-                    grid-area: f;
-                }
-                &:nth-child(7) {
-                    grid-area: g;
-                }
-                &:nth-child(8) {
-                    grid-area: h;
-                }
-                &:nth-child(9) {
-                    grid-area: j;
-                }
-                &:nth-child(10) {
-                    grid-area: k;
-                }
-                &:nth-child(11) {
-                    grid-area: l;
-                }
-                &:nth-child(12) {
-                    grid-area: m;
-                }
-                .portfolio_img {
-                    display: block;
-                    margin: auto;
-                }
-            }
-        }
-        .portfolio_element_btm {
-            grid-area: c;
-            background-size: cover;
-            background-color: $second;
-            background-image: url("../img/h-background.png");
-            margin: 5em 0 0 0;
-            grid-auto-rows: minmax(4em, auto);
-            /***MEDIA***/
-            @include media("<=tablet-landscape") {
-                margin: 2em 0 0 0;
-            }
-            .p_element_btm {
-                grid-gap: 1em;
-                text-align: center;
-                padding: 2.5em 1em;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                grid-template-areas:
-                    "a"
-                    "b";
-                /***MEDIA***/
-                @include media("<=desktop") {
-                    padding: 1em 0.5em;
-                }
-                p {
-                    grid-area: a;
-                    margin: auto 0 0 0;
-                    color: $header;
-                    font-size: 1.7em;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        font-size: 1.1em;
-                        margin: 0;
-                    }
-                }
-                .portfolio_button {
-                    grid-area: b;
-                    padding: 0.5em 0;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        padding: 0;
-                    }
-                    .btn--portfolio {
-                        color: $header;
-                        font-size: 1.2em;
-                        background: transparent;
-                        cursor: pointer;
-                        border: 1px solid $header;
-                        border-radius: 10em;
-                        padding: 0.5em 2em;
-                        position: relative;
-                        transform: translate(0%, 0%);
-                        transition: all 0.3s linear;
-                        overflow: hidden;
-                        &:before {
-                            content: "";
-                            position: absolute;
-                            top: -130px;
-                            margin: auto;
-                            display: block;
-                            border-radius: 50%;
-                            width: 300px;
-                            height: 300px;
-                            left: -75px;
-                            transition: box-shadow 0.5s ease-in-out;
-                            z-index: -1;
-                        }
-                        &:hover {
-                            color: $second;
-                            border: 1px solid $second;
-                        }
-                        &:hover::before {
-                            box-shadow: inset 0 0 0 160px $first;
-                        }
-                        /*MEDIA*/
-                        @include media(">phone", "<tablet") {
-                            padding: 0.5em 2.5em;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-//*************/.PORTFOLIO_BLOCK*************//
-
 .projects {
     margin: $indent 0;
     /***MEDIA***/
@@ -977,7 +647,7 @@ body {
     }
 }
 
-//*************/.PROJECT_PORTFOLIO_BLOCK*************//
+//*************/.PROJECTS SECTION*************//
 
 .services {
     margin: $indent 0;
@@ -1129,7 +799,483 @@ body {
     }
 }
 
-//*************/.SERVICES_BLOCK*************//
+//*************/.SERVICES SECTION*************//
+
+.advantages {
+    min-width: 100%;
+    padding: 5em 2em;
+    position: relative;
+    background-color: $dark;
+    background-size: cover;
+    background-image: url("../img/advantages-bg.png");
+    /*MEDIA*/
+    @include media("<=small-screens") {
+        padding: 3em 2em;
+        z-index: 0;
+    }
+    @include media("<=tablet") {
+        padding: 1em 1em;
+        z-index: 0;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0c0b0b;
+        opacity: 0.1;
+    }
+    .advantages__container {
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 0.7fr;
+        font-size: 1.1em;
+        z-index: 1;
+        color: $header;
+        position: relative;
+        /***MEDIA***/
+        @include media("<=desktop") {
+            grid-template-columns: 0.65fr;
+        }
+        @include media("<=small-screens") {
+            grid-template-columns: 1fr;
+        }
+        // @include media("<=phone-landscape") {
+        //     grid-template-columns: 1fr;
+        //     grid-gap: 0;
+        //     padding: 0.5em 0.5em;
+        // }
+        &::after {
+            content: url("../img/1-adv.png");
+            position: absolute;
+            left: 80%;
+            bottom: 35%;
+            /***MEDIA***/
+            @include media("<=desktop") {
+                left: 73%;
+                bottom: 37%;
+            }
+            @include media("<=small-screens") {
+                display: none;
+            }
+        }
+    }
+    .advantages__info {
+        color: $subtitle;
+    }
+    .advantages__title {
+        color: $header;
+        margin: 0 0 1em 0;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        font-weight: 200;
+    }
+    .advantages__text {
+        margin: 0 0 1em 0;
+        font-size: 1em;
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-size: 0.9em;
+        }
+    }
+    .advantages__author {
+        color: $header;
+    }
+    .advantages__prof,
+    .advantages__author {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+//*************/.ADVANTAGES SECTION *************//
+
+.portfolio {
+    margin: $indent 0;
+    /***MEDIA***/
+    @include media("<=tablet-landscape") {
+        margin: 5em 0;
+    }
+    .portfolio__container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+    }
+    .title {
+        grid-area: a;
+    }
+    .portfolio__nav {
+        grid-area: b;
+        margin: 0 0 2em 0;
+    }
+    .portfolio__nav-link {
+        font-size: 1.4em;
+        color: $dark;
+        margin-right: 1.2em;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            font-size: 1.1em;
+        }
+        @include media("<=phone") {
+            font-size: 1em;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .portfolio__nav-link.active {
+        color: $second;
+        z-index: 10;
+    }
+    .portfolio__gallery {
+        grid-area: c;
+        padding: 0 0.5em;
+    }
+    .portfolio__gallery_item {
+        display: none;
+    }
+    .portfolio__gallery_item.active {
+        display: grid;
+        text-align: center;
+        grid-gap: 0.5em;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(5, 210px);
+        grid-template-areas:
+            "a b c d"
+            "a f c d"
+            "e f g h"
+            "e k g m"
+            "j k l m"
+            "n n n n";
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-gap: 0.2em;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(9, 180px);
+            grid-template-areas:
+                "a b"
+                "a c"
+                "d c"
+                "e f"
+                "e g"
+                "h g"
+                "j k"
+                "j l"
+                "m l";
+        }
+        /***MEDIA***/
+        @include media(">phone", "<tablet") {
+            grid-gap: 0.2em;
+        }
+    }
+    .portfolio__gallery_link {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &:nth-child(1) {
+            grid-area: a;
+        }
+        &:nth-child(2) {
+            grid-area: b;
+        }
+        &:nth-child(3) {
+            grid-area: c;
+        }
+        &:nth-child(4) {
+            grid-area: d;
+        }
+        &:nth-child(5) {
+            grid-area: e;
+        }
+        &:nth-child(6) {
+            grid-area: f;
+        }
+        &:nth-child(7) {
+            grid-area: g;
+        }
+        &:nth-child(8) {
+            grid-area: h;
+        }
+        &:nth-child(9) {
+            grid-area: j;
+        }
+        &:nth-child(10) {
+            grid-area: k;
+        }
+        &:nth-child(11) {
+            grid-area: l;
+        }
+        &:nth-child(12) {
+            grid-area: m;
+        }
+        // .portfolio_img {
+        //     display: block;
+        //     margin: auto;
+        // }
+    }
+    .portfolio__feedback {
+        grid-area: d;
+        background-size: cover;
+        background-color: $second;
+        background-image: url("../img/h-background.png");
+        margin: 5em 0 0 0;
+        grid-gap: 1em;
+        text-align: center;
+        padding: 2.5em 1em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "a"
+            "b";
+        /***MEDIA***/
+        @include media("<=desktop") {
+            padding: 1em 0.5em;
+        }
+        @include media("<=tablet-landscape") {
+            margin: 2em 0 0 0;
+        }
+    }
+    .portfolio__text {
+        grid-area: a;
+        margin: auto 0 0 0;
+        color: $header;
+        font-size: 1.7em;
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-size: 1.1em;
+            margin: 0;
+        }
+    }
+    .portfolio__button {
+        grid-area: b;
+        padding: 0.5em 0;
+        /***MEDIA***/
+        @include media("<=phone") {
+            padding: 0;
+        }
+        .btn--portfolio {
+            color: $header;
+            font-size: 1.2em;
+            background: transparent;
+            cursor: pointer;
+            border: 1px solid $header;
+            border-radius: 10em;
+            padding: 0.5em 2em;
+            position: relative;
+            transform: translate(0%, 0%);
+            transition: all 0.3s linear;
+            overflow: hidden;
+            &:before {
+                content: "";
+                position: absolute;
+                top: -130px;
+                margin: auto;
+                display: block;
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                left: -75px;
+                transition: box-shadow 0.5s ease-in-out;
+                z-index: -1;
+            }
+            &:hover {
+                color: $second;
+                border: 1px solid $second;
+            }
+            &:hover::before {
+                box-shadow: inset 0 0 0 160px $first;
+            }
+            /*MEDIA*/
+            @include media(">phone", "<tablet") {
+                padding: 0.5em 2.5em;
+            }
+        }
+    }
+}
+
+//*************/.PORTFOLIO_BLOCK*************//
+
+.team {
+    .team__container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+    }
+    .team__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a a"
+            "b b";
+        /*MEDIA*/
+        @include media("<=phone") {
+            z-index: 0;
+        }
+    }
+    .text {
+        grid-area: a;
+    }
+    /***SLIDER***/
+    .team__slider {
+        grid-area: b;
+        overflow: hidden;
+        /***MEDIA***/
+        @include media("<=desktop") {
+            z-index: 0;
+        }
+        .owl-dots {
+            text-align: center;
+            .owl-dot {
+                width: 0.5em;
+                height: 0.5em;
+                color: $header;
+                margin: 0 0 0 0.5em;
+                border-radius: 100%;
+                background-color: $second;
+            }
+            .owl-dot.active {
+                border: 1px solid $second;
+                background-color: $header;
+            }
+        }
+    }
+    .team__slider_wrapper {
+        display: grid;
+        padding: 0 1em;
+        grid-template-columns: auto 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: "c d";
+        /***MEDIA***/
+        @include media("<=desktop") {
+            padding: 0 0.5em;
+            grid-column-gap: 0.5em;
+            grid-template-columns: repeat(2, auto);
+            margin-bottom: 1.5em;
+        }
+        @include media("<=phone") {
+            grid-row-gap: 1em;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                "c"
+                "d";
+        }
+    }
+    /***./SLIDER***/
+    .team__section_1 {
+        grid-area: c;
+        display: grid;
+    }
+    .team__image {
+        margin: auto;
+        /***MEDIA***/
+        @include media("<=phone") {
+            margin: auto;
+        }
+    }
+    .team__section_2 {
+        grid-area: d;
+        display: grid;
+        text-align: right;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a"
+            "b";
+        /***MEDIA***/
+        @include media("<=phone") {
+            padding: 0.5em 0.5em;
+            grid-row-gap: 1em;
+        }
+    }
+    .team__text {
+        grid-area: a;
+        position: relative;
+    }
+    .team__title {
+        margin: 0 3em 1.5em 0;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            margin: 0 2em 1.5em 0;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-right: 0.2em solid $second;
+            height: 40%;
+            margin: 0 0 0 auto;
+        }
+    }
+    .team__author {
+        @include title;
+    }
+    .team__prof {
+        @include subtitle;
+        font-style: italic;
+    }
+    .team__subtitle {
+        margin: 0 3em 0 0;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            margin: 0 2em 0 0;
+        }
+    }
+    .team__skills {
+        grid-area: b;
+        display: grid;
+        align-content: center;
+        grid-template-columns: auto;
+        grid-row-gap: 0.4em;
+        justify-items: end;
+    }
+    .skills__bar {
+        width: 15em;
+    }
+    .skills__text {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+        align-items: center;
+    }
+    .text_progress {
+        width: auto;
+        text-align: right;
+        font-family: Arial, sans-serif;
+        color: #202020;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .bg_progress {
+        width: 100%;
+        height: 5px;
+        background: #d8dce0;
+        border-radius: 2px;
+        position: relative;
+    }
+    .current_progress {
+        position: absolute;
+        height: 5px;
+        background: $second;
+        border-radius: 2px;
+    }
+}
+
+//*************/.TEAM SECTION*************//
 
 .testimonials_button_inner {
     margin: $indent 0;
@@ -1820,206 +1966,6 @@ body {
 }
 
 //*************/.SUBSCRIBE_BLOCK*************//
-
-.team {
-    .team_container {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: grid;
-        .team_inner {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, auto);
-            grid-template-areas:
-                "a a"
-                "b b";
-            /*MEDIA*/
-            @include media("<=phone") {
-                z-index: 0;
-            }
-            .team_text {
-                grid-area: a;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "c"
-                    "d";
-                margin: 0 0 $indent 0;
-                text-align: center;
-                /*MEDIA*/
-                @include media("<=tablet-landscape") {
-                    margin: 0 0 2.7em 0;
-                }
-                @include media("<=phone") {
-                    margin: 0 0 3em 0;
-                }
-                .team_title {
-                    grid-area: c;
-                    margin: 0 0 1.1em 0;
-                    h2 {
-                        @include title;
-                    }
-                }
-                .team_subtitle {
-                    grid-area: d;
-                    h3 {
-                        @include subtitle;
-                    }
-                }
-            }
-            /***SLIDER***/
-            .team_slider {
-                grid-area: b;
-                overflow: hidden;
-                /***MEDIA***/
-                @include media("<=desktop") {
-                    z-index: 0;
-                }
-                .owl-dots {
-                    text-align: center;
-                    .owl-dot {
-                        width: 0.5em;
-                        height: 0.5em;
-                        color: $header;
-                        margin: 0 0 0 0.5em;
-                        border-radius: 100%;
-                        background-color: $second;
-                    }
-                    .owl-dot.active {
-                        border: 1px solid $second;
-                        background-color: $header;
-                    }
-                }
-                .team_content_inner {
-                    display: grid;
-                    padding: 0 1em;
-                    grid-template-columns: auto 2fr;
-                    grid-template-rows: auto;
-                    grid-template-areas: "c d";
-                    /***MEDIA***/
-                    @include media("<=desktop") {
-                        padding: 0 0.5em;
-                        grid-column-gap: 0.5em;
-                        grid-template-columns: repeat(2, auto);
-                        margin-bottom: 1.5em;
-                    }
-                    @include media("<=phone") {
-                        grid-row-gap: 1em;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: repeat(2, auto);
-                        grid-template-areas:
-                            "c"
-                            "d";
-                    }
-                    .left_team_content {
-                        grid-area: c;
-                        display: grid;
-                        .left_team_img {
-                            margin: auto;
-                            /***MEDIA***/
-                            @include media("<=phone") {
-                                margin: auto;
-                            }
-                        }
-                    }
-                    .right_team_content {
-                        grid-area: d;
-                        display: grid;
-                        text-align: right;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: repeat(2, auto);
-                        grid-template-areas:
-                            "a"
-                            "b";
-                        /***MEDIA***/
-                        @include media("<=phone") {
-                            padding: 0.5em 0.5em;
-                            grid-row-gap: 1em;
-                        }
-                        .right_text_content {
-                            grid-area: a;
-                            position: relative;
-                            .right_title {
-                                margin: 0 3em 1.5em 0;
-                                /***MEDIA***/
-                                @include media("<=phone-landscape") {
-                                    margin: 0 2em 1.5em 0;
-                                }
-                                &:before {
-                                    content: "";
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    right: 0;
-                                    bottom: 0;
-                                    border-right: 0.2em solid $second;
-                                    height: 40%;
-                                    margin: 0 0 0 auto;
-                                }
-                                .team_author {
-                                    @include title;
-                                }
-                                .team_prof {
-                                    @include subtitle;
-                                    font-style: italic;
-                                }
-                            }
-                            .right_subtitle {
-                                margin: 0 3em 0 0;
-                                /***MEDIA***/
-                                @include media("<=phone-landscape") {
-                                    margin: 0 2em 0 0;
-                                }
-                            }
-                        }
-                        .team_progressBar {
-                            grid-area: b;
-                            display: grid;
-                            align-content: center;
-                            grid-template-columns: auto;
-                            grid-row-gap: 0.4em;
-                            justify-items: end;
-                            .team_bar {
-                                width: 15em;
-                                .bar_text {
-                                    display: grid;
-                                    grid-template-columns: repeat(2, auto);
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    .text_progress {
-                                        width: auto;
-                                        text-align: right;
-                                        font-family: Arial, sans-serif;
-                                        color: #202020;
-                                        font-weight: 700;
-                                        font-size: 14px;
-                                    }
-                                }
-                                .bg_progress {
-                                    width: 100%;
-                                    height: 5px;
-                                    background: #d8dce0;
-                                    border-radius: 2px;
-                                    position: relative;
-                                }
-                                .current_progress {
-                                    position: absolute;
-                                    height: 5px;
-                                    background: $second;
-                                    border-radius: 2px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            /***./SLIDER***/
-        }
-    }
-}
-
-//*************/.TEAM_BLOCK*************//
 
 .contacts {
     height: auto;

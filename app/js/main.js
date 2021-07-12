@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    $('.team_slider').owlCarousel({
+    $('.team__slider').owlCarousel({
         items: 1,
         nav: false,
         dots: true,
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50); /*speed*/
     };
 
-    let project = document.querySelector(".featured_project");
+    let project = document.querySelector(".projects");
 
     let offset = (el) => {  // функция получения значения от верха страницы (кроссбраузерно)
         const rect = el.getBoundingClientRect();
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //  //************/.TEAM PROGRESSBAR************//
 
     let tabsLink = document.querySelectorAll(".nav__menu-link");
-    let tabsItems = document.querySelectorAll(".portfolio_block");
+    let tabsItems = document.querySelectorAll(".portfolio__gallery_item");
 
     tabsLink.forEach(item => {
         item.addEventListener("click", (event) => {
@@ -161,13 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentTab.classList.add("active");
             }
         });
-        document.querySelector(".nav__menu-link").click();
+        document.querySelector(".portfolio__nav-link").click();
     })
 
     //  //*********/.PORTFOLIO TABS*********//
 
-    let headerBar = document.querySelector("#headerBarJS");
-    let mainHeader = document.querySelector("#mainHeaderJS");
+    let headerBar = document.querySelector("#headerBar");
+    let mainHeader = document.querySelector("#header");
     let mainHeaderH = mainHeader.clientHeight;
 
     window.addEventListener('scroll', () => {
@@ -286,5 +286,4 @@ document.addEventListener("DOMContentLoaded", () => {
     //  //*********/.INPUT VALIDATION*********//
 
 
-    //  //*********/.TEAM PROGRESSBAR*********//
 });
