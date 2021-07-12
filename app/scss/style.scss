@@ -427,34 +427,34 @@ body {
         @include media("<=phone") {
             margin: 0 auto 4em auto;
         }
-        .details__icon {
-            border-radius: 30px;
-            background-color: #81868e;
-            width: 50px;
-            height: 50px;
-            position: relative;
-            margin-left: 1.5em;
-            transition: 0.3s linear;
-            &:nth-child(1) {
-                margin: 0;
-            }
-            .img--description {
-                max-width: 26px;
-                height: 22px;
-                display: block;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                position: absolute;
-            }
-            &:hover {
-                background-color: $second;
-            }
-            &:focus {
-                background-color: $second;
-            }
+    }
+    .details__icon {
+        border-radius: 30px;
+        background-color: #81868e;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        margin-left: 1.5em;
+        transition: 0.3s linear;
+        &:nth-child(1) {
+            margin: 0;
+        }
+        .img--description {
+            max-width: 26px;
+            height: 22px;
+            display: block;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+        &:hover {
+            background-color: $second;
+        }
+        &:focus {
+            background-color: $second;
         }
     }
     .details__text {
@@ -504,6 +504,98 @@ body {
 }
 
 //*************/.DETAILS SECTION *************//
+
+.advantages {
+    min-width: 100%;
+    padding: 5em 2em;
+    position: relative;
+    background-color: $dark;
+    background-size: cover;
+    background-image: url("../img/advantages-bg.png");
+    /*MEDIA*/
+    @include media("<=small-screens") {
+        padding: 3em 2em;
+        z-index: 0;
+    }
+    @include media("<=tablet") {
+        padding: 1em 1em;
+        z-index: 0;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0c0b0b;
+        opacity: 0.1;
+    }
+    .advantages__container {
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 0.7fr;
+        font-size: 1.1em;
+        z-index: 1;
+        color: $header;
+        position: relative;
+        /***MEDIA***/
+        @include media("<=desktop") {
+            grid-template-columns: 0.65fr;
+        }
+        @include media("<=small-screens") {
+            grid-template-columns: 1fr;
+        }
+        // @include media("<=phone-landscape") {
+        //     grid-template-columns: 1fr;
+        //     grid-gap: 0;
+        //     padding: 0.5em 0.5em;
+        // }
+        &::after {
+            content: url("../img/1-adv.png");
+            position: absolute;
+            left: 80%;
+            bottom: 35%;
+            /***MEDIA***/
+            @include media("<=desktop") {
+                left: 73%;
+                bottom: 37%;
+            }
+            @include media("<=small-screens") {
+                display: none;
+            }
+        }
+    }
+    .advantages__info {
+        color: $subtitle;
+    }
+    .advantages__title {
+        color: $header;
+        margin: 0 0 1em 0;
+        font-size: 1.5em;
+        letter-spacing: 0.2em;
+        font-weight: 200;
+    }
+    .advantages__text {
+        margin: 0 0 1em 0;
+        font-size: 1em;
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-size: 0.9em;
+        }
+    }
+    .advantages__author {
+        color: $header;
+    }
+    .advantages__prof,
+    .advantages__author {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+//*************/.ADVANTAGES SECTION *************//
 
 .portfolio_section {
     margin: $indent 0;
@@ -743,105 +835,6 @@ body {
 
 //*************/.PORTFOLIO_BLOCK*************//
 
-.advantages {
-    min-width: 100%;
-    padding: 5em 2em;
-    position: relative;
-    background-color: $dark;
-    background-size: cover;
-    background-image: url("../img/advantages-bg.png");
-    /*MEDIA*/
-    @include media("<=small-screens") {
-        padding: 3em 2em;
-        z-index: 0;
-    }
-    @include media("<=tablet") {
-        padding: 1em 1em;
-        z-index: 0;
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #0c0b0b;
-        opacity: 0.1;
-    }
-    .advantages_container {
-        margin: 0 auto;
-        max-width: 1200px;
-        /***MEDIA***/
-        @include media("<=phone-landscape") {
-            grid-template-columns: 1fr;
-            grid-gap: 0;
-            padding: 0.5em 0.5em;
-        }
-        .advantages_inner {
-            display: grid;
-            grid-template-columns: 1fr;
-            .advantages_right_inner {
-                display: grid;
-                grid-template-columns: 0.7fr;
-                font-size: 1.1em;
-                z-index: 1;
-                color: $header;
-                position: relative;
-                /***MEDIA***/
-                @include media("<=desktop") {
-                    grid-template-columns: 0.65fr;
-                }
-                @include media("<=small-screens") {
-                    grid-template-columns: 1fr;
-                }
-                &::after {
-                    content: url("../img/1-adv.png");
-                    position: absolute;
-                    left: 80%;
-                    bottom: 35%;
-                    /***MEDIA***/
-                    @include media("<=desktop") {
-                        left: 73%;
-                        bottom: 37%;
-                    }
-                    @include media("<=small-screens") {
-                        display: none;
-                    }
-                }
-                .advantages_info {
-                    color: $subtitle;
-                    .advantages_title {
-                        color: $header;
-                        margin: 0 0 1em 0;
-                        font-size: 1.5em;
-                        letter-spacing: 0.2em;
-                        font-weight: 200;
-                    }
-                    .advantages_text {
-                        margin: 0 0 1em 0;
-                        font-size: 1em;
-                        /***MEDIA***/
-                        @include media("<=phone") {
-                            font-size: 0.9em;
-                        }
-                    }
-                    .advantages_author {
-                        color: $header;
-                    }
-                    .advantages_prof,
-                    .advantages_author {
-                        text-transform: uppercase;
-                        font-weight: 600;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//*************/.ADVANTAGE_BLOCK*************//
-
 .projects {
     margin: $indent 0;
     /***MEDIA***/
@@ -858,127 +851,127 @@ body {
             "a"
             "b"
             "c";
-        .text {
+    }
+    .text {
+        grid-area: a;
+    }
+    .projects_reviews {
+        grid-area: b;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 0.5fr;
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 1fr;
+            grid-row-gap: 1px;
+        }
+        @include media("<=tablet-landscape") {
+            grid-template-rows: 0.8fr;
+        }
+        &:nth-child(1) {
             grid-area: a;
         }
-        .projects_reviews {
+        &:nth-child(2) {
             grid-area: b;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 0.5fr;
-            /***MEDIA***/
-            @include media("<=phone") {
-                grid-template-rows: repeat(3, auto);
-                grid-template-columns: 1fr;
-                grid-row-gap: 1px;
-            }
-            @include media("<=tablet-landscape") {
-                grid-template-rows: 0.8fr;
-            }
-            .projects__images {
-                overflow: hidden;
-                max-width: 100%;
-                .project_img {
-                    object-position: center;
-                    object-fit: cover;
-                    height: 100%;
-                    width: 100%;
-                }
-            }
-            &:nth-child(1) {
-                grid-area: a;
-            }
-            &:nth-child(2) {
-                grid-area: b;
-            }
-            &:nth-child(3) {
-                grid-area: c;
-            }
         }
-        .projects__feedback {
+        &:nth-child(3) {
             grid-area: c;
-            background-size: cover;
-            background-image: url("../img/project-backround.png");
-            background-position: center;
-            background-color: #19bd9a;
-            display: grid;
-            grid-column: 1 / 4;
-            padding: 3em;
-            grid-template-rows: 1.5fr;
-            align-items: center;
-            /***MEDIA***/
-            @include media("<=phone-landscape") {
-                grid-template-columns: 1fr;
-                grid-row-gap: 0.3em;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "a"
-                    "b";
-                padding: 0.5em 0.4em;
-                font-size: 0.8em;
+        }
+    }
+    .projects__images {
+        overflow: hidden;
+        max-width: 100%;
+        .project-img {
+            object-position: center;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .projects__feedback {
+        grid-area: c;
+        background-size: cover;
+        background-image: url("../img/project-backround.png");
+        background-position: center;
+        background-color: #19bd9a;
+        display: grid;
+        grid-column: 1 / 4;
+        padding: 3em;
+        grid-template-rows: 1.5fr;
+        align-items: center;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-template-columns: 1fr;
+            grid-row-gap: 0.3em;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                "a"
+                "b";
+            padding: 0.5em 0.4em;
+            font-size: 0.8em;
+        }
+        @include media("<=tablet-landscape") {
+            padding: 2em;
+        }
+    }
+    .projects__text {
+        padding: 0 1em;
+        grid-column: 1 / 2;
+        text-align: center;
+        margin: 0 auto;
+        color: $header;
+        font-size: 1.4em;
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-area: a;
+        }
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-size: 1.1em;
+        }
+    }
+    .projects__button {
+        padding: 0 1em;
+        height: auto;
+        text-align: center;
+        grid-column: 2 / 3;
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-area: b;
+        }
+        .btn--project {
+            color: $header;
+            font-size: 1.2em;
+            background: transparent;
+            cursor: pointer;
+            border: 1px solid $header;
+            border-radius: 10em;
+            padding: 0.5em 2em;
+            position: relative;
+            transform: translate(0%, 0%);
+            transition: all 0.3 linear;
+            overflow: hidden;
+            &:before {
+                content: "";
+                position: absolute;
+                top: -130px;
+                margin: auto;
+                display: block;
+                border-radius: 50%;
+                width: 300px;
+                height: 300px;
+                left: -75px;
+                transition: box-shadow 0.5s ease-in-out;
+                z-index: -1;
             }
-            @include media("<=tablet-landscape") {
-                padding: 2em;
+            &:hover {
+                color: $second;
+                border: 1px solid $second;
             }
-            .projects__text {
-                padding: 0 1em;
-                grid-column: 1 / 2;
-                text-align: center;
-                margin: 0 auto;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-area: a;
-                }
-                color: $header;
-                font-size: 1.4em;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    font-size: 1.1em;
-                }
-            }
-            .projects__button {
-                padding: 0 1em;
-                height: auto;
-                text-align: center;
-                grid-column: 2 / 3;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-area: b;
-                }
-                .btn--project {
-                    color: $header;
-                    font-size: 1.2em;
-                    background: transparent;
-                    cursor: pointer;
-                    border: 1px solid $header;
-                    border-radius: 10em;
-                    padding: 0.5em 2em;
-                    position: relative;
-                    transform: translate(0%, 0%);
-                    transition: all 0.3 linear;
-                    overflow: hidden;
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        top: -130px;
-                        margin: auto;
-                        display: block;
-                        border-radius: 50%;
-                        width: 300px;
-                        height: 300px;
-                        left: -75px;
-                        transition: box-shadow 0.5s ease-in-out;
-                        z-index: -1;
-                    }
-                    &:hover {
-                        color: $second;
-                        border: 1px solid $second;
-                    }
-                    &:hover::before {
-                        box-shadow: inset 0 0 0 160px $first;
-                    }
-                }
+            &:hover::before {
+                box-shadow: inset 0 0 0 160px $first;
             }
         }
     }
@@ -993,7 +986,7 @@ body {
     @include media("<=tablet-landscape") {
         margin: 5em 0;
     }
-    .services_container {
+    .services__container {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, auto);
         grid-template-areas:
@@ -1012,155 +1005,125 @@ body {
                 "a"
                 "b";
         }
-        .services_text {
-            grid-area: c;
-            margin: 0 0 3em 0;
-            text-align: center;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
-            grid-template-areas:
-                "a a"
-                "b b";
-            /*MEDIA*/
-            @include media("<=phone") {
-                grid-template-rows: repeat(2, auto);
-            }
-            .services_title {
-                grid-area: a;
-                h2 {
-                    @include title;
-                }
-            }
-            .services_subtitle {
-                grid-area: b;
-                h3 {
-                    @include subtitle;
-                }
-            }
+    }
+    .text {
+        grid-area: c;
+    }
+    .services__section_1 {
+        grid-area: a;
+        padding: 0.5em 0.5em;
+    }
+    .services__icons {
+        display: grid;
+        grid-row-gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+    .services__icons-item {
+        display: grid;
+        align-items: center;
+        grid-column-gap: 3rem;
+        grid-template-columns: auto 1fr;
+        &:first-child {
+            font-size: 1.5em;
+            font-weight: 500;
         }
-        .left_discription_inner {
+    }
+    .services__section_2 {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        padding: 0.5em 0.5em;
+        /*MEDIA*/
+        @include media("<=desktop") {
+            padding: 0.3em 0.3em;
+        }
+    }
+    .services__skills {
+        display: grid;
+        grid-column-gap: 0.5em;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a b c"
+            "d f g";
+        place-items: center;
+        margin: auto 0;
+        /*MEDIA*/
+        @include media("<=phone") {
+            grid-column-gap: 0.4em;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+            grid-template-areas:
+                "a"
+                "d"
+                "b"
+                "f"
+                "c"
+                "g";
+        }
+        .circle_progress {
+            stroke: #19bd9a;
+            fill: transparent;
+            color: #02bd7d;
+            stroke-width: 5;
+            transform-origin: center;
+            transform: rotate(-90deg);
+            transition: stroke-dashoffset 0.3 linear;
+            stroke-dasharray: 300;
+            stroke-dashoffset: 0;
+        }
+        .circle_text {
+            font-size: 1em;
+            background: transparent;
+        }
+        .text--branding {
+            grid-area: d;
+        }
+        .text--web {
+            grid-area: f;
+        }
+        .text--ui {
+            grid-area: g;
+        }
+        .card--branding {
             grid-area: a;
-            padding: 0.5em 0.5em;
-            margin: auto 0;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-rows: repeat(3, auto);
-            grid-template-areas:
-                "a b"
-                "a b"
-                "a b";
-            .services_icons {
-                grid-area: a;
-                margin-right: 50%;
-                display: grid;
-            }
-            li {
-                grid-area: b;
-                margin-bottom: 1.2em;
-                &:nth-child(1) {
-                    font-size: 1.5em;
-                    font-weight: 500;
-                }
+        }
+        .card--web {
+            grid-area: b;
+        }
+        .card--ui {
+            grid-area: c;
+        }
+        .circle--branding {
+            grid-area: a;
+            position: relative;
+            .percent--branding {
+                position: absolute;
+                top: 38%;
+                left: 35%;
+                font-size: 1.1em;
             }
         }
-        .right_services_graphics_inner {
+        .circle--web {
             grid-area: b;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-auto-rows: auto;
-            padding: 0.5em 0.5em;
-            /*MEDIA*/
-            @include media("<=desktop") {
-                padding: 0.3em 0.3em;
+            position: relative;
+            .percent--web {
+                position: absolute;
+                top: 38%;
+                left: 36%;
+                font-size: 1.1em;
             }
-            .graphics_inner {
-                display: grid;
-                grid-column-gap: 0.5em;
-                grid-template-columns: repeat(3, auto);
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "a b c"
-                    "d f g";
-                place-items: center;
-                margin: auto 0;
-                /*MEDIA*/
-                @include media("<=phone") {
-                    grid-column-gap: 0.4em;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(6, auto);
-                    grid-template-areas:
-                        "a"
-                        "d"
-                        "b"
-                        "f"
-                        "c"
-                        "g";
-                }
-                .circle_progress {
-                    stroke: #19bd9a;
-                    fill: transparent;
-                    color: #02bd7d;
-                    stroke-width: 5;
-                    transform-origin: center;
-                    transform: rotate(-90deg);
-                    transition: stroke-dashoffset 0.3 linear;
-                    stroke-dasharray: 300;
-                    stroke-dashoffset: 0;
-                }
-
-                .circle_text {
-                    font-size: 1em;
-                    background: transparent;
-                }
-                .text--branding {
-                    grid-area: d;
-                }
-                .text--web {
-                    grid-area: f;
-                }
-                .text--ui {
-                    grid-area: g;
-                }
-                .card--branding {
-                    grid-area: a;
-                }
-                .card--web {
-                    grid-area: b;
-                }
-                .card--ui {
-                    grid-area: c;
-                }
-                .circle--branding {
-                    grid-area: a;
-                    position: relative;
-                    .percent--branding {
-                        position: absolute;
-                        top: 38%;
-                        left: 35%;
-                        font-size: 1.1em;
-                    }
-                }
-                .circle--web {
-                    grid-area: b;
-                    position: relative;
-                    .percent--web {
-                        position: absolute;
-                        top: 38%;
-                        left: 36%;
-                        font-size: 1.1em;
-                    }
-                }
-                .circle--ui {
-                    grid-area: c;
-                    position: relative;
-                    .percent--ui {
-                        position: absolute;
-                        top: 38%;
-                        left: 36%;
-                        font-size: 1.1em;
-                    }
-                }
+        }
+        .circle--ui {
+            grid-area: c;
+            position: relative;
+            .percent--ui {
+                position: absolute;
+                top: 38%;
+                left: 36%;
+                font-size: 1.1em;
             }
         }
     }

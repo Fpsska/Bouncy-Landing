@@ -236,19 +236,19 @@
                     <picture class="projects__images">
                         <source type="image/webp"
                             srcset="./img/project-3.webp 1x, ./img/project-3@2x.webp 2x, ./img/project-3@3x.webp 3x">
-                        <img src="./img/project-3.png" class="project_img"
+                        <img src="./img/project-3.png" class="project-img"
                             srcset="./img/project-3@2x.png 2x, ./img/project-3@3x.png 3x" alt="project-image">
                     </picture>
                     <picture class="projects__images">
                         <source type="image/webp"
                             srcset="./img/project-1.webp 1x, ./img/project-1@2x.webp 2x, ./img/project-1@3x.webp 3x">
-                        <img src="./img/project-1.png" class="project_img"
+                        <img src="./img/project-1.png" class="project-img"
                             srcset="./img/project-1@2x.png 2x, ./img/project-1@3x.png 3x" alt="project-image">
                     </picture>
                     <picture class="projects__images">
                         <source type="image/webp"
                             srcset="./img/project-3.webp 1x, ./img/project-3@2x.webp 2x, ./img/project-3@3x.webp 3x">
-                        <img src="./img/project-3.png" class="project_img"
+                        <img src="./img/project-3.png" class="project-img"
                             srcset="./img/project-3@2x.png 2x, ./img/project-3@3x.png 3x" alt="project-image">
                     </picture>
                 </div>
@@ -266,105 +266,92 @@
         <!-- /.projects -->
 
         <section class="services">
-            <div class="services_container">
-
-                <article class="services_text">
-                    <div class="services_title">
-                        <h2>OUR SERVICES</h2>
-                    </div>
-                    <div class="services_subtitle">
-                        <h3>
-                            At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
-                            blanditiis praesentium
-                        </h3>
-                    </div>
+            <div class="services__container">
+                <article class="text">
+                    <h2 class="title">OUR SERVICES</h2>
+                    <h3 class="subtitle">
+                        At vero eos et accusamus et lusto odio digissimos ducimus qui <br>
+                        blanditiis praesentium
+                    </h3>
                 </article>
-
-                <div class="left_discription_inner">
-                    <div class="services_icons">
-                        <picture class="services_icon">
-                            <source type="image/webp" srcset="./img/services-1.webp 1x">
-                            <img src="./img/services-1.png" alt="tools">
-                        </picture>
-                        <picture class="services_icon">
-                            <source type="image/webp" srcset="./img/services-1.webp 1x">
-                            <img src="./img/services-1.png" alt="tools">
-                        </picture>
-                        <picture class="services_icon">
-                            <source type="image/webp" srcset="./img/services-1.webp 1x">
-                            <img src="./img/services-1.png" alt="tools">
-                        </picture>
-                    </div>
-                    <ul class="services_discription">
-                        <li>Graphic Design</li>
-                        <li>
-                            At vero eos et accusamus et <span style="font-weight: 700; color: #19bd9a">iusto</span> odio
-                            dignissimos <strong>ducimus</strong> qui blanditiis praesentium
-                            voluptatum deleniti
+                <div class="services__section_1">
+                    <ul class="services__icons">
+                        <li class="services__icons-item">
+                            <picture class="services__icon">
+                                <source type="image/webp" srcset="./img/services-1.webp 1x">
+                                <img src="./img/services-1.png" alt="tools">
+                            </picture>
+                            <p class="services__text">Graphic Design</p>
                         </li>
-                        <li>
-                            quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, <span
-                                style="font-weight: 700; color: #19bd9a">similique sunt</span> in culpa qui
-                            officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                        <li class="services__icons-item">
+                            <picture class="services__icon">
+                                <source type="image/webp" srcset="./img/services-1.webp 1x">
+                                <img src="./img/services-1.png" alt="tools">
+                            </picture>
+                            <p class="services__text">
+                                At vero eos et accusamus et <span style="font-weight: 700; color: #19bd9a">iusto</span>
+                                odio
+                                dignissimos <strong>ducimus</strong> qui blanditiis praesentium
+                                voluptatum deleniti
+                            </p>
+                        </li>
+                        <li class="services__icons-item">
+                            <picture class="services__icon">
+                                <source type="image/webp" srcset="./img/services-1.webp 1x">
+                                <img src="./img/services-1.png" alt="tools">
+                            </picture>
+                            <p class="services__text">
+                                quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, <span
+                                    style="font-weight: 700; color: #19bd9a">similique sunt</span> in culpa qui
+                                officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                            </p>
                         </li>
                     </ul>
                 </div>
-
-                <div class="right_services_graphics_inner">
-
-                    <div class="graphics_inner">
-
+                <div class="services__section_2">
+                    <div class="services__skills">
                         <div class="circle--branding" data-percent="100" data-scale-color="#f3f3f3">
                             <span class="percent--branding">100%</span>
                         </div>
                         <button class="circle_text text--branding">Branding</button>
-
                         <div class="circle--web" data-percent="70" data-scale-color="#f3f3f3">
                             <span class="percent--web">70%</span>
                         </div>
                         <button class="circle_text text--web">Web Design</button>
-
                         <div class="circle--ui" data-percent="50" data-scale-color="#f3f3f3">
                             <span class="percent--ui">50%</span>
                         </div>
                         <button class="circle_text text--ui">UI/UX</button>
-
                     </div>
                 </div>
-
             </div>
         </section>
         <!-- /.services -->
 
         <div class="advantages">
-            <div class="advantages_container">
-                <div class="advantages_inner">
-                    <div class="advantages_right_inner">
-                        <article class="advantages_info">
-                            <h2 class="advantages_title">IMPRESSED?</h2>
-                            <blockquote class="advantages_text">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing
-                                elit. Consequatur veniam nemo autem
-                                quam
-                                molestias illum possimus quod placeat aut ipsam, delectus, fuga ipsa quisquam eos,
-                                numquam
-                                voluptatum dolorum dolores eius?
-                                Pariatur quidem autem ullam alias in tenetur, eveniet libero ex minima? Cum et
-                                dignissimos
-                                corporis omnis vero consectetur aspernatur placeat esse tempora? Iusto ipsa sequi iste.
-                                Accusantium temporibus voluptas cupiditate!
-                                Vitae dolores repudiandae porro aliquam, commodi aut eius debitis modi ipsum omnis
-                                numquam,
-                                deserunt nesciunt aliquid perspiciatis consectetur sed autem officiis cupiditate harum.
-                                Porro
-                                culpa, cum ratione soluta voluptate ipsa?
-                            </blockquote>
-                            <address class="advantages_author">- Abdullah Noman</address>
-                            <p class="advantages_prof">Creatice Director, <span style="color: #19bd9a">Code Cafe</span>
-                            </p>
-                        </article>
-                    </div>
-                </div>
+            <div class="advantages__container">
+                <article class="advantages__info">
+                    <span class="advantages__title">IMPRESSED?</span>
+                    <blockquote class="advantages_text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Consequatur veniam nemo autem
+                        quam
+                        molestias illum possimus quod placeat aut ipsam, delectus, fuga ipsa quisquam eos,
+                        numquam
+                        voluptatum dolorum dolores eius?
+                        Pariatur quidem autem ullam alias in tenetur, eveniet libero ex minima? Cum et
+                        dignissimos
+                        corporis omnis vero consectetur aspernatur placeat esse tempora? Iusto ipsa sequi iste.
+                        Accusantium temporibus voluptas cupiditate!
+                        Vitae dolores repudiandae porro aliquam, commodi aut eius debitis modi ipsum omnis
+                        numquam,
+                        deserunt nesciunt aliquid perspiciatis consectetur sed autem officiis cupiditate harum.
+                        Porro
+                        culpa, cum ratione soluta voluptate ipsa?
+                    </blockquote>
+                    <address class="advantages__author">- Abdullah Noman</address>
+                    <p class="advantages__prof">Creatice Director, <span style="color: #19bd9a">Code Cafe</span></p>
+                </article>
             </div>
         </div>
         <!-- /.advantages -->
