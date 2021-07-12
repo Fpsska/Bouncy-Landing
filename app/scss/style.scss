@@ -141,6 +141,8 @@ body {
     }
 }
 
+//*************/.HEADER SECTION *************//
+
 .about {
     position: absolute;
     top: 50%;
@@ -240,6 +242,8 @@ body {
         }
     }
 }
+
+//*************/.ABOUT SECTION *************//
 
 .description {
     padding: $indent 0;
@@ -379,7 +383,127 @@ body {
     }
 }
 
-//*************/.HEADER_BLOCK*************//
+//*************/.DESCRIPTION SECTION *************//
+
+.details {
+    margin: $indent 0 0 0;
+    /***MEDIA***/
+    @include media("<=small-screens") {
+        margin: 6em 0 0 0;
+    }
+    @include media("<=tablet") {
+        margin: 6em 0 0 0;
+    }
+    @include media("<=phone") {
+        margin: 3em 0 0 0;
+    }
+    .details__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+    }
+    .details__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "a a"
+            "b b"
+            "c c";
+    }
+    .text {
+        grid-area: a;
+    }
+    .details__icons-wrapper {
+        grid-area: b;
+        margin: 0 auto 6em auto;
+        display: grid;
+        grid-template-columns: repeat(3, 0.06fr);
+        grid-template-rows: auto;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            margin: 0 auto 4.5em auto;
+        }
+        @include media("<=phone") {
+            margin: 0 auto 4em auto;
+        }
+        .details__icon {
+            border-radius: 30px;
+            background-color: #81868e;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            margin-left: 1.5em;
+            transition: 0.3s linear;
+            &:nth-child(1) {
+                margin: 0;
+            }
+            .img--description {
+                max-width: 26px;
+                height: 22px;
+                display: block;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                position: absolute;
+            }
+            &:hover {
+                background-color: $second;
+            }
+            &:focus {
+                background-color: $second;
+            }
+        }
+    }
+    .details__text {
+        grid-area: c;
+        display: grid;
+        grid-column-gap: 0.5em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(3em, auto);
+        grid-template-areas: "g o";
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-column-gap: 0;
+            grid-row-gap: 1em;
+            padding: 0 0.5em;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                "g"
+                "o";
+        }
+    }
+    .details__section_1 {
+        grid-area: g;
+        padding: 0 0 0 0.5em;
+        width: 55%;
+        h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin: 0 0 1em 0;
+            font-weight: 600;
+        }
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            width: auto;
+        }
+    }
+    .details__section_2 {
+        grid-area: o;
+        padding: 0 0.5em 0 0;
+        /***MEDIA***/
+        @include media("<=phone") {
+            padding: 0;
+            margin: auto;
+        }
+    }
+}
+
+//*************/.DETAILS SECTION *************//
 
 .portfolio_section {
     margin: $indent 0;
@@ -718,7 +842,7 @@ body {
 
 //*************/.ADVANTAGE_BLOCK*************//
 
-.featured_project {
+.projects {
     margin: $indent 0;
     /***MEDIA***/
     @include media("<=tablet-landscape") {
@@ -727,39 +851,17 @@ body {
     @include media("<=phone") {
         margin: 5em 0 5em 0;
     }
-    .featured_container {
+    .projects__container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
             "a"
             "b"
             "c";
-        .project_text {
+        .text {
             grid-area: a;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, auto);
-            grid-template-areas:
-                "a"
-                "b";
-            margin: 0 0 4em 0;
-            text-align: center;
-            line-height: 1.5em;
-            .project_title {
-                grid-area: a;
-                margin: 1.1em 0;
-                h2 {
-                    @include title;
-                }
-            }
-            .project_subtitle {
-                grid-area: b;
-                h3 {
-                    @include subtitle;
-                }
-            }
         }
-        .project_content {
+        .projects_reviews {
             grid-area: b;
             margin: 0;
             display: grid;
@@ -774,7 +876,7 @@ body {
             @include media("<=tablet-landscape") {
                 grid-template-rows: 0.8fr;
             }
-            .project_img_card {
+            .projects__images {
                 overflow: hidden;
                 max-width: 100%;
                 .project_img {
@@ -794,7 +896,7 @@ body {
                 grid-area: c;
             }
         }
-        .project_footer {
+        .projects__feedback {
             grid-area: c;
             background-size: cover;
             background-image: url("../img/project-backround.png");
@@ -819,7 +921,7 @@ body {
             @include media("<=tablet-landscape") {
                 padding: 2em;
             }
-            .project_footer_text {
+            .projects__text {
                 padding: 0 1em;
                 grid-column: 1 / 2;
                 text-align: center;
@@ -828,16 +930,14 @@ body {
                 @include media("<=phone") {
                     grid-area: a;
                 }
-                p {
-                    color: $header;
-                    font-size: 1.4em;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        font-size: 1.1em;
-                    }
+                color: $header;
+                font-size: 1.4em;
+                /***MEDIA***/
+                @include media("<=phone") {
+                    font-size: 1.1em;
                 }
             }
-            .project_button {
+            .projects__button {
                 padding: 0 1em;
                 height: auto;
                 text-align: center;
@@ -2321,155 +2421,6 @@ body {
 }
 
 //*************/.MAP_BLOCK*************//
-
-.project_description {
-    margin: $indent 0 0 0;
-    /***MEDIA***/
-    @include media("<=small-screens") {
-        margin: 6em 0 0 0;
-    }
-    @include media("<=tablet") {
-        margin: 6em 0 0 0;
-    }
-    @include media("<=phone") {
-        margin: 3em 0 0 0;
-    }
-    .description_container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        .description_inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, auto);
-            grid-template-areas:
-                "a a"
-                "b b"
-                "c c";
-            .description_text {
-                grid-area: a;
-                text-align: center;
-                margin: 0 0 4em 0;
-                /***MEDIA***/
-                @include media("<=phone-landscape") {
-                    margin: 0 0 2.5em 0;
-                }
-                .description_title {
-                    font-size: 1.8em;
-                    font-weight: 400;
-                    color: $subtitle;
-                    letter-spacing: 0.1em;
-                    margin: 0 0 1em 0;
-                    /***MEDIA***/
-                    @include media("<=phone-landscape") {
-                        margin: 0 0 0.5em 0;
-                    }
-                    @include media("<=phone") {
-                        margin: 0 0 1em 0;
-                    }
-                }
-                .description_subtitle {
-                    font-size: 1em;
-                    color: $subtitle;
-                    h3 {
-                        @include subtitle;
-                    }
-                }
-            }
-            .description_icons_inner {
-                grid-area: b;
-                margin: 0 auto 6em auto;
-                display: grid;
-                grid-template-columns: repeat(3, 0.06fr);
-                grid-template-rows: auto;
-                /***MEDIA***/
-                @include media("<=phone-landscape") {
-                    margin: 0 auto 4.5em auto;
-                }
-                @include media("<=phone") {
-                    margin: 0 auto 4em auto;
-                }
-                .description_icon {
-                    border-radius: 30px;
-                    background-color: #81868e;
-                    width: 50px;
-                    height: 50px;
-                    position: relative;
-                    margin-left: 1.5em;
-                    transition: 0.3s linear;
-                    &:nth-child(1) {
-                        margin: 0;
-                    }
-                    .img--description {
-                        max-width: 26px;
-                        height: 22px;
-                        display: block;
-                        left: 0;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        margin: auto;
-                        position: absolute;
-                    }
-                    &:hover {
-                        background-color: $second;
-                    }
-                    &:focus {
-                        background-color: $second;
-                    }
-                }
-            }
-            .description_content-btm {
-                grid-area: c;
-                display: grid;
-                grid-column-gap: 0.5em;
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: minmax(3em, auto);
-                grid-template-areas: "g o";
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-column-gap: 0;
-                    grid-row-gap: 1em;
-                    padding: 0 0.5em;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(2, auto);
-                    grid-template-areas:
-                        "g"
-                        "o";
-                }
-                .left_description {
-                    grid-area: g;
-                    padding: 0 0 0 0.5em;
-                    .left_description-text {
-                        width: 55%;
-                        h2 {
-                            font-size: 1.2em;
-                            font-weight: 400;
-                            letter-spacing: 0.08em;
-                            margin: 0 0 1em 0;
-                            font-weight: 600;
-                        }
-                        /***MEDIA***/
-                        @include media("<=phone-landscape") {
-                            width: auto;
-                        }
-                    }
-                }
-                .right_description {
-                    grid-area: o;
-                    padding: 0 0.5em 0 0;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        padding: 0;
-                        margin: auto;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//*************/.PROJECT_DESCRIPTION_BLOCK*************//
 
 .footer {
     background-color: $first;

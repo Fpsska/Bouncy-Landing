@@ -1,3 +1,5 @@
+@import "include-media";
+
 @mixin btn {
     display: inline-block;
     vertical-align: top;
@@ -39,4 +41,32 @@ $subtitle: #81868e;
 .nav__menu-link {
     font-size: 1.4em;
     color: #000;
+}
+
+.text {
+    text-align: center;
+    margin: 0 0 4em 0;
+    /***MEDIA***/
+    @include media("<=phone-landscape") {
+        margin: 0 0 2.5em 0;
+    }
+}
+.title {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: $subtitle;
+    letter-spacing: 0.1em;
+    margin: 0 0 1em 0;
+    /***MEDIA***/
+    @include media("<=phone-landscape") {
+        margin: 0 0 0.5em 0;
+    }
+    @include media("<=phone") {
+        margin: 0 0 1em 0;
+    }
+}
+.subtitle {
+    font-size: 1em;
+    color: $subtitle;
+    @include subtitle;
 }
