@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    canvas = document.getElementsByTagName("canvas");
-    canvas.width = canvas.width;
-
 
     let brandingItem = document.querySelector(".percent--branding");
     let webItem = document.querySelector(".percent--web");
@@ -113,7 +110,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //  //************/.GRAPHISC_CARD************//
 
-    let tabsLink = document.querySelectorAll(".p-nav_link");
+
+    let progressBrand = document.querySelector(".text_progress--branding");
+    let progressDesign = document.querySelector(".text_progress--design");
+    let progressIntfce = document.querySelector(".text_progress--intfce");
+
+
+
+    let teamProgress = (item, percent) => {
+        let progressLine = document.querySelector(".current_progress");
+        let width = 0;
+        setInterval(() => {
+            if (width == percent) {
+                clearInterval();
+            } else {
+                width++;
+                progressLine.style.width = width;
+                item.textContent = width + "%";
+            }
+        }, 50); /*speed*/
+    };
+
+    teamProgress(progressBrand, 90);
+    // teamProgress(progressDesign, 50);
+    // teamProgress(progressIntfce, 20);
+
+    //  //************/.TEAM PROGRESSBAR************//
+
+    let tabsLink = document.querySelectorAll(".nav__menu-link");
     let tabsItems = document.querySelectorAll(".portfolio_block");
 
     tabsLink.forEach(item => {
@@ -137,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentTab.classList.add("active");
             }
         });
-        document.querySelector(".p-nav_link").click();
+        document.querySelector(".nav__menu-link").click();
     })
 
     //  //*********/.PORTFOLIO TABS*********//
@@ -258,6 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     validateForms(".feedback_inner");
+    validateForms(".subscribe_inputs")
     //  //*********/.INPUT VALIDATION*********//
 
 

@@ -8,7 +8,7 @@ body {
     background-color: $first;
 }
 
-.main_header {
+.header {
     background-color: #7f664d;
     background-size: cover;
     background-position: center;
@@ -29,365 +29,219 @@ body {
         background-color: #0c0b0b;
         opacity: 0.3;
     }
-    .header_container {
+    .header__container {
+        position: relative;
         height: 100vh;
         min-width: 100%;
         text-align: center;
         display: grid;
         grid-row-gap: 0.5em;
-        grid-template-columns: 0.5fr 2fr 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas:
-            "a a a"
-            "b b b";
-        .headerBar-mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+    }
+    .header__bar {
+        z-index: 10;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 0.2fr 1fr;
+        grid-template-rows: 0.5fr;
+        grid-template-areas: "c d";
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-template-rows: 0.3fr;
+        }
+        @include media("<=phone-landscape") {
             display: none;
-            /***MEDIA***/
-            @include media("<=phone-landscape") {
-                grid-area: a;
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-            .header_mobile_items {
-                display: grid;
-                justify-content: start;
-                color: $header;
-                z-index: 5;
-                font-size: 1.5em;
-                font-weight: 400;
-                .logo_text {
-                    font-weight: 700;
-                    font-size: 1.5em;
-                    padding: 0 1em;
-                    /***MEDIA***/
-                    @include media("<=phone-landscape") {
-                        font-size: 1.2em;
-                    }
-                    @include media("<=phone") {
-                        font-size: 1.5em;
-                        padding: 0 0.3em;
-                    }
-                }
-                .header_nav_ul {
-                    text-align: start;
-                    padding: 0.5em 0.3em;
-                    opacity: 0.6;
-                    background-color: transparent;
-                    li {
-                        margin: 0.2em 0;
-                        &:last-child {
-                            margin: 0.2em 0 0 0;
-                        }
-                    }
-                    .header-link {
-                        color: $header;
-                        font-size: 1.2em;
-                    }
-                }
-                /****burger****/
-                .menu-icon {
-                    position: fixed;
-                    color: $dark;
-                    font-size: 1.5em;
-                    left: 85%;
-                    top: 0;
-                    cursor: pointer;
-                    z-index: 1;
-                    /*MEDIA*/
-                    @include media("<=phone-landscape") {
-                        left: 92%;
-                    }
-                    @include media("<=phone") {
-                        left: 85%;
-                        top: 0;
-                    }
-                }
-            }
-            .menu_container {
-                height: 0%;
-                width: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                background-color: rgba(77, 83, 93, 0.8);
-                overflow: hidden;
-                // transition: 1s ease-in-out;
-                .menu_content {
-                    position: relative;
-                    top: 23%;
-                    width: 100%;
-                    text-align: center;
-                    /*MEDIA*/
-                    @include media("<=phone-landscape") {
-                        top: 22%;
-                    }
-                    @include media("<=phone") {
-                        top: 20%;
-                    }
-                    .burger_links {
-                        padding: 1em;
-                        font-size: 1.1em;
-                        color: $header;
-                        display: block;
-                        text-transform: uppercase;
-                        // transition: 0.3s ease-in-out;
-                        &:focus {
-                            background-color: $second;
-                        }
-                        /*MEDIA*/
-                        @include media("<=phone-landscape") {
-                            padding: 0.3em;
-                            font-size: 1em;
-                        }
-                        @include media("<=phone") {
-                            padding: 1em;
-                        }
-                    }
-                }
-                .menu_close {
-                    position: absolute;
-                    top: 15%;
-                    right: 90%;
-                    font-size: 2em;
-                    color: $header;
-                    cursor: pointer;
-                    z-index: 1;
-                    display: none;
-                    /*MEDIA*/
-                    @include media("<=phone-landscape") {
-                        top: 12%;
-                        right: 92%;
-                        font-size: 1.7em;
-                    }
-                    @include media("<=phone") {
-                        top: 14%;
-                        right: 90%;
-                    }
-                }
-                .menu_close.active {
-                    display: block;
-                }
-            }
-            /****./burger****/
         }
-        .headerBar.fixed {
-            display: grid;
-            grid-template-columns: 1fr 13fr;
-            grid-template-rows: 50px;
-            grid-template-areas: "c d";
-            position: fixed;
-            background-color: rgba(77, 83, 93, 0.6);
-            opacity: 0.98;
-            bottom: 0;
-            top: auto;
-            /***MEDIA**/
-            @include media("<=phone-landscape") {
-                display: none;
-            }
-            .header_item_logo {
-                margin: 0 0 0 2em;
-                font-size: 2.5em;
-                font-weight: 900;
-                color: $second;
-                /***MEDIA**/
-                @include media("<=small-screens") {
-                    font-size: 2em;
-                }
-            }
-            .header_nav {
-                .header-link {
-                    z-index: 10;
-                    color: $header;
-                    opacity: 0.7;
-                    &:hover {
-                        color: #02bd7d;
-                        opacity: 1;
-                    }
-                    /***MEDIA**/
-                    @include media("<=small-screens") {
-                    }
-                }
-                .header-link.active {
-                    border-top: 4px solid #02bd7d;
-                }
-            }
+    }
+    .header__logo {
+        grid-area: c;
+        color: $header;
+        font-size: 3em;
+        font-weight: 700;
+        font-size: 2em;
+        /***MEDIA***/
+        @include media("<=small-screens") {
+            margin: 0 0 0 1.2em;
+            font-size: 0.8em;
         }
-        .headerBar {
+        @include media("<=phone") {
             grid-area: a;
-            z-index: 10;
-            display: grid;
-            align-items: center;
-            grid-template-columns: 0.2fr 1fr;
-            grid-template-rows: 0.5fr;
-            grid-template-areas: "c d";
-            /***MEDIA***/
+            margin: 0 0 0 1em;
+            padding: 0 3 0 0;
+            font-size: 38px;
+        }
+    }
+    .header__nav {
+        grid-area: d;
+        margin: 0 5em 0 0;
+        /***MEDIA***/
+        @include media("<=small-screens") {
+            margin: 0 2em 0 0;
+        }
+        @include media("<=phone") {
+            grid-area: b;
+        }
+        .nav__menu-link {
+            cursor: pointer;
+            color: $header;
+            font-size: 1.4em;
+            margin-right: 1.2em;
+            /*MEDIA*/
             @include media("<=tablet") {
-                grid-template-rows: 0.3fr;
+                font-size: 1.1em;
+                margin-right: 0.3em;
             }
-            @include media("<=phone-landscape") {
-                display: none;
+            &:last-child {
+                margin-right: 0;
             }
-            .header_item_logo {
-                color: $header;
-                font-size: 3em;
-                font-weight: 700;
-                grid-area: c;
-                font-size: 2em;
-                /***MEDIA***/
-                @include media("<=small-screens") {
-                    margin: 0 0 0 1.2em;
-                    font-size: 0.8em;
-                }
-                @include media("<=phone") {
-                    grid-area: a;
-                    margin: 0 0 0 1em;
-                    padding: 0 3 0 0;
-                    font-size: 38px;
-                }
-            }
-            .header_nav {
-                grid-area: d;
-                text-align: end;
-                margin: 0 5em 0 0;
-                /***MEDIA***/
-                @include media("<=small-screens") {
-                    margin: 0 2em 0 0;
-                }
-                @include media("<=phone") {
-                    grid-area: b;
-                }
-                .header-link {
-                    cursor: pointer;
-                    color: $header;
-                    font-size: 1.4em;
-                    margin-right: 1.2em;
-                    /*MEDIA*/
-                    @include media("<=tablet") {
-                        font-size: 1.1em;
-                        margin-right: 0.3em;
-                    }
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                    &:hover,
-                    &:focus {
-                        color: $second;
-                    }
-                }
+            &:hover,
+            &:focus {
+                color: $second;
             }
         }
-        .header_text {
-            grid-area: b;
-            align-content: center;
-            padding: 0 0.5em;
-            font-size: 2em;
+    }
+    .header__menu {
+        margin: 0 0 0 auto;
+    }
+    .header__bar.fixed {
+        display: grid;
+        position: fixed;
+        grid-template-columns: 1fr 13fr;
+        grid-template-rows: 50px;
+        background-color: rgba(77, 83, 93, 0.6);
+        opacity: 0.98;
+        bottom: 0;
+        /***MEDIA**/
+        @include media("<=phone-landscape") {
+            display: none;
+        }
+        .header__logo {
+            margin: 0 0 0 2em;
+            font-size: 2.5em;
+            font-weight: 900;
+            color: $second;
+            /***MEDIA**/
+            @include media("<=small-screens") {
+                font-size: 2em;
+            }
+        }
+        .nav__menu-link {
+            z-index: 10;
             color: $header;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas:
-                "m"
-                "t";
-            /***MEDIA***/
-            @include media("<=tablet-landscape") {
-                z-index: 0;
+            opacity: 0.7;
+            &:hover {
+                color: #02bd7d;
+                opacity: 1;
             }
-            .header_title {
-                grid-area: m;
-                h2 {
-                    font-size: 2em;
-                    /***MEDIA***/
-                    @include media("<=tablet") {
-                        font-size: 1.3em;
-                    }
-                    @include media("<=phone") {
-                        font-size: 1.1em;
-                    }
-                }
-            }
-            .header_subtitle {
-                grid-area: t;
-                h3 {
-                    font-size: 1em;
-                    /***MEDIA***/
-                    @include media("<=tablet-landscape") {
-                        font-size: 0.7em;
-                    }
-                    @include media("<=tablet") {
-                        font-size: 0.7em;
-                    }
-                    @include media("<=phone") {
-                        font-size: 0.6em;
-                    }
-                }
-            }
-            .header_button {
-                margin-top: 0.3em;
-                position: relative;
-                display: grid;
-                grid-template-columns: auto;
-                grid-template-rows: auto;
-                justify-content: center;
-                .btn--header {
-                    display: grid;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
-                    border: none;
-                    background: $second;
-                    background-size: 18px;
-                    cursor: pointer;
-                    outline: none;
-                    width: 0.7em;
-                    height: 0.7em;
-                    border-radius: 100%;
-                    i {
-                        border: solid $header;
-                        border-width: 0 2px 2px 0;
-                        display: inline-block;
-                        padding: 3px;
-                        &:hover,
-                        &:focus {
-                            border: solid $dark;
-                            border-width: 0 2px 2px 0;
-                            display: inline-block;
-                            padding: 3px;
-                            z-index: 5;
-                        }
-                    }
-                    .arrow_down {
-                        transform: rotate(45deg);
-                        -webkit-transform: rotate(45deg);
-                    }
-                    .btn--header_bg {
-                        position: absolute;
-                        animation: pulse 1.2s ease infinite;
-                        background: $second;
-                        width: 0.7em;
-                        height: 0.7em;
-                        border-radius: 100%;
-                    }
-                }
-                @keyframes pulse {
-                    0% {
-                        transform: scale(1, 1);
-                    }
-                    50% {
-                        opacity: 0.3;
-                    }
-                    100% {
-                        transform: scale(1.5);
-                        opacity: 0;
-                    }
-                }
+            /***MEDIA**/
+            @include media("<=small-screens") {
             }
         }
     }
 }
 
-.header_description {
+.about {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 0.5em;
+    // font-size: 2em;
+    color: $header;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr;
+    grid-template-rows: min-content;
+    /***MEDIA***/
+    @include media("<=tablet-landscape") {
+        z-index: 0;
+    }
+    .about__title {
+        font-size: 4em;
+        /***MEDIA***/
+        @include media("<=tablet") {
+            font-size: 1.3em;
+        }
+        @include media("<=phone") {
+            font-size: 1.1em;
+        }
+    }
+    .about__subtitle {
+        font-size: 1.8em;
+        text-align: center;
+        /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            font-size: 0.7em;
+        }
+        @include media("<=tablet") {
+            font-size: 0.7em;
+        }
+        @include media("<=phone") {
+            font-size: 0.6em;
+        }
+    }
+    .about__button {
+        margin-top: 0.3em;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        justify-content: center;
+    }
+    .btn--about {
+        position: relative;
+        display: grid;
+        place-items: center;
+        border: none;
+        background: $second;
+        background-size: 18px;
+        cursor: pointer;
+        outline: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            transform: translate(-50%, -50%);
+            border: solid $header;
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 2.6px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            &:hover,
+            &:focus {
+                border: solid $dark;
+                border-width: 0 2px 2px 0;
+                padding: 3px;
+                z-index: 5;
+            }
+        }
+    }
+    .btn--about_bg {
+        background: $second;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        animation: pulse 1.2s ease infinite;
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(1, 1);
+        }
+        50% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+}
+
+.description {
     padding: $indent 0;
     background-color: $header;
     /***MEDIA***/
@@ -397,133 +251,130 @@ body {
     @include media("<=tablet-landscape") {
         padding: 5em 0;
     }
-    .header_description_container {
+    .description__container {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        .header_description_inner {
-            display: grid;
-            grid-column-gap: 0.5em;
-            grid-template-columns: 1fr 0.5fr;
+    }
+    .description__inner {
+        display: grid;
+        grid-column-gap: 0.5em;
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a b"
+            "d b";
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-row-gap: 0.5em;
+        }
+        @include media("<=phone") {
+            grid-row-gap: 3em;
+            grid-template-columns: 1fr;
             grid-template-rows: repeat(2, auto);
             grid-template-areas:
-                "a b"
-                "d b";
+                "r"
+                "p";
+        }
+    }
+    .description__section_1 {
+        grid-area: a;
+        display: grid;
+        padding: 0 0 0 0.5em;
+        grid-row-gap: 0.5em;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "a"
+            "b";
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-area: r;
+            padding: 0;
+        }
+    }
+    .description__title {
+        grid-area: a;
+        display: grid;
+        align-items: end;
+        font-size: 1.5em;
+        font-weight: 400;
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-weight: 600;
+        }
+        // @include media("<=phone") {
+        //     margin: auto;
+        // }
+    }
+    .description__text {
+        grid-area: b;
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        /***MEDIA***/
+        @include media("<=phone") {
+            padding: 0 0 0 0.5em;
+        }
+    }
+    .description__subtitle {
+        width: 60%;
+        /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            width: auto;
+        }
+        @include media("<=phone") {
+            margin: auto;
+        }
+    }
+    .description__button {
+        grid-area: "c";
+        display: grid;
+        align-items: start;
+        padding: 0 0 0 0.5em;
+        grid-template-columns: 0.2fr;
+        grid-template-rows: minmax(0.3fr, auto);
+        /***MEDIA***/
+        @include media("<=phone") {
+            justify-content: center;
+            grid-template-columns: 0.6fr;
+        }
+        @include media("<=tablet-landscape") {
+            grid-template-columns: 0.4fr;
+        }
+        .btn--description {
+            @include btn;
+            color: $dark;
+            font-weight: 400;
+            font-size: 1.2em;
+            border: 1px solid $dark;
+            border-radius: 10em;
+            padding: 0.2em 0.4em;
             /***MEDIA***/
-            @include media("<=phone-landscape") {
-                grid-row-gap: 0.5em;
-            }
             @include media("<=phone") {
-                grid-row-gap: 3em;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "r"
-                    "p";
+                font-size: 1em;
             }
-            .header_description_inner-left {
-                grid-area: a;
-                display: grid;
-                padding: 0 0 0 0.5em;
-                grid-row-gap: 0.5em;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                grid-template-areas:
-                    "a"
-                    "b";
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-area: r;
-                    padding: 0;
-                }
-                .h-description_title {
-                    grid-area: a;
-                    display: grid;
-                    align-items: end;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        margin: auto;
-                    }
-                    h2 {
-                        font-size: 1.5em;
-                        font-weight: 400;
-                        /***MEDIA***/
-                        @include media("<=phone") {
-                            font-weight: 600;
-                        }
-                    }
-                }
-                .header_description-text {
-                    grid-area: b;
-                    display: grid;
-                    align-items: center;
-                    grid-template-columns: auto;
-                    grid-template-rows: auto;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        padding: 0 0 0 0.5em;
-                    }
-                    .h-description_subtitle {
-                        width: 60%;
-                        /***MEDIA***/
-                        @include media("<=tablet-landscape") {
-                            width: auto;
-                        }
-                        @include media("<=phone") {
-                            margin: auto;
-                        }
-                    }
-                }
+            &:hover {
+                box-shadow: 0px 0px 1.5px 1px $dark;
             }
-            .h-description_button {
-                grid-area: "c";
-                display: grid;
-                align-items: start;
-                padding: 0 0 0 0.5em;
-                grid-template-columns: 0.2fr;
-                grid-template-rows: minmax(0.3fr, auto);
-                /***MEDIA***/
-                @include media("<=phone") {
-                    justify-content: center;
-                    grid-template-columns: 0.6fr;
-                }
-                @include media("<=tablet-landscape") {
-                    grid-template-columns: 0.4fr;
-                }
-                .btn--header_description {
-                    @include btn;
-                    color: $dark;
-                    font-weight: 400;
-                    font-size: 1.2em;
-                    border: 1px solid $dark;
-                    border-radius: 10em;
-                    padding: 0.2em 0.4em;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        font-size: 1em;
-                    }
-                    &:hover {
-                        box-shadow: 0px 0px 1.5px 1px $dark;
-                    }
-                }
-            }
-            .header_description_inner-right {
-                grid-area: b;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-area: p;
-                }
-                .h-description_img {
-                    margin: auto;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        margin: auto;
-                    }
-                }
-            }
+        }
+    }
+    .description__section_2 {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-area: p;
+        }
+    }
+    .description__image {
+        margin: auto;
+        /***MEDIA***/
+        @include media("<=phone") {
+            margin: auto;
         }
     }
 }
@@ -1183,7 +1034,7 @@ body {
                 .circle--branding {
                     grid-area: a;
                     position: relative;
-                    h2 {
+                    .percent--branding {
                         position: absolute;
                         top: 38%;
                         left: 35%;
@@ -1193,7 +1044,7 @@ body {
                 .circle--web {
                     grid-area: b;
                     position: relative;
-                    h2 {
+                    .percent--web {
                         position: absolute;
                         top: 38%;
                         left: 36%;
@@ -1203,7 +1054,7 @@ body {
                 .circle--ui {
                     grid-area: c;
                     position: relative;
-                    h2 {
+                    .percent--ui {
                         position: absolute;
                         top: 38%;
                         left: 36%;
@@ -2080,10 +1931,6 @@ body {
                                         color: #202020;
                                         font-weight: 700;
                                         font-size: 14px;
-                                        &::after {
-                                            content: "%";
-                                            font-size: 12px;
-                                        }
                                     }
                                 }
                                 .bg_progress {
@@ -2092,12 +1939,12 @@ body {
                                     background: #d8dce0;
                                     border-radius: 2px;
                                     position: relative;
-                                    .current_progress {
-                                        position: absolute;
-                                        height: 5px;
-                                        background: $second;
-                                        border-radius: 2px;
-                                    }
+                                }
+                                .current_progress {
+                                    position: absolute;
+                                    height: 5px;
+                                    background: $second;
+                                    border-radius: 2px;
                                 }
                             }
                         }

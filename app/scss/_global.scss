@@ -30,3 +30,13 @@ $first: #f3f3f3;
 $second: #19bd9a;
 $subtitle: #81868e;
 
+.nav__menu {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    max-width: 60%;
+    margin: 0 auto;
+}
+.nav__menu-link {
+    font-size: 1.4em;
+    color: #000;
+}

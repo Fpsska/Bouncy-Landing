@@ -80,96 +80,78 @@
     </svg>
     <!-- /.Sprite -->
 
-    <header class="main_header" id="mainHeaderJS">
-
-        <div class="header_container">
-
-            <div class="headerBar" id="headerBarJS">
-                <h1 class="header_item_logo">BOUNCY</h1>
-                <nav class="header_nav">
-                    <a href="#" class="header-link" data-scroll="#header_descriptionJS">Hello</a>
-                    <a href="#" class="header-link" data-scroll="#project_descriptionJS">About</a>
-                    <a href="#" class="header-link" data-scroll="#servicesJS">Services</a>
-                    <a href="#" class="header-link" data-scroll="#portfolioJS">Portfolio</a>
-                    <a href="#" class="header-link" data-scroll="#teamJS">Team</a>
-                    <a href="#" class="header-link" data-scroll="#newsJS">Blog</a>
-                    <a href="#" class="header-link" data-scroll="#contactsJS">Contacts</a>
+    <header class="header" id="mainHeaderJS">
+        <div class="header__container">
+            <div class="header__bar" id="headerBarJS">
+                <h1 class="header__logo">BOUNCY</h1>
+                <nav class="nav header__nav">
+                    <ul class="nav__menu header__menu">
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#header_descriptionJS">Hello</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#project_descriptionJS">About</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#servicesJS">Services</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#portfolioJS">Portfolio</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#teamJS">Team</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#newsJS">Blog</a>
+                        </li>
+                        <li class="nav__menu-item">
+                            <a href="#" class="nav__menu-link" data-scroll="#contactsJS">Contacts</a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
-
-            <div class="headerBar-mobile">
-                <div class="header_mobile_items">
-                    <h1 class="logo_text">BOUNCY</h1>
-
-                    <span class="menu-icon">&#9776;</span>
-                </div>
-
-                <div class="menu_container">
-                    <span class="menu_close">&times;</span>
-                    <nav class="menu_content">
-                        <a href="#" class="burger_links" data-scroll="#header_descriptionJS">hello</a>
-                        <a href="#" class="burger_links" data-scroll="#project_descriptionJS">About</a>
-                        <a href="#" class="burger_links" data-scroll="#servicesJS">Services</a>
-                        <a href="#" class="burger_links" data-scroll="#portfolioJS">Portfolio</a>
-                        <a href="#" class="burger_links" data-scroll="#teamJS">Team</a>
-                        <a href="#" class="burger_links" data-scroll="#newsJS">Blog</a>
-                        <a href="#" class="burger_links" data-scroll="#contactsJS">Contact</a>
-                    </nav>
-                </div>
-
-            </div>
-
-            <div class="header_text">
-                <div class="header_title">
-                    <h2>WE ARE CODE CAFE</h2>
-                </div>
-                <div class="header_subtitle">
-                    <h3>
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>
-                        praesentium voluptatum
-                    </h3>
-                </div>
-
-                <div class="header_button">
-                    <a href=""></a>
-                    <div class="btn--header">
-                        <i class="arrow_down"></i>
-                        <div class="btn--header_bg"></div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </header>
     <!-- /.header -->
-    <main>
-        <div class="header_description" id="header_descriptionJS">
-            <div class="header_description_container">
-                <div class="header_description_inner">
 
-                    <article class="header_description_inner-left">
-                        <div class="h-description_title">
-                            <h2>THIS IS BOUNCY</h2>
-                        </div>
-                        <div class="header_description-text">
-                            <div class="h-description_subtitle">
-                                <p>
-                                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                    praesentiumvoluptatum deleniti atque corrupti quos dolores et quasmolestias
-                                    excepturi sint occaecati cupiditate non provident,similique sunt in culpa qui
-                                    officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                                    rerum facilis est et expedita distinctio.
-                                </p>
-                            </div>
+    <main>
+        <div class="about">
+            <h2 class="about__title">WE ARE CODE CAFE</h2>
+            <h3 class="about__subtitle">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis <br>
+                praesentium voluptatum
+            </h3>
+            <a class="about__button" href="#">
+                <span class="btn--about">
+                    <span class="btn--about_bg"></span>
+                </span>
+            </a>
+        </div>
+        <!-- /.about -->
+
+        <div class="description">
+            <div class="description__container">
+                <div class="description__inner">
+
+                    <article class="description__section_1">
+                        <h2 class="description__title">THIS IS BOUNCY</h2>
+                        <div class="description__text">
+                            <p class="description__subtitle">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                praesentiumvoluptatum deleniti atque corrupti quos dolores et quasmolestias
+                                excepturi sint occaecati cupiditate non provident,similique sunt in culpa qui
+                                officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                                rerum facilis est et expedita distinctio.
+                            </p>
                         </div>
                     </article>
 
-                    <div class="h-description_button">
-                        <a href="#" class="btn--header_description">Read More</a>
+                    <div class="description__button">
+                        <a href="#" class="btn--description">Read More</a>
                     </div>
 
-                    <div class="header_description_inner-right">
-                        <div class="h-description_img">
+                    <div class="description__section_2">
+                        <div class="description__image">
                             <picture>
                                 <source type="image/webp"
                                     srcset="./img/h-description-1.webp 1x, ./img/h-description-1@2x.webp 2x, ./img/h-description-1@3x.webp 3x">
@@ -179,10 +161,11 @@
                             </picture>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- /.header_description -->
+        <!-- /.description -->
 
         <div class="project_description" id="project_descriptionJS">
             <div class="description_container">
@@ -367,17 +350,17 @@
                     <div class="graphics_inner">
 
                         <div class="circle--branding" data-percent="100" data-scale-color="#f3f3f3">
-                            <h2 class="percent--branding">100%</h2>
+                            <span class="percent--branding">100%</span>
                         </div>
                         <button class="circle_text text--branding">Branding</button>
 
                         <div class="circle--web" data-percent="70" data-scale-color="#f3f3f3">
-                            <h2 class="percent--web">70%</h2>
+                            <span class="percent--web">70%</span>
                         </div>
                         <button class="circle_text text--web">Web Design</button>
 
                         <div class="circle--ui" data-percent="50" data-scale-color="#f3f3f3">
-                            <h2 class="percent--ui">50%</h2>
+                            <span class="percent--ui">50%</span>
                         </div>
                         <button class="circle_text text--ui">UI/UX</button>
 
@@ -436,13 +419,29 @@
                     </div>
 
                     <nav class="portfolio_nav">
-                        <a href="#" class="p-nav_link" data-tab="#tab_1">All Works</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_2">Print</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_3">Identity</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_4">Branding</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_5">Web</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_6">HTML</a>
-                        <a href="#" class="p-nav_link" data-tab="#tab_7">Wordpress</a>
+                        <ul class="nav__menu">
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_1">All Works</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_2">Print</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_3">Identity</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_4">Branding</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_5">Web</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_6">HTML</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a class="nav__menu-link" href="#" data-tab="#tab_7">Wordpress</a>
+                            </li>
+                        </ul>
                     </nav>
                 </article>
 
@@ -706,8 +705,8 @@
                                     <div class="team_bar">
 
                                         <div class="bar_text">
-                                            <h3 class="bar_name--branding">BRANDING</h3>
-                                            <p class="text_progress text_progress-first">0</p>
+                                            <span class="bar_name--branding">BRANDING</span>
+                                            <span class="text_progress text_progress--branding">0</span>
                                         </div>
 
                                         <div class="bg_progress">
@@ -719,22 +718,23 @@
 
                                     <div class="team_bar">
                                         <div class="bar_text">
-                                            <h3 class="bar_name--intfce">WEB DESIGN</h3>
-                                            <p class="text_progress">0</p>
+                                            <span class="bar_name--design">WEB DESIGN</span>
+                                            <span class="text_progress text_progress--design">0</span>
                                         </div>
                                         <div class="bg_progress">
-                                            <div class="current_progress current_progress-second"></div>
+                                            <div class="current_progress-second"></div>
                                         </div>
                                     </div>
 
                                     <!-- 3 BAR -->
+
                                     <div class="team_bar">
                                         <div class="bar_text">
-                                            <h3 class="bar_name--intfce">USER INTARFACE</h3>
-                                            <p class="text_progress">0</p>
+                                            <span class="bar_name--intfce">USER INTARFACE</span>
+                                            <span class="text_progress text_progress--intfce">0</span>
                                         </div>
                                         <div class="bg_progress">
-                                            <div class="current_progress current_progress-third"></div>
+                                            <div class="current_progress-third"></div>
                                         </div>
                                     </div>
 
@@ -769,35 +769,35 @@
 
                                 <div class="team_progressBar">
                                     <!-- 1 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--branding">BRANDING</h3>
-                                            <p class="text_progress first_text--slide2">0</p>
+                                            <span class="text_progress first_text--slide2">0</span>
                                         </div>
                                         <div class="bg_progress first_bg--slide2">
                                             <div class="current_progress first_pr--slide2"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- 2 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--intfce">WEB DESIGN</h3>
-                                            <p class="text_progress second_text--slide2">0</p>
+                                            <span class="text_progress second_text--slide2">0</span>
                                         </div>
                                         <div class="bg_progress second_bg--slide2">
                                             <div class="current_progress second_pr--slide2"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- 3 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--intfce">USER INTARFACE</h3>
-                                            <p class="text_progress third_text--slide2">0</p>
+                                            <span class="text_progress third_text--slide2">0</span>
                                         </div>
                                         <div class="bg_progress third_bg--slide2">
                                             <div class="current_progress third_pr--slide2"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                 </div>
                             </div>
@@ -837,35 +837,35 @@
 
                                 <div class="team_progressBar">
                                     <!-- 1 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--branding">BRANDING</h3>
-                                            <p class="text_progress first_text--slide3">0</p>
+                                            <span class="text_progress first_text--slide3">0</span>
                                         </div>
                                         <div class="bg_progress first_bg--slide3">
                                             <div class="current_progress first_pr--slide3"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- 2 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--intfce">WEB DESIGN</h3>
-                                            <p class="text_progress second_text--slide3">0</p>
+                                            <span class="text_progress second_text--slide3">0</span>
                                         </div>
                                         <div class="bg_progress second_bg--slide3">
                                             <div class="current_progress second_pr--slide3"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- 3 BAR -->
-                                    <div class="team_bar">
+                                    <!-- <div class="team_bar">
                                         <div class="bar_text">
                                             <h3 class="bar_name--intfce">USER INTARFACE</h3>
-                                            <p class="text_progress third_text--slide3">0</p>
+                                            <span class="text_progress third_text--slide3">0</span>
                                         </div>
                                         <div class="bg_progress third_bg--slide3">
                                             <div class="current_progress third_pr--slide3"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -1245,9 +1245,9 @@
 
                     <form action="/" method="GET" enctype="multipart/form-data" class="subscribe_inputs">
                         <input class="subscribe_input input--email" placeholder="Email Address" type="email"
-                            name="email">
+                            name="email" data-validate-field="email" required>
                         <div class="subscribe_button">
-                            <button class="custom-btn btn-subscribe" type="button"><span>SUMBIT</span></button>
+                            <button class="custom-btn btn-subscribe" type="submit"><span>SUMBIT</span></button>
                         </div>
                     </form>
                 </div>
@@ -1347,13 +1347,13 @@
                     <div class="group_inputs">
                         <input class="input input--name" name="text" placeholder="Your name" type="text" required
                             data-validate-field="name">
-                        <input class="input input--email" name="email" placeholder="Email address" type="email"
-                            required data-validate-field="email">
-                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15" type="text" required
-                            data-validate-field="subject">
+                        <input class="input input--email" name="email" placeholder="Email address" type="email" required
+                            data-validate-field="email">
+                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15" type="text"
+                            required data-validate-field="subject">
                     </div>
-                    <input class="input input--message" name="text" placeholder="Type your message" type="text"
-                        required data-validate-field="message">
+                    <input class="input input--message" name="text" placeholder="Type your message" type="text" required
+                        data-validate-field="message">
 
                     <div class="feedback_button">
                         <button class="btn-feedback" type="submit">
