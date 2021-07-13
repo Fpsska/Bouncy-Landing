@@ -112,7 +112,7 @@
             </div>
         </div>
     </header>
-    <!-- /.header -->
+    <!-- /.HEADER -->
 
     <main>
         <div class="about" id="about">
@@ -1233,106 +1233,99 @@
         </div>
         <!-- /.contacts -->
 
-        <!-- <div class="feedback">
-            <div class="feedback_container">
-                <form action="/" method="GET" enctype="multipart/form-data" class="feedback_inner">
-                    <div class="group_inputs">
-                        <input class="input input--name" name="text" placeholder="Your name" type="text" required
-                            data-validate-field="name">
-                        <input class="input input--email" name="email" placeholder="Email address" type="email" required
-                            data-validate-field="email">
-                        <input class="input input--subject" name="text" placeholder="Subject" maxlength="15" type="text"
-                            required data-validate-field="subject">
-                    </div>
-                    <input class="input input--message" name="text" placeholder="Type your message" type="text" required
-                        data-validate-field="message">
-
-                    <div class="feedback_button">
-                        <button class="btn-feedback" type="submit">
+        <div class="form">
+            <div class="form__container">
+                <form class="form__group" action="/" method="GET" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="form__section_1">
+                            <input class="form__input form__input-name" name="text" placeholder="Your name" type="text"
+                                required data-validate-field="name">
+                            <input class="form__input form__input-email" name="email" placeholder="Email address"
+                                type="email" required data-validate-field="email">
+                            <input class="form__input form__input-subject" name="text" placeholder="Subject"
+                                maxlength="15" type="text" required data-validate-field="subject">
+                        </div>
+                        <div class="form__section_2">
+                            <input class="form__input form__input-message" name="text" placeholder="Type your message"
+                                type="text" required data-validate-field="message">
+                        </div>
+                    </fieldset>
+                    <div class="form__button">
+                        <button class="btn--form" type="submit">
                             <span class="side flip-front">SUMBIT NOW</span>
                             <span class="side flip-back">COMPLITE!</span>
                         </button>
                     </div>
-
                 </form>
             </div>
-        </div> -->
+        </div>
         <!-- /.feedback -->
 
         <div class="map">
-            <div class="map_container">
-                <div class="map_iframe">
+            <div class="map__container">
+                <div class="map__iframe">
                     <iframe class="iframe-responsive"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.5084480654316!2d30.48136721617253!3d59.90710867160365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46962e5d5a6645ab%3A0x8f342a4735c3175a!2z0YHRgi4g0LwuINGD0LvQuNGG0LAg0JTRi9Cx0LXQvdC60L4!5e0!3m2!1sru!2sru!4v1612356995089!5m2!1sru!2sru"
                         allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    <div class="map_text">
-                        <h2 class="map_title">FIND US ON THE MAP</h2>
+                    <div class="map__text">
+                        <h2 class="map__title">FIND US ON THE MAP</h2>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- /.map -->
-    </main>
-    <footer class="footer">
-        <div class="footer_container">
-            <div class="footer_inner">
-                <article class="footer_text">
-                    <div class="footer_title">
-                        <h2>BOUNCY</h2>
-                    </div>
-                    <div class="footer_subtitle">
-                        <h3>Copyright 2020, All rights Reserved</h3>
-                    </div>
-                </article>
-                <ul class="footer_social_inner">
 
-                    <li class="footer_social_item">
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <svg class="footer_icon">
+    </main>
+    <!-- /.MAIN-->
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__inner">
+                <article class="footer__text">
+                    <h2 class="footer__title">BOUNCY</h2>
+                    <h3 class="footer__subtitle ">Copyright 2020, All rights Reserved</h3>
+                </article>
+                <ul class="footer__social">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="https://www.facebook.com/" target="_blank">
+                            <svg class="footer__svg">
                                 <use xlink:href="#facebook"></use>
                             </svg>
                         </a>
                     </li>
-
-                    <li class="footer_social_item">
-                        <a href="https://twitter.com/?lang=en" target="_blank">
-                            <svg class="footer_icon">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="https://twitter.com/?lang=en" target="_blank">
+                            <svg class="footer__svg">
                                 <use xlink:href="#twitter"></use>
                             </svg>
                         </a>
                     </li>
-
-                    <li class="footer_social_item">
-                        <a href="https://ru.wikipedia.org/wiki/LinkedIn" target="_blank">
-                            <svg class="footer_icon">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="https://ru.wikipedia.org/wiki/LinkedIn" target="_blank">
+                            <svg class="footer__svg">
                                 <use xlink:href="#linkedin"></use>
                             </svg>
                         </a>
                     </li>
-
-
-                    <li class="footer_social_item">
-                        <a href="https://web.telegram.org/#/login" target="_blank">
-                            <svg class="footer_icon">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="https://web.telegram.org/#/login" target="_blank">
+                            <svg class="footer__svg">
                                 <use xlink:href="#telegram"></use>
                             </svg>
                         </a>
                     </li>
-
-                    <li class="footer_social_item">
-                        <a href="https://vk.com/" target="_blank">
-                            <svg class="footer_icon">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="https://vk.com/" target="_blank">
+                            <svg class="footer__svg">
                                 <use xlink:href="#vk"></use>
                             </svg>
                         </a>
                     </li>
-
                 </ul>
             </div>
         </div>
     </footer>
-    <!--/.footer -->
+    <!--/.FOOTER -->
 
 
 

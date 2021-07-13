@@ -1984,161 +1984,135 @@ body {
 
 //*************/.CONTACTS SECTION*************//
 
-// .feedback {
-//     margin: $indent 0;
-//     padding: 0.5em 0.5em;
-//     /***MEDIA***/
-//     @include media("<=phone") {
-//         margin: 3em 0;
-//         padding: 0.1em 0.1em;
-//     }
-//     .feedback_container {
-//         max-width: 1300px;
-//         margin: 0 auto;
-//         display: grid;
-//         height: 100%;
-//         .feedback_inner {
-//             display: grid;
-//             grid-template-columns: repeat(3, 1fr);
-//             grid-template-rows: auto;
-//             grid-template-areas:
-//                 "a a a"
-//                 "b b b"
-//                 "c c c";
-//             /***MEDIA***/
-//             @include media("<=tablet") {
-//                 grid-template-columns: 1fr;
-//                 grid-template-rows: repeat(2, auto);
-//                 grid-template-areas:
-//                     "a"
-//                     "b"
-//                     "c";
-//             }
-//             .group_inputs {
-//                 grid-area: a;
-//                 display: grid;
-//                 justify-content: space-between;
-//                 grid-template-columns: repeat(3, auto);
-//                 grid-template-areas: "m t v";
-//                 /***MEDIA***/
-//                 @include media("<=tablet") {
-//                     grid-area: a;
-//                     grid-template-columns: 1fr;
-//                     grid-template-rows: repeat(3, auto);
-//                     grid-row-gap: 0.5em;
-//                     grid-template-areas:
-//                         "r"
-//                         "p"
-//                         "g";
-//                 }
-//                 .input--name {
-//                     grid-area: m;
-//                     @include input;
-//                     width: 318px;
-//                     height: 40px;
-//                     /***MEDIA***/
-//                     @include media("<=tablet") {
-//                         grid-area: r;
-//                         min-width: 100%;
-//                     }
-//                     @include media("<=tablet") {
-//                         width: 210px;
-//                     }
-//                     &:hover {
-//                         border: 1px solid $second;
-//                     }
-//                 }
-//                 .input--email {
-//                     grid-area: t;
-//                     @include input;
-//                     width: 318px;
-//                     height: 40px;
-//                     /***MEDIA***/
-//                     @include media("<=tablet") {
-//                         grid-area: p;
-//                         min-width: 100%;
-//                     }
-//                     @include media("<=tablet") {
-//                         width: 210px;
-//                     }
-//                     &:hover {
-//                         border: 1px solid $second;
-//                     }
-//                 }
-//                 .input--subject {
-//                     grid-area: v;
-//                     @include input;
-//                     width: 318px;
-//                     height: 40px;
-//                     /***MEDIA***/
-//                     @include media("<=tablet") {
-//                         grid-area: g;
-//                         min-width: 100%;
-//                     }
-//                     @include media("<=tablet") {
-//                         width: 210px;
-//                     }
-//                     &:hover {
-//                         border: 1px solid $second;
-//                     }
-//                 }
-//             }
-//             .input--message {
-//                 grid-area: b;
-//                 @include input;
-//                 height: 190px;
-//                 margin: 2.5em 0;
-//                 /***MEDIA***/
-//                 @include media("<=phone") {
-//                     grid-area: b;
-//                     min-width: 150px;
-//                 }
-//                 &:hover {
-//                     border: 1px solid $second;
-//                 }
-//             }
-//             .feedback_button {
-//                 grid-area: c;
-//                 display: grid;
-//                 grid-template-rows: 40px;
-//             }
-//             .btn-feedback {
-//                 position: relative;
-//                 transform-style: preserve-3d;
-//                 // &:focus {
-//                 //     transform: rotatex(-90deg);
-//                 // }
-//             }
-//             .btn-feedback.submited {
-//                 transform: rotatex(-90deg);
-//             }
-//             .side {
-//                 position: absolute;
-//                 left: 0;
-//                 top: 0;
-//                 width: 100%;
-//                 height: 100%;
-//                 display: grid;
-//                 align-items: center;
-//                 backface-visibility: hidden;
-//             }
-//             .flip-front {
-//                 font-size: 1em;
-//                 background-color: $second;
-//                 color: #202020;
-//                 transform: translateZ(20.1px);
-//             }
-//             .flip-back {
-//                 font-size: 1em;
-//                 background-color: #202020;
-//                 color: #fff;
-//                 transform: rotateX(90deg) translateZ(20.1px);
-//             }
-//         }
-//     }
-// }
+.form {
+    margin: $indent 0;
+    padding: 0.5em 0.5em;
+    /***MEDIA***/
+    @include media("<=phone") {
+        margin: 3em 0;
+        padding: 0.1em 0.1em;
+    }
+    .form__container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    .form__group {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "a a a"
+            "b b b"
+            "c c c";
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "a"
+                "b"
+                "c";
+        }
+    }
+    .form__section_1 {
+        grid-area: a;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, auto);
+        grid-template-areas: "m t v";
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-area: a;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            grid-row-gap: 0.5em;
+            grid-template-areas:
+                "r"
+                "p"
+                "g";
+        }
+    }
+    .form__section_2 {
+        grid-area: b;
+        display: grid;
+    }
+    .form__input {
+        @include input;
+        width: 318px;
+        height: 40px;
+        &:hover {
+            border: 1px solid $second;
+        }
+        @include media("<=tablet") {
+            min-width: 100%;
+        }
+        // @include media("<=tablet") {
+        //     width: 210px;
+        // }
+    }
+    .form__input-name {
+        grid-area: m;
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-area: r;
+        }
+    }
+    .form__input-email {
+        grid-area: t;
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-area: p;
+        }
+    }
+    .form__input-subject {
+        grid-area: v;
+        /***MEDIA***/
+        @include media("<=tablet") {
+            grid-area: g;
+        }
+    }
+    .form__input-message {
+        height: 190px;
+        width: 100%;
+        margin: 2.5em 0;
+    }
+    .form__button {
+        grid-area: c;
+        display: grid;
+        grid-template-rows: 40px;
+    }
+    .btn--form {
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    .btn--form .submited {
+        transform: rotatex(-90deg);
+    }
+    .side {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        backface-visibility: hidden;
+    }
+    .flip-front {
+        font-size: 1em;
+        background-color: $second;
+        color: #202020;
+        transform: translateZ(20.1px);
+    }
+    .flip-back {
+        font-size: 1em;
+        background-color: #202020;
+        color: #fff;
+        transform: rotateX(90deg) translateZ(20.1px);
+    }
+}
 
-//*************/.FEEDBACK_BLOCK*************//
+//*************/.FEEDBACK SECTION*************//
 
 .map {
     max-width: 100%;
@@ -2147,72 +2121,72 @@ body {
     @include media("<=small-screens") {
         height: 100vh;
     }
-    .map_container {
+    .map__container {
         width: 100%;
         height: 100%;
         /*MEDIA*/
         @include media("<=small-screens") {
             height: 100vh;
         }
-        .map_iframe {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            &:hover .map_text {
-                transform: translate(-100);
-                height: 0;
-                font-size: 0;
-            }
-            &:hover .map_title {
-                font-size: 0;
-            }
-            /*MEDIA*/
-            @include media("<=small-screens") {
-                height: 100vh;
-            }
-            .iframe-responsive {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                height: 100%;
-                width: 100%;
-                /*MEDIA*/
-                @include media("<=small-screens") {
-                    height: 100vh;
-                }
-            }
+    }
+    .map__iframe {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        &:hover .map__text {
+            transform: translate(-100);
+            height: 0;
+            font-size: 0;
         }
-        .map_text {
-            display: grid;
-            width: 100%;
-            height: 100%;
-            background-color: $dark;
-            opacity: 0.9;
-            align-items: center;
-            justify-items: center;
-            /*MEDIA*/
-            @include media("<=small-screens") {
-                height: 100vh;
-            }
-            .map_title {
-                font-weight: 200;
-                font-size: 2em;
-                color: $header;
-                /***MEDIA***/
-                @include media("<=phone") {
-                    font-size: 1.4em;
-                    top: 45%;
-                    left: 20%;
-                }
-            }
+        &:hover .map__title {
+            font-size: 0;
+        }
+        /*MEDIA*/
+        @include media("<=small-screens") {
+            height: 100vh;
+        }
+    }
+    .iframe-responsive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        /*MEDIA*/
+        @include media("<=small-screens") {
+            height: 100vh;
+        }
+    }
+    .map__text {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        background-color: $dark;
+        opacity: 0.9;
+        align-items: center;
+        justify-items: center;
+        /*MEDIA*/
+        @include media("<=small-screens") {
+            height: 100vh;
+        }
+    }
+    .map__title {
+        font-weight: 200;
+        font-size: 2em;
+        color: $header;
+        /***MEDIA***/
+        @include media("<=phone") {
+            font-size: 1.4em;
+            top: 45%;
+            left: 20%;
         }
     }
 }
 
-//*************/.MAP_BLOCK*************//
+//*************/.MAP SECTION*************//
 
 .footer {
     background-color: $first;
@@ -2222,60 +2196,56 @@ body {
         height: auto;
         padding: 1em 0;
     }
-    .footer_container {
+    .footer__container {
         display: grid;
         margin: 0 auto;
         text-align: center;
         align-content: center;
         height: 100%;
         max-width: 540px;
-        .footer_inner {
-            margin: auto 0;
-            display: grid;
-            grid-row-gap: 1em;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 0.5fr);
-            grid-template-areas:
-                "a"
-                "b";
-            .footer_text {
-                grid-area: a;
-                .footer_title {
-                    h2 {
-                        font-weight: 900;
-                        font-size: 1.8em;
-                    }
-                }
-                h3 {
-                    @include subtitle;
-                }
-            }
-            .footer_social_inner {
-                grid-area: b;
-                display: grid;
-                grid-template-columns: repeat(5, 0.07fr);
-                grid-template-rows: auto;
-                justify-content: center;
-                /*MEDIA*/
-                @include media("<=tablet-landscape") {
-                    grid-column-gap: 0.25em;
-                }
-                .footer_icon {
-                    width: 35px;
-                    height: 35px;
-                    z-index: 10;
-                    transform: scale(1);
-                    transition: 0.1s linear;
-                    border-radius: 5px;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                }
-            }
+    }
+    .footer__inner {
+        margin: auto 0;
+        display: grid;
+        grid-row-gap: 1em;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 0.5fr);
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .footer__text {
+        grid-area: a;
+        @include subtitle;
+    }
+    .footer__title {
+        font-weight: 900;
+        font-size: 1.8em;
+    }
+    .footer__social {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: repeat(5, 0.07fr);
+        grid-template-rows: auto;
+        justify-content: center;
+        /*MEDIA*/
+        @include media("<=tablet-landscape") {
+            grid-column-gap: 0.25em;
+        }
+    }
+    .footer__svg {
+        width: 35px;
+        height: 35px;
+        z-index: 10;
+        transform: scale(1);
+        transition: 0.1s linear;
+        border-radius: 5px;
+        &:hover {
+            transform: scale(1.1);
         }
     }
 }
 
-//*************/.FOOTER_BLOCK*************//
+//*************/.FOOTER SECTION*************//
 
 @import "include-media.scss";
