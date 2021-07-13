@@ -525,7 +525,7 @@ body {
     .text {
         grid-area: a;
     }
-    .projects_reviews {
+    .projects__overview {
         grid-area: b;
         margin: 0;
         display: grid;
@@ -1584,181 +1584,132 @@ body {
     @include media("<=phone-landscape") {
         margin: 5em 0;
     }
-    .prices_container {
+    .prices__container {
         max-width: 1200px;
         margin: 0 auto;
+    }
+    .prices__inner {
         display: grid;
-        .prices_inner {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 0.5fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 0.5fr);
+        grid-template-areas:
+            "a"
+            "b";
+        /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            grid-template-rows: 0.05fr auto;
+        }
+    }
+    .text {
+        grid-area: a;
+    }
+    .prices__overview {
+        grid-area: b;
+        padding: 0.5em;
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: minmax(255px, auto);
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: auto;
+            justify-content: center;
+            grid-row-gap: 3em;
             grid-template-areas:
                 "a"
-                "b";
-            /***MEDIA***/
-            @include media("<=tablet-landscape") {
-                grid-template-rows: 0.05fr auto;
-            }
-            .prices_text {
-                grid-area: a;
-                display: grid;
-                grid-auto-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "a"
-                    "b";
-                /***MEDIA***/
-                @include media("<=phone") {
-                    margin: 0 0 5em 0;
-                    grid-template-rows: repeat(2, 0.05fr);
-                }
-                @include media("<=tablet-landscape") {
-                    margin: 0 0 3em 0;
-                }
-                margin: 0 0 7em 0;
-                text-align: center;
-                .prices_title {
-                    grid-area: a;
-                    margin: 0 0 0.5em 0;
-                    h2 {
-                        @include title;
-                    }
-                }
-                .prices_subtitle {
-                    grid-area: b;
-                    h3 {
-                        @include subtitle;
-                    }
-                }
-            }
-
-            .prices_card_inner {
-                grid-area: b;
-                padding: 0.5em;
-                display: grid;
-                justify-content: space-between;
-                grid-template-columns: repeat(3, auto);
-                /***MEDIA***/
-                @include media("<=phone-landscape") {
-                    grid-template-rows: repeat(3, 1fr);
-                    grid-template-columns: auto;
-                    justify-content: center;
-                    grid-row-gap: 3em;
-                    grid-template-areas:
-                        "a"
-                        "b"
-                        "c";
-                }
-                .prices_card {
-                    display: grid;
-                    text-align: center;
-                    grid-template-areas:
-                        "a"
-                        "b"
-                        "c";
-                    grid-template-columns: 11em;
-                    grid-template-rows: 1fr;
-                    box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
-                    .price_card_content-top {
-                        grid-area: a;
-                        background-color: $second;
-                    }
-                    .price_card_content-center {
-                        grid-area: b;
-                        display: grid;
-                        li {
-                            font-size: 1em;
-                        }
-                    }
-                    .price_card_content-btm {
-                        grid-area: c;
-                        background-color: $second;
-                        position: relative;
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            top: 0;
-                            left: 77%;
-                            top: 43%;
-                            right: 0;
-                            bottom: 0;
-                            width: 10px;
-                            height: 10px;
-                            border-top: 2px solid $header;
-                            border-right: 2px solid $header;
-                            transform: rotate(-315deg);
-                            opacity: 0.8;
-                            z-index: 10;
-                        }
-                    }
-                }
-                .card--first {
-                    display: grid;
-                    grid-template-rows: 0.25fr 1fr;
-                    grid-template-areas:
-                        "a"
-                        "b";
-                    position: relative;
-                    color: $subtitle;
-                    background-color: $header;
-                    h3 {
-                        font-size: 1.8em;
-                        font-weight: 700;
-                        color: $second;
-                        padding: 0.1em 0.1em;
-                        margin: auto 0 0 0;
-                    }
-                }
-                .card--second {
-                    display: grid;
-                    grid-template-areas:
-                        "b"
-                        "c";
-                    color: $subtitle;
-                    background-color: $header;
-                    .price_card_ul {
-                        padding: 0.5em 1.5em;
-                        text-align: start;
-                    }
-                }
-                .card--third {
-                    display: grid;
-                    grid-template-rows: 0.25fr 1fr;
-                    grid-template-areas:
-                        "a"
-                        "b";
-                    position: relative;
-                    color: $subtitle;
-                    background-color: $header;
-                    h3 {
-                        font-size: 1.8em;
-                        font-weight: 700;
-                        color: $second;
-                        padding: 0.1em 0.1em;
-                        margin: auto 0 0 0;
-                    }
-                }
-                h2 {
-                    padding: 0.5em 0.5em;
-                    font-size: 1.2em;
-                    color: $header;
-                }
-                h3 {
-                    font-size: 1.2em;
-                    padding: 0.5em 0.5em;
-                    color: $header;
-                }
-                p {
-                    font-size: 1.3em;
-                    padding: 0.1em 0.1em;
-                    margin: 0 0 auto 0;
-                }
-            }
+                "b"
+                "c";
         }
+    }
+    .prices__card {
+        display: grid;
+        text-align: center;
+        grid-template-areas:
+            "a"
+            "b"
+            "c";
+        grid-template-columns: minmax(190px, auto);
+        box-shadow: -1px 0px 7px 2px rgba(0, 0, 0, 0.22);
+        color: $subtitle;
+        background-color: $header;
+    }
+    .prices__card_top {
+        grid-area: a;
+        background-color: $second;
+        font-size: 1.2em;
+        color: #fff;
+        display: grid;
+        align-items: center;
+    }
+    .prices__card_center {
+        grid-area: b;
+        display: grid;
+    }
+    .prices__card_btm {
+        grid-area: c;
+        display: grid;
+        align-items: center;
+        background-color: $second;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 77%;
+            top: 43%;
+            right: 0;
+            bottom: 0;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid $header;
+            border-right: 2px solid $header;
+            transform: rotate(-315deg);
+            opacity: 0.8;
+            z-index: 10;
+        }
+    }
+    .prices__card_title {
+        font-size: 1.2em;
+        color: #fff;
+    }
+    .prices__card-first {
+        grid-template-rows: 0.25fr 1fr;
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .prices__card-second {
+        grid-template-rows: 1fr 0.25fr;
+        grid-template-areas:
+            "b"
+            "c";
+    }
+    .prices__card-third {
+        grid-template-rows: 0.25fr 1fr;
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .prices__card_duration {
+        font-size: 1.3em;
+        padding: 0.1em 0.1em;
+        margin: 0 0 auto 0;
+    }
+    .prices__card_sum {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: $second;
+        padding: 0.1em 0.1em;
+        margin: auto 0 0 0;
+    }
+    .prices__services {
+        padding: 0.5em 1.5em;
+        text-align: start;
     }
 }
 
-//*************/.PRICES_BLOCK*************//
+//*************/.PRICES SECTION*************//
 
 .subscribe {
     margin: 0 0 0 0;
@@ -1767,181 +1718,161 @@ body {
     background-position: center;
     background-image: url("../img/sub-background.png");
     opacity: 8;
-    .subscribe_container {
+    .subscribe__container {
         max-width: 540px;
         margin: 0 auto;
         text-align: center;
         display: grid;
-        .subscribe_inner {
-            padding: 5em 0;
-            margin: auto 0;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
+    }
+    .subscribe__inner {
+        padding: 5em 0;
+        margin: auto 0;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+            "a a"
+            "b b";
+        /*MEDIA*/
+        @include media("<=phone-landscape") {
+            padding: 3em 0;
+        }
+        @include media("<=phone") {
+            padding: 2em 0;
+        }
+    }
+    .text {
+        grid-area: a;
+        .title {
+            color: $header;
+        }
+        .subtitle {
+            color: $header;
+        }
+    }
+    .subscribe__form {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: min(2.5em);
+        grid-template-areas: "a b";
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-row-gap: 1em;
+            grid-template-columns: 1fr;
             grid-template-rows: repeat(2, auto);
             grid-template-areas:
-                "a a"
-                "b b";
-            /*MEDIA*/
-            @include media("<=phone-landscape") {
-                padding: 3em 0;
+                "a"
+                "b";
+        }
+    }
+    .subscribe__input {
+        grid-area: a;
+        max-width: 134%;
+        color: #cfd3d4;
+        padding: 1em;
+        color: $header;
+        border: 1px solid $subtitle;
+        background-color: transparent;
+        opacity: 0.7;
+        /***MEDIA***/
+        @include media("<=phone") {
+            grid-area: a;
+            width: 90%;
+            margin: auto;
+        }
+        &:hover {
+            border: 1px solid $header;
+        }
+    }
+    .subscribe__button {
+        grid-area: b;
+        display: grid;
+        grid-template-columns: 0.9fr;
+        grid-template-rows: 1fr;
+        justify-content: end;
+        /*MEDIA*/
+        @include media("<=phone") {
+            margin: 0 auto;
+        }
+        .btn--custom {
+            padding: 0.6em 1.2em;
+            font-size: 1em;
+            font-weight: 200;
+            background: transparent;
+            outline: none !important;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            color: $header;
+            &:hover,
+            &:focus {
+                color: $second;
             }
-            @include media("<=phone") {
-                padding: 2em 0;
-            }
-            .subscribe_text {
-                grid-area: a;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "c"
-                    "d";
-                color: $header;
-                .subscribe_title {
-                    grid-area: c;
-                    margin: 0 0 1.5em 0;
-                    h2 {
-                        font-size: 1.5em;
-                        font-weight: 200;
-                    }
-                }
-                .subscribe_subtitle {
-                    grid-area: d;
-                    margin: 0 0 2.6em 0;
-                    h3 {
-                        font-size: 1.1em;
-                        /***MEDIA***/
-                        @include media("<=phone") {
-                            font-size: 0.75em;
-                        }
-                    }
-                }
-            }
-            .subscribe_inputs {
-                grid-area: b;
-                display: grid;
-                grid-template-columns: 1.5fr 1fr;
-                grid-template-rows: min(2.5em);
-                grid-template-areas: "a b";
-                /***MEDIA***/
-                @include media("<=phone") {
-                    grid-row-gap: 1em;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(2, auto);
-                    grid-template-areas:
-                        "a"
-                        "b";
-                }
-                .subscribe_input {
-                    grid-area: a;
-                    max-width: 134%;
-                    color: #cfd3d4;
-                    padding: 1em;
-                    color: $header;
-                    border: 1px solid $subtitle;
-                    background-color: transparent;
-                    opacity: 0.7;
-                    /***MEDIA***/
-                    @include media("<=phone") {
-                        grid-area: a;
-                        width: 90%;
-                        margin: auto;
-                    }
-                    &:hover {
-                        border: 1px solid $header;
-                    }
-                }
-                .subscribe_button {
-                    grid-area: b;
-                    display: grid;
-                    grid-template-columns: 0.9fr;
-                    grid-template-rows: 1fr;
-                    justify-content: end;
-                    /*MEDIA*/
-                    @include media("<=phone") {
-                        margin: 0 auto;
-                    }
-                    .custom-btn {
-                        padding: 0.6em 1.2em;
-                        font-size: 1em;
-                        font-weight: 200;
-                        background: transparent;
-                        outline: none !important;
-                        cursor: pointer;
-                        position: relative;
-                        display: inline-block;
-                        color: $header;
-                        &:hover,
-                        &:focus {
-                            color: $second;
-                        }
-                    }
-                    .btn-subscribe {
-                        width: 9em;
-                        height: 90%;
-                        line-height: 2.3em;
-                        padding: 0;
-                        border: none;
-                    }
-                    .btn-subscribe span {
-                        position: relative;
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .btn-subscribe:before,
-                    .btn-subscribe:after {
-                        position: absolute;
-                        content: "";
-                        right: 0;
-                        top: 0;
-                        background: $second;
-                        transition: all 0.3s ease;
-                    }
-                    .btn-subscribe:before {
-                        height: 0%;
-                        width: 1px;
-                    }
-                    .btn-subscribe:after {
-                        width: 0%;
-                        height: 1px;
-                    }
-                    .btn-subscribe:hover:before {
-                        height: 100%;
-                    }
-                    .btn-subscribe:hover:after {
-                        width: 100%;
-                    }
-                    .btn-subscribe span:before,
-                    .btn-subscribe span:after {
-                        position: absolute;
-                        content: "";
-                        left: 0;
-                        bottom: 0;
-                        background: $second;
-                        transition: all 0.3s ease;
-                    }
-                    .btn-subscribe span:before {
-                        width: 1px;
-                        height: 0%;
-                    }
-                    .btn-subscribe span:after {
-                        width: 0%;
-                        height: 1px;
-                    }
-                    .btn-subscribe span:hover:before {
-                        height: 100%;
-                    }
-                    .btn-subscribe span:hover:after {
-                        width: 100%;
-                    }
-                }
-            }
+        }
+        .btn--subscribe {
+            width: 9em;
+            height: 90%;
+            line-height: 2.3em;
+            padding: 0;
+            border: none;
+        }
+        .btn--subscribe span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .btn--subscribe:before,
+        .btn--subscribe:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            background: $second;
+            transition: all 0.3s ease;
+        }
+        .btn--subscribe:before {
+            height: 0%;
+            width: 1px;
+        }
+        .btn--subscribe:after {
+            width: 0%;
+            height: 1px;
+        }
+        .btn--subscribe:hover:before {
+            height: 100%;
+        }
+        .btn--subscribe:hover:after {
+            width: 100%;
+        }
+        .btn--subscribe span:before,
+        .btn--subscribe span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            background: $second;
+            transition: all 0.3s ease;
+        }
+        .btn--subscribe span:before {
+            width: 1px;
+            height: 0%;
+        }
+        .btn--subscribe span:after {
+            width: 0%;
+            height: 1px;
+        }
+        .btn--subscribe span:hover:before {
+            height: 100%;
+        }
+        .btn--subscribe span:hover:after {
+            width: 100%;
         }
     }
 }
 
-//*************/.SUBSCRIBE_BLOCK*************//
+//*************/.SUBSCRIBE SECTION*************//
 
 .contacts {
     height: auto;
@@ -1950,132 +1881,108 @@ body {
     @include media(">phone", "<tablet") {
         margin: 5em 0;
     }
-    .contacts_container {
+    .contacts__container {
         text-align: center;
         display: grid;
         grid-auto-rows: minmax(500px, auto);
         max-width: 1300px;
         margin: 0 auto;
-        .contacts_inner {
-            display: grid;
+    }
+    .contacts__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(200px, auto);
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .text {
+        grid-area: a;
+    }
+    .contacts__overview {
+        grid-area: b;
+        justify-content: space-between;
+        display: grid;
+        grid-gap: 2em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(28em, auto);
+        /***MEDIA***/
+        @include media("<=tablet") {
+            justify-content: center;
+            grid-gap: 3em;
             grid-template-columns: 1fr;
-            grid-auto-rows: minmax(200px, auto);
-            grid-template-areas:
-                "a"
-                "b";
-            .contacts_text {
-                grid-area: a;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, auto);
-                grid-template-areas:
-                    "c"
-                    "d";
-                margin-bottom: 4em;
-                .contacts_title {
-                    grid-area: c;
-                    margin: 0 0 1em 0;
-                    h2 {
-                        @include title;
-                    }
-                }
-                .contacts_subtitle {
-                    grid-area: d;
-                    h3 {
-                        @include subtitle;
-                    }
-                }
-            }
-            .contacst_card_inner {
-                grid-area: b;
-                justify-content: space-between;
-                display: grid;
-                grid-gap: 2em;
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: minmax(22em, auto);
-                /***MEDIA***/
-                @include media("<=tablet") {
-                    justify-content: center;
-                    grid-gap: 3em;
-                    grid-template-columns: 1fr;
-                    grid-auto-rows: repeat(3, auto);
-                    padding: 0.1em 0.1em;
-                }
-                .contacts_card {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 13em minmax(5em, auto);
-                    grid-template-areas:
-                        "a"
-                        "b";
-                    .card_top_content {
-                        grid-area: a;
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: auto;
-                        background-size: cover;
-                        position: relative;
-                        .contacts_card_img {
-                            margin: auto;
-                            transform: scale(1);
-                            transition: 0.2s linear;
-                            &:hover {
-                                transform: scale(1.1);
-                            }
-                        }
-                    }
-                    .card--social {
-                        background-image: url("../img/contacts-1.png");
-                    }
-                    .card--office {
-                        background-image: url("../img/contacts-2.png");
-                    }
-                    .card--phone {
-                        background-image: url("../img/contacts-3.png");
-                    }
-                    .card_btm_content {
-                        grid-area: b;
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-auto-rows: minmax(4em, auto);
-                        grid-template-areas:
-                            "a"
-                            "b";
-                        background: $header;
-                        min-width: 100%;
-                        .card_title {
-                            grid-area: a;
-                            padding: 0.5em 0.5em;
-                            font-weight: 400;
-                            font-size: 1.2em;
-                            margin: auto;
-                        }
-                        .card_subtitle {
-                            grid-area: b;
-                            display: grid;
-                            padding: 0.5em 0.5em;
-                            grid-template-columns: 1fr;
-                            grid-template-rows: 0.2fr;
-                            grid-template-areas:
-                                "c"
-                                "d";
-                            .requisites_1 {
-                                grid-area: c;
-                                color: $dark;
-                            }
-                            .requisites_2 {
-                                grid-area: d;
-                                color: $dark;
-                            }
-                        }
-                    }
-                }
-            }
+            grid-auto-rows: repeat(3, auto);
+            padding: 0.1em 0.1em;
         }
+    }
+    .contacts__card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "a"
+            "b";
+    }
+    .contacts__card_top {
+        grid-area: a;
+        display: grid;
+        background-size: cover;
+        position: relative;
+    }
+    .contacts__card_image {
+        margin: auto;
+        transform: scale(1);
+        transition: 0.2s linear;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .contacts__card_btm {
+        grid-area: b;
+        display: grid;
+        grid-template-rows: minmax(0.5fr, auto);
+        grid-template-areas:
+            "a"
+            "b";
+        background: $header;
+    }
+    .contacts__card_subtitle {
+        grid-area: b;
+        display: grid;
+        padding: 0.5em 0.5em;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr;
+        grid-template-areas:
+            "c"
+            "d";
+    }
+    .requisites-1 {
+        grid-area: c;
+        color: $dark;
+    }
+    .requisites-2 {
+        grid-area: d;
+        color: $dark;
+    }
+    .contacts__card_title {
+        grid-area: a;
+        padding: 0.5em 0.5em;
+        font-weight: 400;
+        font-size: 1.2em;
+        margin: auto;
+    }
+    .contacts__card-social {
+        background-image: url("../img/contacts-1.png");
+    }
+    .contacts__card-office {
+        background-image: url("../img/contacts-2.png");
+    }
+    .contacts__card-phone {
+        background-image: url("../img/contacts-3.png");
     }
 }
 
-//*************/.CONTACTS_BLOCK*************//
+//*************/.CONTACTS SECTION*************//
 
 // .feedback {
 //     margin: $indent 0;
