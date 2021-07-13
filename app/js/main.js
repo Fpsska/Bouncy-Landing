@@ -195,49 +195,50 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     //  //*********/.SMOOTH SCROLL*********//
 
-    // let burgerClose = document.querySelector(".menu_close");
-    // let burgerIcon = document.querySelector(".menu-icon");
-    // let burgerLinks = document.querySelectorAll(".burger_links");
-    // let burgerBox = document.querySelector(".menu_container");
-    // let logoText = document.querySelector(".logo_text");
+    let burgerClose = document.querySelector(".menu__close");
+    let burgerIcon = document.querySelector(".menu__icon");
+    let burgerLinks = document.querySelectorAll(".menu__link");
+    let burgerBox = document.querySelector(".menu__container");
+    let logoText = document.querySelectorAll(".header__logo");
 
-    // burgerIcon.addEventListener("click", () => {
-    //     burgerIcon.classList.toggle("active");
-    //     if (burgerIcon.classList.contains("active")) {
-    //         burgerBox.style.height = "100%";
-    //         burgerLinks.hidden = false;
-    //         burgerClose.classList.add("active");
-    //         logoText.style.color = "#19bd9a";
-    //     } else {
-    //         burgerBox.style.height = "0";
-    //         burgerLinks.forEach(item => {
-    //             item.classList.remove("active");
-    //         })
-    //         burgerClose.classList.remove("active");
-    //         logoText.style.color = "#fff";
-    //     }
-    // })
+    burgerIcon.addEventListener("click", () => {
+        burgerIcon.classList.toggle("active");
+        if (burgerIcon.classList.contains("active")) {
+            burgerBox.style.height = "100%";
+            burgerLinks.hidden = false;
+            burgerClose.classList.add("active");
+            logoText.forEach(item => {
+                item.style.color = "#19bd9a";
+            })
+        } else {
+            burgerBox.style.height = "0";
+            burgerLinks.forEach(item => {
+                item.classList.remove("active");
+            })
+            burgerClose.classList.remove("active");
+        }
+    })
 
-    // burgerClose.addEventListener("click", () => {
-    //     if (burgerClose.classList.contains("active")) {
-    //         burgerClose.classList.remove("active");
-    //         burgerBox.style.height = "0";
-    //         burgerLinks.hidden = true;
-    //         logoText.style.color = "#fff";
-    //     }
-    // });
+    burgerClose.addEventListener("click", () => {
+        if (burgerClose.classList.contains("active")) {
+            burgerClose.classList.remove("active");
+            burgerBox.style.height = "0";
+            burgerLinks.hidden = true;
+        }
+    });
 
-    // burgerLinks.forEach(item => {
-    //     item.addEventListener("click", () => {
-    //         item.classList.add("active");
-    //         if (item.classList.contains("active")) {
-    //             item.classList.remove("active");
-    //             burgerClose.classList.remove("active");
-    //             burgerBox.style.height = "0";
-    //             logoText.style.color = "#fff";
-    //         }
-    //     })
-    // })
+    burgerLinks.forEach(item => {
+        item.addEventListener("click", () => {
+            burgerLinks.forEach(item => {
+                item.classList.remove("active")
+            })
+            item.classList.add("active");
+            if (item.classList.contains("active")) {
+                burgerClose.classList.remove("active");
+                burgerBox.style.height = "0";
+            }
+        })
+    })
 
     //  //*********/.BURGER*********//
 
@@ -275,14 +276,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then(function (data) {
                         console.log(data);
                         console.log("Форма отправлена!");
-                        document.querySelector(".btn-feedback").classList.add("submited");
+                        document.querySelector(".btn--form").classList.add("submited");
                     });
             }
         });
     }
 
-    validateForms(".feedback_inner");
-    validateForms(".subscribe_inputs")
+    validateForms(".form__group");
+    validateForms(".subscribe__form")
     //  //*********/.INPUT VALIDATION*********//
 
 

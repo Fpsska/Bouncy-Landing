@@ -83,7 +83,7 @@
     <header class="header" id="header">
         <div class="header__container">
             <div class="header__bar" id="headerBar">
-                <h1 class="header__logo">BOUNCY</h1>
+                <a class="header__logo" href="#" data-scroll="#header">BOUNCY</a>
                 <nav class="nav header__nav">
                     <ul class="nav__menu header__menu">
                         <li class="nav__menu-item">
@@ -110,7 +110,43 @@
                     </ul>
                 </nav>
             </div>
+
+            <div class="menu">
+                <div class="menu__container">
+                    <div class="menu__bar">
+                        <h1 class="header__logo">BOUNCY</h1>
+                        <span class="menu__icon">&#9776;</span>
+                    </div>
+                    <span class="menu__close">&times;</span>
+                    <nav class="nav">
+                        <ul class="nav__menu">
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#header">Hello</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#description">About</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#services">Services</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#portfolio">Portfolio</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#team">Team</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class=" menu__link" data-scroll="#news">Blog</a>
+                            </li>
+                            <li class="nav__menu-item">
+                                <a href="#" class="menu__link" data-scroll="#contacts">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
+        <!-- /. burger-menu -->
     </header>
     <!-- /.HEADER -->
 
@@ -366,7 +402,7 @@
                     </p>
                 </article>
                 <nav class="portfolio__nav">
-                    <ul class="nav__menu">
+                    <ul class="nav__menu nav__menu-portfolio">
                         <li class="nav__menu-item">
                             <a class="nav__menu-link portfolio__nav-link" href="#" data-tab="#tab_1">All Works</a>
                         </li>
@@ -1153,7 +1189,7 @@
                             blanditiis praesentium
                         </p>
                     </article>
-                    <form action="/" method="GET" enctype="multipart/form-data" class="subscribe__form">
+                    <form class="subscribe__form" action="/" method="GET" enctype="multipart/form-data">
                         <input class="subscribe__input input--email" placeholder="Email Address" type="email"
                             name="email" data-validate-field="email" required>
                         <div class="subscribe__button">
@@ -1236,26 +1272,25 @@
         <div class="form">
             <div class="form__container">
                 <form class="form__group" action="/" method="GET" enctype="multipart/form-data">
-                    <fieldset>
-                        <div class="form__section_1">
-                            <input class="form__input form__input-name" name="text" placeholder="Your name" type="text"
-                                required data-validate-field="name">
-                            <input class="form__input form__input-email" name="email" placeholder="Email address"
-                                type="email" required data-validate-field="email">
-                            <input class="form__input form__input-subject" name="text" placeholder="Subject"
-                                maxlength="15" type="text" required data-validate-field="subject">
-                        </div>
-                        <div class="form__section_2">
-                            <input class="form__input form__input-message" name="text" placeholder="Type your message"
-                                type="text" required data-validate-field="message">
-                        </div>
-                    </fieldset>
+                    <div class="form__section_1">
+                        <input class="form__input form__input-name" name="text" placeholder="Your name" type="text"
+                            required data-validate-field="name">
+                        <input class="form__input form__input-email" name="email" placeholder="Email address"
+                            type="email" required data-validate-field="email">
+                        <input class="form__input form__input-subject" name="text" placeholder="Subject" maxlength="15"
+                            type="text" required data-validate-field="subject">
+                    </div>
+                    <div class="form__section_2">
+                        <input class="form__input form__input-message" name="text" placeholder="Type your message"
+                            type="text" required data-validate-field="message">
+                    </div>
                     <div class="form__button">
                         <button class="btn--form" type="submit">
                             <span class="side flip-front">SUMBIT NOW</span>
                             <span class="side flip-back">COMPLITE!</span>
                         </button>
                     </div>
+
                 </form>
             </div>
         </div>

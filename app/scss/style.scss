@@ -43,9 +43,10 @@ body {
         z-index: 10;
         display: grid;
         align-items: center;
-        grid-template-columns: 0.2fr 1fr;
+        grid-template-columns: auto 1fr;
         grid-template-rows: 0.5fr;
         grid-template-areas: "c d";
+        padding: 10px 50px;
         /***MEDIA***/
         @include media("<=tablet") {
             grid-template-rows: 0.3fr;
@@ -62,8 +63,7 @@ body {
         font-size: 2em;
         /***MEDIA***/
         @include media("<=small-screens") {
-            margin: 0 0 0 1.2em;
-            font-size: 0.8em;
+            font-size: 1.7em;
         }
         @include media("<=phone") {
             grid-area: a;
@@ -74,35 +74,37 @@ body {
     }
     .header__nav {
         grid-area: d;
-        margin: 0 5em 0 0;
         /***MEDIA***/
-        @include media("<=small-screens") {
-            margin: 0 2em 0 0;
-        }
+        // @include media("<=small-screens") {
+        //     margin: 0 2em 0 0;
+        // }
         @include media("<=phone") {
             grid-area: b;
         }
-        .nav__menu-link {
-            cursor: pointer;
-            color: $header;
-            font-size: 1.4em;
-            margin-right: 1.2em;
-            /*MEDIA*/
-            @include media("<=tablet") {
-                font-size: 1.1em;
-                margin-right: 0.3em;
-            }
-            &:last-child {
-                margin-right: 0;
-            }
-            &:hover,
-            &:focus {
-                color: $second;
-            }
+    }
+    .nav__menu-link {
+        cursor: pointer;
+        color: $header;
+        font-size: 1.4em;
+        margin-right: 1.2em;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover,
+        &:focus {
+            color: $second;
+        }
+        /*MEDIA*/
+        @include media("<=tablet") {
+            font-size: 1.1em;
+            margin-right: 0.3em;
         }
     }
     .header__menu {
         margin: 0 0 0 auto;
+        @include media("<=small-screens") {
+            max-width: 80%;
+        }
     }
     .header__bar.fixed {
         display: grid;
@@ -117,7 +119,6 @@ body {
             display: none;
         }
         .header__logo {
-            margin: 0 0 0 2em;
             font-size: 2.5em;
             font-weight: 900;
             color: $second;
@@ -141,6 +142,118 @@ body {
     }
 }
 
+.menu {
+    display: none;
+    min-height: 100vh;
+    /***MEDIA***/
+    @include media("<=phone-landscape") {
+        display: block;
+        position: relative;
+    }
+    .menu__bar {
+        text-align: start;
+        color: $header;
+        z-index: 1;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    .header__logo {
+        color: $header;
+        font-size: 1.2em;
+    }
+    .header__logo {
+        font-weight: 700;
+        font-size: 1.5em;
+        padding: 0 1em;
+        /***MEDIA***/
+        @include media("<=phone-landscape") {
+            font-size: 1.2em;
+        }
+        @include media("<=phone") {
+            font-size: 1.5em;
+            padding: 0 0.3em;
+        }
+    }
+    .menu__icon {
+        position: fixed;
+        color: $dark;
+        font-size: 1.5em;
+        left: 85%;
+        top: 0;
+        cursor: pointer;
+        z-index: 1;
+        /*MEDIA*/
+        @include media("<=phone-landscape") {
+            left: 92%;
+        }
+        @include media("<=phone") {
+            left: 85%;
+            top: 0;
+        }
+    }
+    .menu__container {
+        width: 100%;
+        height: 0px;
+        position: fixed;
+        z-index: 1;
+        background-color: rgba(77, 83, 93, 0.8);
+        overflow: hidden;
+        // transition: 1s ease-in-out;
+    }
+    .menu__close {
+        position: absolute;
+        top: 15%;
+        right: 90%;
+        font-size: 2em;
+        color: $header;
+        cursor: pointer;
+        z-index: 1;
+        display: none;
+        /*MEDIA*/
+        @include media("<=phone-landscape") {
+            top: 12%;
+            right: 92%;
+            font-size: 1.7em;
+        }
+        @include media("<=phone") {
+            top: 14%;
+            right: 90%;
+        }
+    }
+    .menu__close.active {
+        display: block;
+    }
+    .nav {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .nav__menu {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .menu__link {
+        z-index: 10;
+        padding: 1em;
+        font-size: 1.1em;
+        color: $header;
+        text-transform: uppercase;
+        /*MEDIA*/
+        @include media("<=phone-landscape") {
+            padding: 0.3em;
+            font-size: 1em;
+        }
+        @include media("<=phone") {
+            padding: 1em;
+        }
+    }
+    .menu__link.active {
+        color: $second;
+    }
+}
+
 //*************/.HEADER SECTION *************//
 
 .about {
@@ -148,8 +261,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0 0.5em;
-    // font-size: 2em;
+    min-width: 100%;
     color: $header;
     z-index: 1;
     display: grid;
@@ -163,25 +275,29 @@ body {
     .about__title {
         font-size: 4em;
         /***MEDIA***/
+        @include media("<=small-screens") {
+            font-size: 3em;
+        }
         @include media("<=tablet") {
-            font-size: 1.3em;
+            font-size: 2.5em;
         }
         @include media("<=phone") {
-            font-size: 1.1em;
+            font-size: 2em;
         }
     }
     .about__subtitle {
         font-size: 1.8em;
         text-align: center;
         /***MEDIA***/
-        @include media("<=tablet-landscape") {
-            font-size: 0.7em;
+        @include media("<=small-screens") {
+            font-size: 1.2em;
         }
+
         @include media("<=tablet") {
-            font-size: 0.7em;
+            font-size: 1em;
         }
         @include media("<=phone") {
-            font-size: 0.6em;
+            font-size: 0.8em;
         }
     }
     .about__button {
@@ -249,11 +365,11 @@ body {
     padding: $indent 0;
     background-color: $header;
     /***MEDIA***/
-    @include media("<=phone") {
-        padding: 6em 0;
-    }
     @include media("<=tablet-landscape") {
         padding: 5em 0;
+    }
+    @include media("<=phone") {
+        padding: 6em 0;
     }
     .description__container {
         max-width: 1200px;
@@ -340,12 +456,12 @@ body {
         grid-template-columns: 0.2fr;
         grid-template-rows: minmax(0.3fr, auto);
         /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            grid-template-columns: 0.4fr;
+        }
         @include media("<=phone") {
             justify-content: center;
             grid-template-columns: 0.6fr;
-        }
-        @include media("<=tablet-landscape") {
-            grid-template-columns: 0.4fr;
         }
         .btn--description {
             @include btn;
@@ -355,12 +471,12 @@ body {
             border: 1px solid $dark;
             border-radius: 10em;
             padding: 0.2em 0.4em;
+            &:hover {
+                box-shadow: 0px 0px 1.5px 1px $dark;
+            }
             /***MEDIA***/
             @include media("<=phone") {
                 font-size: 1em;
-            }
-            &:hover {
-                box-shadow: 0px 0px 1.5px 1px $dark;
             }
         }
     }
@@ -531,15 +647,6 @@ body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 0.5fr;
-        /***MEDIA***/
-        @include media("<=phone") {
-            grid-template-rows: repeat(3, auto);
-            grid-template-columns: 1fr;
-            grid-row-gap: 1px;
-        }
-        @include media("<=tablet-landscape") {
-            grid-template-rows: 0.8fr;
-        }
         &:nth-child(1) {
             grid-area: a;
         }
@@ -548,6 +655,15 @@ body {
         }
         &:nth-child(3) {
             grid-area: c;
+        }
+        /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            grid-template-rows: 0.8fr;
+        }
+        @include media("<=phone") {
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 1fr;
+            grid-row-gap: 1px;
         }
     }
     .projects__images {
@@ -572,6 +688,9 @@ body {
         grid-template-rows: 1.5fr;
         align-items: center;
         /***MEDIA***/
+        @include media("<=tablet-landscape") {
+            padding: 2em;
+        }
         @include media("<=phone-landscape") {
             grid-template-columns: 1fr;
             grid-row-gap: 0.3em;
@@ -581,9 +700,6 @@ body {
                 "b";
             padding: 0.5em 0.4em;
             font-size: 0.8em;
-        }
-        @include media("<=tablet-landscape") {
-            padding: 2em;
         }
     }
     .projects__text {
@@ -596,9 +712,6 @@ body {
         /***MEDIA***/
         @include media("<=phone") {
             grid-area: a;
-        }
-        /***MEDIA***/
-        @include media("<=phone") {
             font-size: 1.1em;
         }
     }
@@ -903,6 +1016,7 @@ body {
         max-width: 1300px;
         margin: 0 auto;
         display: grid;
+        grid-template-rows: auto;
         grid-template-areas:
             "a"
             "b"
@@ -915,20 +1029,39 @@ body {
     .portfolio__nav {
         grid-area: b;
         margin: 0 0 2em 0;
+        @include media("<=phone-landscape") {
+            padding: 0 0.5em;
+        }
+    }
+    .nav__menu-portfolio {
+        @include media("<=tablet") {
+            max-width: 100% !important;
+        }
+        @include media("<=phone-landscape") {
+            grid-column-gap: 5px;
+            grid-template-columns: repeat(4, auto-fill);
+        }
+        @include media("<=phone") {
+            grid-template-columns: repeat(auto-fit, minmax(90px, auto));
+            grid-column-gap: 0;
+        }
     }
     .portfolio__nav-link {
         font-size: 1.4em;
         color: $dark;
         margin-right: 1.2em;
+        &:last-child {
+            margin-right: 0;
+        }
         /***MEDIA***/
-        @include media("<=phone-landscape") {
-            font-size: 1.1em;
+        // @include media("<=phone-landscape") {
+        //     font-size: 1.3em !important;
+        // }
+        @include media("<=tablet") {
+            font-size: 1.3em;
         }
         @include media("<=phone") {
             font-size: 1em;
-        }
-        &:last-child {
-            margin-right: 0;
         }
     }
     .portfolio__nav-link.active {
@@ -1385,12 +1518,12 @@ body {
         margin: 0 0 5em 0;
         overflow: hidden;
         /***MEDIA***/
-        @include media("<=phone") {
-            z-index: 0;
-        }
         @include media("<=tablet-landscape") {
             z-index: 0;
             margin: 0 0 3em 0;
+        }
+        @include media("<=phone") {
+            z-index: 0;
         }
         .owl-dots {
             text-align: center;
@@ -1775,14 +1908,14 @@ body {
         border: 1px solid $subtitle;
         background-color: transparent;
         opacity: 0.7;
+        &:hover {
+            border: 1px solid $header;
+        }
         /***MEDIA***/
         @include media("<=phone") {
             grid-area: a;
             width: 90%;
             margin: auto;
-        }
-        &:hover {
-            border: 1px solid $header;
         }
     }
     .subscribe__button {
@@ -1911,7 +2044,6 @@ body {
             justify-content: center;
             grid-gap: 3em;
             grid-template-columns: 1fr;
-            grid-auto-rows: repeat(3, auto);
             padding: 0.1em 0.1em;
         }
     }
@@ -1926,6 +2058,7 @@ body {
     .contacts__card_top {
         grid-area: a;
         display: grid;
+        grid-template-rows: minmax(10em, auto);
         background-size: cover;
         position: relative;
     }
@@ -1999,20 +2132,11 @@ body {
     .form__group {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(2, auto);
         grid-template-areas:
             "a a a"
             "b b b"
             "c c c";
-        /***MEDIA***/
-        @include media("<=tablet") {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(2, 1fr);
-            grid-template-areas:
-                "a"
-                "b"
-                "c";
-        }
     }
     .form__section_1 {
         grid-area: a;
