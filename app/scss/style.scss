@@ -74,10 +74,6 @@ body {
     }
     .header__nav {
         grid-area: d;
-        /***MEDIA***/
-        // @include media("<=small-screens") {
-        //     margin: 0 2em 0 0;
-        // }
         @include media("<=phone") {
             grid-area: b;
         }
@@ -198,7 +194,6 @@ body {
         z-index: 1;
         background-color: rgba(77, 83, 93, 0.8);
         overflow: hidden;
-        // transition: 1s ease-in-out;
     }
     .menu__close {
         position: absolute;
@@ -228,7 +223,7 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
     .nav__menu {
         display: grid;
@@ -292,7 +287,6 @@ body {
         @include media("<=small-screens") {
             font-size: 1.2em;
         }
-
         @include media("<=tablet") {
             font-size: 1em;
         }
@@ -423,9 +417,6 @@ body {
         @include media("<=phone") {
             font-weight: 600;
         }
-        // @include media("<=phone") {
-        //     margin: auto;
-        // }
     }
     .description__text {
         grid-area: b;
@@ -596,7 +587,7 @@ body {
         grid-area: g;
         padding: 0 0 0 0.5em;
         width: 55%;
-        h2 {
+        .details__title {
             font-size: 1.2em;
             font-weight: 400;
             letter-spacing: 0.08em;
@@ -956,11 +947,6 @@ body {
         @include media("<=small-screens") {
             grid-template-columns: 1fr;
         }
-        // @include media("<=phone-landscape") {
-        //     grid-template-columns: 1fr;
-        //     grid-gap: 0;
-        //     padding: 0.5em 0.5em;
-        // }
         &::after {
             content: url("../img/1-adv.png");
             position: absolute;
@@ -1034,15 +1020,16 @@ body {
         }
     }
     .nav__menu-portfolio {
+        display: grid;
+        grid-template-columns: repeat(7, auto);
         @include media("<=tablet") {
             max-width: 100% !important;
         }
         @include media("<=phone-landscape") {
-            grid-column-gap: 5px;
-            grid-template-columns: repeat(4, auto-fill);
+            grid-template-columns: repeat(auto-fit, minmax(100px, auto));
         }
         @include media("<=phone") {
-            grid-template-columns: repeat(auto-fit, minmax(90px, auto));
+            grid-template-columns: repeat(auto-fit, minmax(70px, auto));
             grid-column-gap: 0;
         }
     }
@@ -1054,9 +1041,6 @@ body {
             margin-right: 0;
         }
         /***MEDIA***/
-        // @include media("<=phone-landscape") {
-        //     font-size: 1.3em !important;
-        // }
         @include media("<=tablet") {
             font-size: 1.3em;
         }
@@ -1150,10 +1134,6 @@ body {
         &:nth-child(12) {
             grid-area: m;
         }
-        // .portfolio_img {
-        //     display: block;
-        //     margin: auto;
-        // }
     }
     .portfolio__feedback {
         grid-area: d;
@@ -2162,17 +2142,14 @@ body {
     }
     .form__input {
         @include input;
-        width: 318px;
-        height: 40px;
+        max-width: 318px;
+        min-height: 40px;
         &:hover {
             border: 1px solid $second;
         }
         @include media("<=tablet") {
             min-width: 100%;
         }
-        // @include media("<=tablet") {
-        //     width: 210px;
-        // }
     }
     .form__input-name {
         grid-area: m;
