@@ -108,6 +108,7 @@ body {
         grid-template-columns: 1fr 13fr;
         grid-template-rows: 50px;
         background-color: rgba(77, 83, 93, 0.6);
+        padding: 0 10px;
         opacity: 0.98;
         bottom: 0;
         /***MEDIA**/
@@ -2142,7 +2143,7 @@ body {
     }
     .form__input {
         @include input;
-        max-width: 318px;
+        width: 318px;
         min-height: 40px;
         &:hover {
             border: 1px solid $second;
