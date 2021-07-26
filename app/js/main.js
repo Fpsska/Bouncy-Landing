@@ -68,18 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50); /*speed*/
     };
 
-    let project = document.querySelector(".projects");
 
-    let offset = (el) => {  // функция получения значения от верха страницы (кроссбраузерно)
+    let offset = (el) => {  // function of element position from top page position
         const rect = el.getBoundingClientRect();
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         return { top: rect.top + scrollTop }
     }
 
+    let project = document.querySelector(".projects");
     let projectOffset = offset(project).top
 
     let advantages = document.querySelector(".advantages");
-
     let advantagesOffset = offset(advantages).top;
 
     let circleHandlerFinish = false;
@@ -96,8 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("scroll", () => {
-
-        let scrollPos = window.pageYOffset; // кол-во прокрученных пикселей, ось Y
+        let scrollPos = window.pageYOffset; // Y-axis scroll (px)
 
         if (scrollPos >= projectOffset) {
             if (scrollPos < advantagesOffset) {
@@ -107,15 +105,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     })
-
     //  //************/.GRAPHISC_CARD************//
 
 
     let progressBrand = document.querySelector(".text_progress--branding");
     let progressDesign = document.querySelector(".text_progress--design");
     let progressIntfce = document.querySelector(".text_progress--intfce");
-
-
 
     let teamProgress = (item, percent) => {
         let progressLine = document.querySelector(".current_progress");
@@ -134,10 +129,9 @@ document.addEventListener("DOMContentLoaded", () => {
     teamProgress(progressBrand, 90);
     // teamProgress(progressDesign, 50);
     // teamProgress(progressIntfce, 20);
-
     //  //************/.TEAM PROGRESSBAR************//
 
-    let tabsLink = document.querySelectorAll(".nav__menu-link");
+    let tabsLink = document.querySelectorAll(".portfolio__nav-link");
     let tabsItems = document.querySelectorAll(".portfolio__gallery_item");
 
     tabsLink.forEach(item => {
@@ -163,36 +157,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         document.querySelector(".portfolio__nav-link").click();
     })
-
     //  //*********/.PORTFOLIO TABS*********//
 
     let headerBar = document.querySelector("#headerBar");
-    let mainHeader = document.querySelector("#header");
-    let mainHeaderH = mainHeader.clientHeight;
+    let header = document.querySelector("#header");
+    let headerOffSet = offset(header).top
 
     window.addEventListener('scroll', () => {
         let scrollPos = window.pageYOffset;
-
-        if (scrollPos > mainHeaderH) {
+        if (scrollPos > headerOffSet) {
             headerBar.classList.add("fixed");
         } else {
             headerBar.classList.remove("fixed");
         }
     });
-
     //  //*********/.HEADER FIXED*********//
 
     const dataScrollElement = document.querySelectorAll("[data-scroll]").forEach(item => {
         item.addEventListener("click", (event) => {
             event.preventDefault();
-
-            const elementID = event.currentTarget.getAttribute("data-scroll").substr(1);
-
+            const elementID = event.currentTarget.getAttribute("data-scroll").substr(1); // remove "#" symbol in data-scroll="#item"
             document.getElementById(elementID).scrollIntoView({
-                behavior: "smooth"
+                behavior: "smooth",
+                block: "center"
             })
         })
     })
+
     //  //*********/.SMOOTH SCROLL*********//
 
     let burgerClose = document.querySelector(".menu__close");
@@ -239,17 +230,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     })
-
     //  //*********/.BURGER*********//
 
     lightbox.option({
         'resizeDuration': 200,
         'wrapAround': true
     });
-
     //  //*********/.LIGHTBOX*********//
 
-    function validateForms(selector) {  // selector - строка, класс родителя
+    function validateForms(selector) {  // selector - class of parent block
         new window.JustValidate(selector, {
             rules: {
                 name: {
@@ -268,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             submitHandler: function (form) {
                 console.log(form);
-                let formData = new FormData(form); // помещаем все данные form
+                let formData = new FormData(form); // all of data of form
                 fetch("mail.php", {
                     method: "POST",
                     body: formData
@@ -287,4 +276,5 @@ document.addEventListener("DOMContentLoaded", () => {
     //  //*********/.INPUT VALIDATION*********//
 
 
+    //  //*********/.PIXBAY API*********//
 });

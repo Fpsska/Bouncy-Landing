@@ -14,11 +14,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../img/header-1.png");
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
-    @include media("<=phone-landscape") {
-        height: 100vh;
-    }
     &:before {
         content: "";
         position: absolute;
@@ -31,7 +28,7 @@ body {
     }
     .header__container {
         position: relative;
-        height: 100vh;
+        min-height: 100vh;
         min-width: 100%;
         text-align: center;
         display: grid;
@@ -67,7 +64,7 @@ body {
         }
         @include media("<=phone") {
             grid-area: a;
-            margin: 0 0 0 1em;
+            margin: 0;
             padding: 0 3 0 0;
             font-size: 38px;
         }
@@ -105,11 +102,13 @@ body {
     .header__bar.fixed {
         display: grid;
         position: fixed;
-        grid-template-columns: 1fr 13fr;
+        min-width: 100%;
+        grid-template-columns: auto 1fr;
         grid-template-rows: 50px;
         background-color: rgba(77, 83, 93, 0.6);
         padding: 0 10px;
         opacity: 0.98;
+        transition: 0.2s linear;
         bottom: 0;
         /***MEDIA**/
         @include media("<=phone-landscape") {
@@ -122,6 +121,10 @@ body {
             /***MEDIA**/
             @include media("<=small-screens") {
                 font-size: 2em;
+            }
+            @include media("<=phone") {
+                font-size: 2em;
+                margin: 0;
             }
         }
         .nav__menu-link {
@@ -184,8 +187,11 @@ body {
             left: 92%;
         }
         @include media("<=phone") {
-            left: 85%;
+            left: 88%;
             top: 0;
+        }
+        @include media("<=sm-phone") {
+            left: 85%;
         }
     }
     .menu__container {
@@ -232,17 +238,13 @@ body {
     }
     .menu__link {
         z-index: 10;
-        padding: 1em;
+        padding: 0;
         font-size: 1.1em;
         color: $header;
         text-transform: uppercase;
         /*MEDIA*/
         @include media("<=phone-landscape") {
-            padding: 0.3em;
             font-size: 1em;
-        }
-        @include media("<=phone") {
-            padding: 1em;
         }
     }
     .menu__link.active {
@@ -312,7 +314,7 @@ body {
         cursor: pointer;
         outline: none;
         width: 20px;
-        height: 20px;
+        min-height: 20px;
         border-radius: 100%;
         &::before {
             content: "";
@@ -336,7 +338,7 @@ body {
     .btn--about_bg {
         background: $second;
         width: 20px;
-        height: 20px;
+        min-height: 20px;
         border-radius: 100%;
         animation: pulse 1.2s ease infinite;
     }
@@ -357,14 +359,19 @@ body {
 //*************/.ABOUT SECTION *************//
 
 .description {
-    padding: $indent 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: $indent;
     background-color: $header;
     /***MEDIA***/
     @include media("<=tablet-landscape") {
         padding: 5em 0;
+        min-height: auto;
+        height: auto;
     }
     @include media("<=phone") {
-        padding: 6em 0;
+        padding: $indent-tablet;
     }
     .description__container {
         max-width: 1200px;
@@ -494,16 +501,14 @@ body {
 //*************/.DESCRIPTION SECTION *************//
 
 .details {
-    margin: $indent 0 0 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
     /***MEDIA***/
-    @include media("<=small-screens") {
-        margin: 6em 0 0 0;
-    }
-    @include media("<=tablet") {
-        margin: 6em 0 0 0;
-    }
-    @include media("<=phone") {
-        margin: 3em 0 0 0;
+    @include media("<=tablet-landscape") {
+        margin: $indent-tablet;
+        min-height: auto;
+        height: auto;
     }
     .details__container {
         max-width: 1200px;
@@ -540,7 +545,7 @@ body {
         border-radius: 30px;
         background-color: #81868e;
         width: 50px;
-        height: 50px;
+        min-height: 50px;
         position: relative;
         margin-left: 1.5em;
         transition: 0.3s linear;
@@ -549,7 +554,7 @@ body {
         }
         .img--description {
             max-width: 26px;
-            height: 22px;
+            min-height: 22px;
             display: block;
             left: 0;
             top: 0;
@@ -614,14 +619,6 @@ body {
 //*************/.DETAILS SECTION *************//
 
 .projects {
-    margin: $indent 0;
-    /***MEDIA***/
-    @include media("<=tablet-landscape") {
-        margin: 4em 0;
-    }
-    @include media("<=phone") {
-        margin: 5em 0 5em 0;
-    }
     .projects__container {
         display: grid;
         grid-template-columns: 1fr;
@@ -652,7 +649,7 @@ body {
         @include media("<=tablet-landscape") {
             grid-template-rows: 0.8fr;
         }
-        @include media("<=phone") {
+        @include media("<=phone-landscape") {
             grid-template-rows: repeat(3, auto);
             grid-template-columns: 1fr;
             grid-row-gap: 1px;
@@ -755,11 +752,17 @@ body {
 //*************/.PROJECTS SECTION*************//
 
 .services {
-    margin: $indent 0;
+    min-height: 100vh;
     display: grid;
+    place-items: center;
     /***MEDIA***/
     @include media("<=tablet-landscape") {
-        margin: 5em 0;
+        margin: $indent-tablet;
+        min-height: auto;
+        height: auto;
+    }
+    @include media("<=phone") {
+        margin: 6em 0 4em 0;
     }
     .services__container {
         grid-template-columns: 1fr 1fr;
@@ -827,6 +830,7 @@ body {
         margin: auto 0;
         /*MEDIA*/
         @include media("<=phone") {
+            margin-top: 2em;
             grid-column-gap: 0.4em;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(6, auto);
@@ -876,8 +880,9 @@ body {
             position: relative;
             .percent--branding {
                 position: absolute;
-                top: 38%;
-                left: 35%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 font-size: 1.1em;
             }
         }
@@ -886,8 +891,9 @@ body {
             position: relative;
             .percent--web {
                 position: absolute;
-                top: 38%;
-                left: 36%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 font-size: 1.1em;
             }
         }
@@ -896,8 +902,9 @@ body {
             position: relative;
             .percent--ui {
                 position: absolute;
-                top: 38%;
-                left: 36%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 font-size: 1.1em;
             }
         }
@@ -921,6 +928,10 @@ body {
     @include media("<=tablet") {
         padding: 1em 1em;
         z-index: 0;
+    }
+    @include media("<=phone") {
+        min-height: auto;
+        height: auto;
     }
     &:before {
         content: "";
@@ -994,10 +1005,10 @@ body {
 //*************/.ADVANTAGES SECTION *************//
 
 .portfolio {
-    margin: $indent 0;
+    margin: $indent;
     /***MEDIA***/
     @include media("<=tablet-landscape") {
-        margin: 5em 0;
+        margin: $indent-tablet;
     }
     .portfolio__container {
         max-width: 1300px;
@@ -1022,16 +1033,15 @@ body {
     }
     .nav__menu-portfolio {
         display: grid;
-        grid-template-columns: repeat(7, auto);
+        grid-template-columns: repeat(auto-fit, minmax(95px, auto));
         @include media("<=tablet") {
             max-width: 100% !important;
         }
         @include media("<=phone-landscape") {
-            grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+            grid-template-columns: repeat(auto-fit, minmax(85px, auto));
         }
         @include media("<=phone") {
-            grid-template-columns: repeat(auto-fit, minmax(70px, auto));
-            grid-column-gap: 0;
+            grid-template-columns: repeat(auto-fit, minmax(60px, auto));
         }
     }
     .portfolio__nav-link {
@@ -1197,7 +1207,7 @@ body {
                 display: block;
                 border-radius: 50%;
                 width: 300px;
-                height: 300px;
+                min-height: 300px;
                 left: -75px;
                 transition: box-shadow 0.5s ease-in-out;
                 z-index: -1;
@@ -1220,6 +1230,14 @@ body {
 //*************/.PORTFOLIO_BLOCK*************//
 
 .team {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    /*MEDIA*/
+    @include media("<=tablet-landscape") {
+        min-height: auto;
+        height: auto;
+    }
     .team__container {
         max-width: 1300px;
         margin: 0 auto;
@@ -1252,7 +1270,7 @@ body {
             text-align: center;
             .owl-dot {
                 width: 0.5em;
-                height: 0.5em;
+                min-height: 0.5em;
                 color: $header;
                 margin: 0 0 0 0.5em;
                 border-radius: 100%;
@@ -1331,7 +1349,7 @@ body {
             right: 0;
             bottom: 0;
             border-right: 0.2em solid $second;
-            height: 40%;
+            min-height: 40%;
             margin: 0 0 0 auto;
         }
     }
@@ -1376,14 +1394,14 @@ body {
     }
     .bg_progress {
         width: 100%;
-        height: 5px;
+        min-height: 5px;
         background: #d8dce0;
         border-radius: 2px;
         position: relative;
     }
     .current_progress {
         position: absolute;
-        height: 5px;
+        min-height: 5px;
         background: $second;
         border-radius: 2px;
     }
@@ -1392,13 +1410,13 @@ body {
 //*************/.TEAM SECTION*************//
 
 .feedback {
-    margin: $indent 0;
+    margin: $indent;
     background-position: center;
     background-size: cover;
     background-image: url("../img/contcs-baclground.png");
     /***MEDIA***/
     @include media("<=tablet-landscape") {
-        margin: 6em 0;
+        margin: $indent-tablet;
     }
     .feedback__container {
         display: grid;
@@ -1438,7 +1456,7 @@ body {
         }
         .btn--feedback .mask {
             background-color: $header;
-            height: 100px;
+            min-height: 100px;
             position: absolute;
             transform: translate3d(-120%, -50px, 0) rotate3d(0, 0, 1, 45deg);
             width: 200px;
@@ -1474,10 +1492,10 @@ body {
 //*************/.FEEDBACK SECTION*************//
 
 .testimonials {
-    margin: 0 0 $indent 0;
     /***MEDIA***/
     @include media("<=phone") {
-        margin: 0 0 7em 0;
+        min-height: auto;
+        height: auto;
     }
     .testimonial__container {
         max-width: 1300px;
@@ -1510,7 +1528,7 @@ body {
             text-align: center;
             .owl-dot {
                 width: 0.5em;
-                height: 0.5em;
+                min-height: 0.5em;
                 color: $header;
                 margin: 0 0 0 0.5em;
                 border-radius: 100%;
@@ -1571,6 +1589,9 @@ body {
 //*************/.TESTIMONIALS_BLOCK*************//
 
 .news {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
     opacity: 5;
     padding: 5em 5em;
     background-position: center;
@@ -1584,6 +1605,11 @@ body {
     }
     @include media("<=small-screens") {
         padding: 1em 1em;
+    }
+    @include media("<=tablet-landscape") {
+        min-height: auto;
+        height: auto;
+        margin: $indent-tablet;
     }
     @include media("<=phone") {
         padding: 1em 0.5em;
@@ -1610,7 +1636,7 @@ body {
             text-align: center;
             .owl-dot {
                 width: 0.6em;
-                height: 0.6em;
+                min-height: 0.6em;
                 color: transparent;
                 margin: 0 0 0 0.5em;
                 border: 1px solid #b2b3b3;
@@ -1690,13 +1716,9 @@ body {
 //*************/.NEWS SECTION*************//
 
 .prices {
-    margin: $indent 0;
-    /***MEDIA***/
-    @include media("<=desktop") {
-        margin: 4em 0;
-    }
-    @include media("<=phone-landscape") {
-        margin: 5em 0;
+    margin: $indent;
+    @include media("<=tablet-landscape") {
+        margin: 0;
     }
     .prices__container {
         max-width: 1200px;
@@ -1775,7 +1797,7 @@ body {
             right: 0;
             bottom: 0;
             width: 10px;
-            height: 10px;
+            min-height: 10px;
             border-top: 2px solid $header;
             border-right: 2px solid $header;
             transform: rotate(-315deg);
@@ -1826,12 +1848,14 @@ body {
 //*************/.PRICES SECTION*************//
 
 .subscribe {
-    margin: 0 0 0 0;
     background-color: #333333;
     background-size: cover;
     background-position: center;
     background-image: url("../img/sub-background.png");
     opacity: 8;
+    @include media("<=tablet-landscape") {
+        margin: $indent-tablet;
+    }
     .subscribe__container {
         max-width: 540px;
         margin: 0 auto;
@@ -1926,7 +1950,7 @@ body {
         }
         .btn--subscribe {
             width: 9em;
-            height: 90%;
+            min-height: 90%;
             line-height: 2.3em;
             padding: 0;
             border: none;
@@ -1935,7 +1959,7 @@ body {
             position: relative;
             display: block;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
         }
         .btn--subscribe:before,
         .btn--subscribe:after {
@@ -1952,10 +1976,10 @@ body {
         }
         .btn--subscribe:after {
             width: 0%;
-            height: 1px;
+            min-height: 1px;
         }
         .btn--subscribe:hover:before {
-            height: 100%;
+            min-height: 100%;
         }
         .btn--subscribe:hover:after {
             width: 100%;
@@ -1975,10 +1999,10 @@ body {
         }
         .btn--subscribe span:after {
             width: 0%;
-            height: 1px;
+            min-height: 1px;
         }
         .btn--subscribe span:hover:before {
-            height: 100%;
+            min-height: 100%;
         }
         .btn--subscribe span:hover:after {
             width: 100%;
@@ -1989,11 +2013,16 @@ body {
 //*************/.SUBSCRIBE SECTION*************//
 
 .contacts {
-    height: auto;
-    margin: $indent 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
     /*MEDIA*/
     @include media(">phone", "<tablet") {
         margin: 5em 0;
+    }
+    @include media("<=tablet-landscape") {
+        min-height: auto;
+        height: auto;
     }
     .contacts__container {
         text-align: center;
@@ -2070,6 +2099,9 @@ body {
             "c"
             "d";
     }
+    .contacts__card_city {
+        padding: 0.5em 0.5em;
+    }
     .requisites-1 {
         grid-area: c;
         color: $dark;
@@ -2099,11 +2131,13 @@ body {
 //*************/.CONTACTS SECTION*************//
 
 .form {
-    margin: $indent 0;
+    margin: $indent;
     padding: 0.5em 0.5em;
     /***MEDIA***/
+    @include media("<=tablet-landscape") {
+        margin: $indent-tablet;
+    }
     @include media("<=phone") {
-        margin: 3em 0;
         padding: 0.1em 0.1em;
     }
     .form__container {
@@ -2174,7 +2208,7 @@ body {
         }
     }
     .form__input-message {
-        height: 190px;
+        min-height: 190px;
         width: 100%;
         margin: 2.5em 0;
     }
@@ -2221,7 +2255,11 @@ body {
     height: 800px;
     /*MEDIA*/
     @include media("<=small-screens") {
-        height: 100vh;
+        min-height: 100vh;
+    }
+    @include media("<=phone") {
+        min-height: auto;
+        height: auto;
     }
     .map__container {
         width: 100%;
@@ -2292,12 +2330,8 @@ body {
 
 .footer {
     background-color: $first;
-    padding: 4em;
-    /*MEDIA*/
-    @include media("<=small-screens") {
-        height: auto;
-        padding: 1em 0;
-    }
+    margin: 4em 0;
+    padding-bottom: 4em;
     .footer__container {
         display: grid;
         margin: 0 auto;
