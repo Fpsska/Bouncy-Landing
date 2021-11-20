@@ -1788,22 +1788,17 @@ body {
         align-items: center;
         background-color: $second;
         position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 77%;
-            top: 43%;
-            right: 0;
-            bottom: 0;
-            width: 10px;
-            min-height: 10px;
-            border-top: 2px solid $header;
-            border-right: 2px solid $header;
-            transform: rotate(-315deg);
-            opacity: 0.8;
-            z-index: 10;
-        }
+    }
+    .prices__card_icon {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        fill: transparent;
+        stroke: #fff;
+        transform: rotate(270deg);
+        top: 15%;
+        left: 70%;
     }
     .prices__card_title {
         font-size: 1.2em;
